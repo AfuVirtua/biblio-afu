@@ -15,7 +15,7 @@
     <nav>
         <button class="nav-btn active" onclick="showTab('gestion')">📊 Gestion & Infrastructures</button>
         <button class="nav-btn" onclick="showTab('consignes')">📜 Consignes Individuelles</button>
-        <button class="nav-btn" onclick="showTab('tactique')">⚽ Tactiques & Tuto MDM</button>
+        <button class="nav-btn" onclick="showTab('tactique')">⚽ Tactiques & Tutos Lahi</button>
         <button class="nav-btn" onclick="showTab('calculateur')">🧮 Calculateur Excel AfU</button>
     </nav>
 
@@ -58,14 +58,14 @@
             </div>
 
             <div class="card">
-                <h3>🏟️ Couts et Amélioration des Infrastructures</h3>
+                <h3>🏟️ Coûts et Amélioration des Infrastructures</h3>
                 <p>Grille de progression des infrastructures de votre club :</p>
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Infrastructures</th>
-                               <th>Niveau 1</th>
+                                <th>Niveau 1</th>
                                 <th>Niveau 2</th>
                                 <th>Niveau 3</th>
                                 <th>Niveau 4</th>
@@ -297,11 +297,11 @@
         </section>
 
         <section id="tactique" class="tab-content">
-            <h2>⚽ Analyse Tactique & Tutoriel MDM</h2>
+            <h2>⚽ Analyses Tactiques & Tutoriels de Lahi</h2>
 
             <div class="card intro-card">
-                <h3>💡 Tuto : Débloquer le Moteur De Match (MDM) par Lahi</h3>
-                <p><strong>La règle d'or :</strong> Ne JAMAIS attaquer et défendre en même temps sur le même côté ! (Ex: Attaquer dans l'axe et bloquer l'axe, ou attaquer à droite et bloquer à droite). Cela bloque le MDM et provoque des buts évitables.</p>
+                <h3>💡 Tuto 1 : Débloquer le Moteur De Match (MDM)</h3>
+                <p><strong>Règle d'or :</strong> Ne JAMAIS attaquer et défendre en même temps sur le même côté ! (Ex: Attaquer dans l'axe et bloquer l'axe, ou attaquer à droite et bloquer à droite). Cela bloque le MDM et provoque des buts évitables.</p>
                 <hr>
                 <h4>Combinaisons Tactiques Recommandées :</h4>
                 <ul>
@@ -317,9 +317,27 @@
                     </li>
                     <li><strong>Si vous attaquez Côté Droit :</strong>
                         <ul>
-                            <li>Option Défense idéale : Bloquer Côté Gauche (et inversement).</li>
+                            <li>Option Défense idéale : Bloquer Côté Gauche (et vice versa).</li>
                         </ul>
                     </li>
+                </ul>
+            </div>
+
+            <div class="card intro-card" style="border-left-color: #1976d2; background-color: #e3f2fd;">
+                <h3>👁️ Tuto 2 : L'Anticipation pendant le Match en Direct</h3>
+                <p>L'<strong>anticipation</strong> consiste à deviner la zone d'attaque de l'adversaire lors de la prochaine actualisation (actu) pour bloquer cette zone à temps.</p>
+                <hr>
+                <h4>Méthode 1 : Surveillance via l'onglet Style (Méthode Anti-Bug)</h4>
+                <ul>
+                    <li>Allez dans le menu <strong>Consigne</strong> &gt; <strong>Tactique</strong> &gt; <strong>Style de jeu</strong>, puis descendez pour observer le positionnement exact des attaquants adverses.</li>
+                    <li><em>Pourquoi cette méthode ?</em> La fiche principale du club souffre d'un bug de réactivité et ne met pas à jour immédiatement les mouvements adverses !</li>
+                    <li><strong>Exemple :</strong> Si l'adversaire aligne un ATC et un ATD (Attaquant Droit), il prépare une attaque côté droit. Vous devez immédiatement bloquer votre côté gauche !</li>
+                    <li><strong>Astuce Live :</strong> Rafraîchissez l'onglet Style toutes les 10 secondes avant la fin de l'actu pour contrer les managers qui déplacent leurs attaquants à la dernière seconde.</li>
+                </ul>
+                <hr>
+                <h4>Méthode 2 : Analyse des cycles d'attaque</h4>
+                <ul>
+                    <li>Analysez le schéma répétitif de l'adversaire (ex: Min 1: Axe, Min 2: Gauche, Min 3: Droite). S'il suit un cycle régulier, prenez un temps d'avance en positionnant votre bloc défensif sur sa prochaine cible.</li>
                 </ul>
             </div>
 
@@ -370,7 +388,7 @@
 
             <div class="card">
                 <h3>📈 Utilisation des Ratios en Match</h3>
-                <p>Un but provient presque toujours de la domination d'une zone spécifique du terrain (Milieu / Attaque vs Défense adverse) :</p>
+                <p>Un goal provient presque toujours de la domination d'une zone spécifique du terrain (Milieu / Attaque vs Défense adverse) :</p>
                 <ul>
                     <li><strong>Blocage de l'Axe & Perforation des Ailes :</strong> Si l'adversaire force l'axe, orientez votre compo pour bloquer l'axe défensif tout en dominant les ailes en attaque.</li>
                     <li><strong>Réaction aux ajustements :</strong> Suivez la possession et les XG à la mi-temps pour corriger vos consignes.</li>
