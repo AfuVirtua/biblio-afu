@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BIBLIO AFU - SCRIPT PRINCIPAL (VERSION CORRIGÉE)
+   BIBLIO AFU - SCRIPT PRINCIPAL (VERSION AVEC CALCUL NG CORRECT)
    ========================================================================== */
 
 // 1. VARIABLE GLOBALE DE LANGUE
@@ -20,35 +20,49 @@ const statNamesEN = {
     "Endurance": "Stamina"
 };
 
-// 3. TABLEAU DES PROPORTIONS D'ENTRAÎNEMENT (EXCEL AFU)
-const proportionsEntrainement = {
-    "GAC": { "Gardien": "50%", "Défense": "16.67%", "Tacles": "16.67%", "Placement": "16.67%" },
-    "GAC - Relanceur": { "Gardien": "50%", "Tacles": "16.67%", "Placement": "16.67%", "Passes": "16.67%" },
-    "DL - Normal": { "Défense": "50%", "Tacles": "25%", "Placement": "25%" },
-    "DFC - Normal": { "Défense": "50%", "Tacles": "16.67%", "Placement": "16.67%", "Puissance": "16.67%" },
-    "DFC - Participer à la construction": { "Défense": "42.86%", "Tacles": "14.29%", "Puissance": "14.29%", "Passes": "28.57%" },
-    "DFC - Monter sur phases arrêtées": { "Défense": "50%", "Tacles": "16.67%", "Puissance": "33.33%" },
-    "DFL - Normal": { "Défense": "50%", "Tacles": "16.67%", "Passes": "16.67%", "Vitesse": "16.67%" },
-    "DFL - Prendre le couloir": { "Défense": "40%", "Tacles": "20%", "Vitesse": "40%" },
-    "MD - Normal": { "Défense": "25%", "Passes": "50%", "Technique": "25%" },
-    "MD - Défendre": { "Défense": "50%", "Passes": "25%", "Technique": "25%" },
-    "MD - Attaquer": { "Passes": "50%", "Technique": "25%", "Attaque": "25%" },
-    "MD - Provoquer": { "Défense": "25%", "Passes": "25%", "Technique": "50%" },
-    "MOC - Normal": { "Passes": "33.33%", "Technique": "33.33%", "Attaque": "33.33%" },
-    "MOC - Défendre": { "Défense": "33.33%", "Passes": "33.33%", "Technique": "33.33%" },
-    "MOC - Attaque": { "Passes": "25%", "Technique": "25%", "Attaque": "50%" },
-    "MOL - Normal": { "Passes": "20%", "Technique": "20%", "Vitesse": "40%", "Attaque": "20%" },
-    "MOL - Centrer": { "Passes": "40%", "Technique": "20%", "Vitesse": "20%", "Attaque": "20%" },
-    "MOL - Provoquer": { "Passes": "20%", "Technique": "40%", "Vitesse": "20%", "Attaque": "20%" },
-    "MOL - Déborder": { "Passes": "16.67%", "Technique": "16.67%", "Vitesse": "50%", "Attaque": "16.67%" },
-    "AS - Normal": { "Passes": "20%", "Technique": "20%", "Vitesse": "20%", "Attaque": "40%" },
-    "AT - Normal": { "Technique": "25%", "Vitesse": "25%", "Attaque": "50%" },
-    "AT - Jeu en profondeur": { "Technique": "20%", "Vitesse": "40%", "Attaque": "40%" },
-    "AT - Provoquer": { "Technique": "40%", "Vitesse": "20%", "Attaque": "40%" },
-    "AT - Pivot": { "Puissance": "16.67%", "Passes": "16.67%", "Vitesse": "16.67%", "Technique": "16.67%", "Attaque": "33.33%" }
+// 3. TABLEAU DES COEFFICIENTS (PROPORTIONS ENTRAINEMENTS - EXCEL AFU)
+const coefficients = {
+    "GAC": { "Gardien": 0.5, "Défense": 0.1667, "Tacles": 0.1667, "Placement": 0.1667 },
+    "GAC - Relanceur": { "Gardien": 0.5, "Tacles": 0.1667, "Placement": 0.1667, "Passes": 0.1667 },
+    "DL - Normal": { "Défense": 0.5, "Tacles": 0.25, "Placement": 0.25 },
+    "DFC - Normal": { "Défense": 0.5, "Tacles": 0.1667, "Placement": 0.1667, "Puissance": 0.1667 },
+    "DFC - Participer à la construction": { "Défense": 0.4286, "Tacles": 0.1429, "Puissance": 0.1429, "Passes": 0.2857 },
+    "DFC - Monter sur phases arrêtées": { "Défense": 0.5, "Tacles": 0.1667, "Puissance": 0.3333 },
+    "DFL - Normal": { "Défense": 0.5, "Tacles": 0.1667, "Passes": 0.1667, "Vitesse": 0.1667 },
+    "DFL - Prendre le couloir": { "Défense": 0.4, "Tacles": 0.2, "Vitesse": 0.4 },
+    "MD - Normal": { "Défense": 0.25, "Passes": 0.5, "Technique": 0.25 },
+    "MD - Défendre": { "Défense": 0.5, "Passes": 0.25, "Technique": 0.25 },
+    "MD - Attaquer": { "Passes": 0.5, "Technique": 0.25, "Attaque": 0.25 },
+    "MD - Provoquer": { "Défense": 0.25, "Passes": 0.25, "Technique": 0.5 },
+    "MOC - Normal": { "Passes": 0.3333, "Technique": 0.3333, "Attaque": 0.3333 },
+    "MOC - Défendre": { "Défense": 0.3333, "Passes": 0.3333, "Technique": 0.3333 },
+    "MOC - Attaque": { "Passes": 0.25, "Technique": 0.25, "Attaque": 0.5 },
+    "MOL - Normal": { "Passes": 0.2, "Technique": 0.2, "Vitesse": 0.4, "Attaque": 0.2 },
+    "MOL - Centrer": { "Passes": 0.4, "Technique": 0.2, "Vitesse": 0.2, "Attaque": 0.2 },
+    "MOL - Provoquer": { "Passes": 0.2, "Technique": 0.4, "Vitesse": 0.2, "Attaque": 0.2 },
+    "MOL - Déborder": { "Passes": 0.1667, "Technique": 0.1667, "Vitesse": 0.5, "Attaque": 0.1667 },
+    "AS - Normal": { "Passes": 0.2, "Technique": 0.2, "Vitesse": 0.2, "Attaque": 0.4 },
+    "AT - Normal": { "Technique": 0.25, "Vitesse": 0.25, "Attaque": 0.5 },
+    "AT - Jeu en profondeur": { "Technique": 0.2, "Vitesse": 0.4, "Attaque": 0.4 },
+    "AT - Provoquer": { "Technique": 0.4, "Vitesse": 0.2, "Attaque": 0.4 },
+    "AT - Pivot": { "Puissance": 0.1667, "Passes": 0.1667, "Vitesse": 0.1667, "Technique": 0.1667, "Attaque": 0.3333 }
 };
 
-// 4. FONCTION POUR CHANGER DE LANGUE
+// 4. CORRESPONDANCE DES STATS POUR LE CALCUL
+const statMapping = {
+    "Gardien": "gar",
+    "Défense": "def",
+    "Tacles": "tac",
+    "Placement": "pla",
+    "Marquage": "mar",
+    "Puissance": "pui",
+    "Passes": "pas",
+    "Technique": "tec",
+    "Vitesse": "vit",
+    "Attaque": "att"
+};
+
+// 5. FONCTION POUR CHANGER DE LANGUE
 function switchLanguage(lang) {
     currentLang = lang;
     
@@ -69,7 +83,7 @@ function switchLanguage(lang) {
     calculerTout();
 }
 
-// 5. FONCTION POUR LA NAVIGATION
+// 6. FONCTION POUR LA NAVIGATION
 function showTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
@@ -86,172 +100,118 @@ function showTab(tabId) {
     });
 }
 
-// 6. FONCTION DE CALCUL DE LA NG - VERSION CORRIGÉE
+// 7. FONCTION DE CALCUL DE LA NG - MÉTHODE CORRECTE
 function calculerTout() {
-    // Récupération des valeurs
-    const gar = parseFloat(document.getElementById('st_gar')?.value) || 0;
-    const def = parseFloat(document.getElementById('st_def')?.value) || 0;
-    const tac = parseFloat(document.getElementById('st_tac')?.value) || 0;
-    const pla = parseFloat(document.getElementById('st_pla')?.value) || 0;
-    const pui = parseFloat(document.getElementById('st_pui')?.value) || 0;
-    const pas = parseFloat(document.getElementById('st_pas')?.value) || 0;
-    const tec = parseFloat(document.getElementById('st_tec')?.value) || 0;
-    const vit = parseFloat(document.getElementById('st_vit')?.value) || 0;
-    const att = parseFloat(document.getElementById('st_att')?.value) || 0;
+    // Récupération des valeurs des caractéristiques
+    const stats = {
+        gar: parseFloat(document.getElementById('st_gar')?.value) || 0,
+        def: parseFloat(document.getElementById('st_def')?.value) || 0,
+        tac: parseFloat(document.getElementById('st_tac')?.value) || 0,
+        pla: parseFloat(document.getElementById('st_pla')?.value) || 0,
+        mar: parseFloat(document.getElementById('st_mar')?.value) || 0,
+        pui: parseFloat(document.getElementById('st_pui')?.value) || 0,
+        pas: parseFloat(document.getElementById('st_pas')?.value) || 0,
+        tec: parseFloat(document.getElementById('st_tec')?.value) || 0,
+        vit: parseFloat(document.getElementById('st_vit')?.value) || 0,
+        att: parseFloat(document.getElementById('st_att')?.value) || 0
+    };
 
     const posteSelect = document.getElementById('posteSelect');
     if (!posteSelect) return;
     
     const poste = posteSelect.value;
-    let ng = 0;
-
-    // ================================================================
-    // CALCUL DE LA NG SELON LA RÉPARTITION DES CARACTÉRISTIQUES
-    // Basé sur les informations du forum Virtuafoot
-    // ================================================================
     
-    switch(poste) {
-        // ===== GARDIENS =====
-        // GAC Normal : Gardien 3 | Défense 1 | Tacles 1 | Placement 1
-        case "GAC": 
-            ng = (3 * gar + def + tac + pla) / 6; 
-            break;
-            
-        // GAC Relanceur : Gardien 3 | Tacles 1 | Placement 1 | Passes 1
-        case "GAC - Relanceur": 
-            ng = (3 * gar + tac + pla + pas) / 6; 
-            break;
-
-        // ===== DÉFENSEURS =====
-        // DL Normal : Défense 2 | Tacles 1 | Placement 1
-        case "DL - Normal": 
-            ng = (2 * def + tac + pla) / 4; 
-            break;
-            
-        // DFC Normal : Défense 3 | Tacles 1 | Placement 1 | Puissance 1
-        case "DFC - Normal": 
-            ng = (3 * def + tac + pla + pui) / 6; 
-            break;
-            
-        // DFC Monter sur phases arrêtées : Défense 3 | Tacles 1 | Puissance 2
-        case "DFC - Monter sur phases arrêtées": 
-            ng = (3 * def + tac + 2 * pui) / 6; 
-            break;
-            
-        // DFC Participer à la construction : Défense 3 | Tacles 1 | Puissance 1 | Passes 2
-        case "DFC - Participer à la construction": 
-            ng = (3 * def + tac + pui + 2 * pas) / 7; 
-            break;
-            
-        // DFL Normal : Défense 3 | Tacles 1 | Passes 1 | Vitesse 1
-        case "DFL - Normal": 
-            ng = (3 * def + tac + pas + vit) / 6; 
-            break;
-            
-        // DFL Prendre le couloir : Défense 2 | Tacles 1 | Vitesse 2
-        case "DFL - Prendre le couloir": 
-            ng = (2 * def + tac + 2 * vit) / 5; 
-            break;
-
-        // ===== MILIEUX =====
-        // MD Normal : Défense 1 | Passes 2 | Technique 1
-        case "MD - Normal": 
-            ng = (def + 2 * pas + tec) / 4; 
-            break;
-            
-        // MD Défendre : Défense 2 | Passes 1 | Technique 1
-        case "MD - Défendre": 
-            ng = (2 * def + pas + tec) / 4; 
-            break;
-            
-        // MD Attaquer : Passes 2 | Technique 1 | Attaque 1
-        case "MD - Attaquer": 
-            ng = (2 * pas + tec + att) / 4; 
-            break;
-            
-        // MD Provoquer : Défense 1 | Passes 1 | Technique 2
-        case "MD - Provoquer": 
-            ng = (def + pas + 2 * tec) / 4; 
-            break;
-            
-        // MOC Normal : Passes 1 | Technique 1 | Attaque 1
-        case "MOC - Normal": 
-            ng = (pas + tec + att) / 3; 
-            break;
-            
-        // MOC Défendre : Défense 1 | Passes 1 | Technique 1
-        case "MOC - Défendre": 
-            ng = (def + pas + tec) / 3; 
-            break;
-            
-        // MOC Attaque : Passes 1 | Technique 1 | Attaque 2
-        case "MOC - Attaque": 
-            ng = (pas + tec + 2 * att) / 4; 
-            break;
-            
-        // MOL Normal : Passes 1 | Technique 1 | Vitesse 2 | Attaque 1
-        case "MOL - Normal": 
-            ng = (pas + tec + 2 * vit + att) / 5; 
-            break;
-            
-        // MOL Centrer : Passes 2 | Technique 1 | Vitesse 1 | Attaque 1
-        case "MOL - Centrer": 
-            ng = (2 * pas + tec + vit + att) / 5; 
-            break;
-            
-        // MOL Provoquer : Passes 1 | Technique 2 | Vitesse 1 | Attaque 1
-        case "MOL - Provoquer": 
-            ng = (pas + 2 * tec + vit + att) / 5; 
-            break;
-            
-        // MOL Déborder : Passes 1 | Technique 1 | Vitesse 3 | Attaque 1
-        case "MOL - Déborder": 
-            ng = (pas + tec + 3 * vit + att) / 6; 
-            break;
-
-        // ===== ATTAQUANTS =====
-        // AS Normal : Passes 1 | Technique 1 | Vitesse 1 | Attaque 2
-        case "AS - Normal": 
-            ng = (pas + tec + vit + 2 * att) / 5; 
-            break;
-            
-        // AT Normal : Technique 1 | Vitesse 1 | Attaque 2
-        case "AT - Normal": 
-            ng = (tec + vit + 2 * att) / 4; 
-            break;
-            
-        // AT Jeu en profondeur : Technique 1 | Vitesse 2 | Attaque 2
-        case "AT - Jeu en profondeur": 
-            ng = (tec + 2 * vit + 2 * att) / 5; 
-            break;
-            
-        // AT Provoquer : Technique 2 | Vitesse 1 | Attaque 2
-        case "AT - Provoquer": 
-            ng = (2 * tec + vit + 2 * att) / 5; 
-            break;
-            
-        // AT Pivot : Puissance 1 | Passes 1 | Vitesse 1 | Technique 1 | Attaque 2
-        case "AT - Pivot": 
-            ng = (pui + pas + vit + tec + 2 * att) / 6; 
-            break;
-
-        default: 
-            ng = 0;
+    // Récupérer les coefficients pour ce poste
+    const coeffs = coefficients[poste] || {};
+    
+    // Étape 1: Calculer la somme des stats utiles pondérées
+    let sommeStats = 0;
+    let sommeCoeffs = 0;
+    const statsUtiles = {};
+    
+    for (const [statName, coeff] of Object.entries(coeffs)) {
+        const statKey = statMapping[statName];
+        if (statKey && stats[statKey] !== undefined) {
+            statsUtiles[statKey] = stats[statKey];
+            sommeStats += stats[statKey];
+            sommeCoeffs += coeff;
+        }
     }
+    
+    // Étape 2: Calculer la NG idéale (la plus haute stat * 2)
+    // La NG maximale est limitée par la stat la plus élevée
+    // Pour un GAC avec Gardien à 91, la NG max est 91 * (6/2) = 273? Non.
+    // En réalité, la NG = (somme des min(stat_réelle, stat_idéale)) / 2
+    
+    // Étape 3: Calculer les valeurs idéales basées sur la stat la plus élevée
+    const statKeys = Object.keys(statsUtiles);
+    if (statKeys.length === 0) {
+        document.getElementById('ngResult').innerText = '0.00';
+        return;
+    }
+    
+    // Trouver la stat la plus élevée pour déterminer la référence
+    let maxStat = 0;
+    let maxStatKey = '';
+    for (const key of statKeys) {
+        if (statsUtiles[key] > maxStat) {
+            maxStat = statsUtiles[key];
+            maxStatKey = key;
+        }
+    }
+    
+    // Calculer les valeurs idéales basées sur la stat max
+    // Idéalement, chaque stat devrait être proportionnelle à son coefficient
+    // Par exemple, si Gardien=91 et coeff=0.5, alors Défense idéale = 91 * (0.1667/0.5)
+    let ngSum = 0;
+    for (const key of statKeys) {
+        const statValue = statsUtiles[key];
+        // Trouver le nom de la stat correspondant
+        let statName = '';
+        for (const [name, mappingKey] of Object.entries(statMapping)) {
+            if (mappingKey === key) {
+                statName = name;
+                break;
+            }
+        }
+        if (statName && coeffs[statName]) {
+            const coeff = coeffs[statName];
+            // Valeur idéale basée sur la stat max
+            const idealValue = maxStat * (coeff / coeffs[statNameForMax]);
+            // Prendre le minimum entre la valeur réelle et l'idéale
+            const minValue = Math.min(statValue, idealValue);
+            ngSum += minValue;
+        }
+    }
+    
+    // La NG est la somme divisée par 2
+    const ng = ngSum / 2;
+    
+    // Trouver le nom de la stat max pour l'affichage
+    let statNameForMax = '';
+    for (const [name, mappingKey] of Object.entries(statMapping)) {
+        if (mappingKey === maxStatKey) {
+            statNameForMax = name;
+            break;
+        }
+    }
+    
+    // Si la stat max est 0, NG = 0
+    const finalNg = maxStat === 0 ? 0 : ng;
 
     // Affichage de la NG arrondie
     const ngResultElem = document.getElementById('ngResult');
     if (ngResultElem) {
-        ngResultElem.innerText = ng.toFixed(2);
+        ngResultElem.innerText = finalNg.toFixed(2);
     }
 
     // Affichage des badges de proportions d'entraînement
     const ratioBox = document.getElementById('entrainementRatio');
     if (ratioBox) {
         ratioBox.innerHTML = '';
-        const ratios = proportionsEntrainement[poste] || {};
-        for (const [stat, pct] of Object.entries(ratios)) {
-            const labelStat = (currentLang === 'en' && statNamesEN[stat]) ? statNamesEN[stat] : stat;
+        for (const [statName, coeff] of Object.entries(coeffs)) {
+            const pct = (coeff * 100).toFixed(1) + '%';
+            const labelStat = (currentLang === 'en' && statNamesEN[statName]) ? statNamesEN[statName] : statName;
             const badge = document.createElement('div');
             badge.className = 'ratio-badge';
             badge.innerText = `${labelStat} : ${pct}`;
@@ -260,7 +220,7 @@ function calculerTout() {
     }
 }
 
-// 7. INITIALISATION
+// 8. INITIALISATION
 document.addEventListener('DOMContentLoaded', function() {
     switchLanguage('fr');
     calculerTout();
