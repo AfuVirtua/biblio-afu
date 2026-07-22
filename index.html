@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblio AfU - African Union</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌍 Biblio AfU</h1>
+        <p>Plateforme Officielle & Outils de l'Entente African Union</p>
+    </header>
+
+    <nav>
+        <button onclick="showTab('guides')">📖 Guides & Stratégies</button>
+        <button onclick="showTab('calculateur')">🧮 Calculateur de Formation</button>
+    </nav>
+
+    <main class="container">
+        <section id="guides" class="tab-content active">
+            <h2>Guide du Manager AfU</h2>
+            <div class="card">
+                <h3>💡 Modèle Économique & Formation</h3>
+                <p>Priorisez la formation interne pour rajeunir l'effectif. Utilisez vos slots disponibles pour développer des pépites et revendez-les au bon moment pour financer la trésorerie du club à long terme sans dépendre du marché des transferts.</p>
+            </div>
+            <div class="card">
+                <h3>⚽ Matchs & Réactivité</h3>
+                <p>Organisez votre interface en ouvrant plusieurs onglets ou appareils lors des matchs décisifs pour adapter les tactiques en temps réel et garder une longueur d'avance.</p>
+            </div>
+        </section>
+
+        <section id="calculateur" class="tab-content">
+            <h2>Calculateur de Note & Caractéristiques</h2>
+            <div class="card">
+                <p>Entrez les caractéristiques de votre jeune joueur pour calculer sa note de formation selon les ratios Excel AfU :</p>
+                
+                <div class="form-group">
+                    <label>Endurance / Physique :</label>
+                    <input type="number" id="physique" value="80">
+                </div>
+                <div class="form-group">
+                    <label>Technique / Vitesse :</label>
+                    <input type="number" id="technique" value="80">
+                </div>
+                <div class="form-group">
+                    <label>Mental / Tactique :</label>
+                    <input type="number" id="mental" value="80">
+                </div>
+
+                <button class="btn-calc" onclick="calculerNote()">Calculer le Potentiel</button>
+
+                <div id="resultat" class="result-box">
+                    Score Estimé : <span id="scoreVal">-</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>African Union (AfU) © 2026 - Virtuafoot Manager</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
