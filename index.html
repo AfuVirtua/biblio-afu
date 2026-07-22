@@ -8,117 +8,122 @@
 </head>
 <body>
     <header>
-        <div class="header-top">
-            <h1>🌍 Biblio AfU</h1>
-            <div class="lang-switch">
-                <button id="btn-fr" class="lang-btn active" onclick="switchLanguage('fr')">🇫🇷 FR</button>
-                <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">🇬🇧 EN</button>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; max-width: 1200px; margin: 0 auto;">
+            <div>
+                <h1>🌍 Biblio AfU</h1>
+                <p id="header-subtitle" data-i18n="header-subtitle">Plateforme Officielle, Outils & Guides de l'Entente African Union</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button onclick="switchLanguage('fr')" id="btn-fr" class="lang-btn active" style="background: #fff; color: #1b5e20; border: 2px solid #fff; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">🇫🇷 FR</button>
+                <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn" style="background: transparent; color: #fff; border: 2px solid #fff; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">🇬🇧 EN</button>
             </div>
         </div>
-        <p data-i18n="header_subtitle">Plateforme Officielle, Outils & Guides de l'Entente African Union</p>
     </header>
 
     <nav>
-        <button class="nav-btn active" onclick="showTab('gestion')" data-i18n="nav_gestion">📊 Gestion & Infrastructures</button>
-        <button class="nav-btn" onclick="showTab('consignes')" data-i18n="nav_consignes">📜 Consignes Individuelles</button>
-        <button class="nav-btn" onclick="showTab('tactique')" data-i18n="nav_tactique">⚽ Tactiques & Tutos Lahi</button>
-        <button class="nav-btn" onclick="showTab('is')" data-i18n="nav_is">🦁 Sélection IS</button>
-        <button class="nav-btn" onclick="showTab('calculateur')" data-i18n="nav_calculateur">🧮 Calculateur Excel AfU</button>
+        <button class="nav-btn active" onclick="showTab('gestion')" data-i18n="nav-gestion">📊 Gestion & Infrastructures</button>
+        <button class="nav-btn" onclick="showTab('consignes')" data-i18n="nav-consignes">📜 Consignes Individuelles</button>
+        <button class="nav-btn" onclick="showTab('tactique')" data-i18n="nav-tactique">⚽ Tactiques & Tutos Lahi</button>
+        <button class="nav-btn" onclick="showTab('is')" data-i18n="nav-is">🦁 Sélection IS</button>
+        <button class="nav-btn" onclick="showTab('calculateur')" data-i18n="nav-calculateur">🧮 Calculateur Excel AfU</button>
     </nav>
 
     <main class="container">
 
+        <!-- ============================================================ -->
+        <!-- SECTION GESTION                                               -->
+        <!-- ============================================================ -->
         <section id="gestion" class="tab-content active">
-            <h2 data-i18n="gestion_title">📊 Stratégie, Gestion Financière & Infrastructures</h2>
+            <h2 data-i18n="gestion-title">📊 Stratégie, Gestion Financière & Infrastructures</h2>
             
             <div class="card intro-card">
-                <p data-i18n="gestion_intro"><strong>Les clés de la réussite sur Virtuafoot :</strong> La Patience, La Formation et l'Intelligence. Tout tourne autour de la gestion de votre trésorerie (banque) et de l'élévation de vos infrastructures.</p>
+                <p data-i18n="gestion-intro"><strong>Les clés de la réussite sur Virtuafoot :</strong> La Patience, La Formation et l'Intelligence. Tout tourne autour de la gestion de votre trésorerie (banque) et de l'élévation de vos infrastructures.</p>
             </div>
 
             <div class="grid-2">
                 <div class="card">
-                    <h3 data-i18n="gestion_rev_match">💵 A. Les Revenus de Matchs</h3>
+                    <h3 data-i18n="gestion-revenus">💵 A. Les Revenus de Matchs</h3>
                     <ul>
-                        <li data-i18n="gestion_a1"><strong>A1. Matchs amicaux à domicile :</strong> Organisez vos matchs amicaux à domicile au moins 1 heure à l'avance pour laisser le temps aux autres clubs d'acheter vos droits TV.</li>
-                        <li data-i18n="gestion_a2"><strong>A2. Interviews d'après-match :</strong> Rejoignez un championnat pour faire l'interview après chaque rencontre à domicile afin de cumuler les gains.</li>
+                        <li data-i18n="gestion-revenus1"><strong>A1. Matchs amicaux à domicile :</strong> Organisez vos matchs amicaux à domicile au moins 1 heure à l'avance pour laisser le temps aux autres clubs d'acheter vos droits TV.</li>
+                        <li data-i18n="gestion-revenus2"><strong>A2. Interviews d'après-match :</strong> Rejoignez un championnat pour faire l'interview après chaque rencontre à domicile afin de cumuler les gains.</li>
                     </ul>
                 </div>
 
                 <div class="card">
-                    <h3 data-i18n="gestion_rev_transfers">🔁 B. Les Revenus de Transferts</h3>
+                    <h3 data-i18n="gestion-transferts">🔁 B. Les Revenus de Transferts</h3>
                     <ul>
-                        <li data-i18n="gestion_b1"><strong>B1. Formation de jeunes en prêt :</strong> Prenez 6 jeunes en prêt avec prime de formation (minimum 100k/point). Priorisez les coefficients de progression élevés.</li>
-                        <li data-i18n="gestion_b2"><strong>B2. Achat / Revente rapide :</strong> Libérez les places restantes pour faire du trading régulier. Objectif : 1M/jour de bénéfice = 60M+/saison.</li>
-                        <li data-i18n="gestion_b3"><strong>B3. Achat de jeunes à 1 saison de la fin :</strong> Achetez aux enchères des jeunes presque formés, terminez leur formation et revendez-les plus cher.</li>
+                        <li data-i18n="gestion-transferts1"><strong>B1. Formation de jeunes en prêt :</strong> Prenez 6 jeunes en prêt avec prime de formation (minimum 100k/point). Priorisez les coefficients de progression élevés.</li>
+                        <li data-i18n="gestion-transferts2"><strong>B2. Achat / Revente rapide :</strong> Libérez les places restantes pour faire du trading régulier. Objectif : 1M/jour de bénéfice = 60M+/saison.</li>
+                        <li data-i18n="gestion-transferts3"><strong>B3. Achat de jeunes à 1 saison de la fin :</strong> Achetez aux enchères des jeunes presque formés, terminez leur formation et revendez-les plus cher.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="card">
-                <h3 data-i18n="gestion_philo_title">🏆 C. Philosophie Équipe A / Équipe B</h3>
-                <p data-i18n="gestion_philo_desc">Adoptez la philosophie <strong>Équipe A (Compétitive)</strong> + <strong>Équipe B (100% Formation)</strong> :</p>
+                <h3 data-i18n="gestion-philosophie">🏆 C. Philosophie Équipe A / Équipe B</h3>
+                <p data-i18n="gestion-philosophie-intro">Adoptez la philosophie <strong>Équipe A (Compétitive)</strong> + <strong>Équipe B (100% Formation)</strong> :</p>
                 <ul>
-                    <li data-i18n="gestion_c1">Achetez vos futurs cadres très jeunes (18 ans, potentiel 75) à 3M-5M au lieu d'investir 10M+ sur des joueurs de 27 ans.</li>
-                    <li data-i18n="gestion_c2">Formez-les vous-même. Lorsqu'ils arrivent à maturité (27 ans environ), faites monter l’Équipe B et revendez l’Équipe A avec une forte plus-value.</li>
-                    <li data-i18n="gestion_c3">Vos joueurs formés ensemble développeront une <strong>Affinité maximale</strong>, facteur déterminant en compétition.</li>
+                    <li data-i18n="gestion-philosophie1">Achetez vos futurs cadres très jeunes (18 ans, potentiel 75) à 3M-5M au lieu d'investir 10M+ sur des joueurs de 27 ans.</li>
+                    <li data-i18n="gestion-philosophie2">Formez-les vous-même. Lorsqu'ils arrivent à maturité (27 ans environ), faites monter l'Équipe B et revendez l'Équipe A avec une forte plus-value.</li>
+                    <li data-i18n="gestion-philosophie3">Vos joueurs formés ensemble développeront une <strong>Affinité maximale</strong>, facteur déterminant en compétition.</li>
                 </ul>
             </div>
 
             <div class="card">
-                <h3 data-i18n="infra_title">🏟️ Coûts et Amélioration des Infrastructures</h3>
-                <p data-i18n="infra_desc">Grille de progression des infrastructures de votre club :</p>
+                <h3 data-i18n="gestion-infrastructures">🏟️ Coûts et Amélioration des Infrastructures</h3>
+                <p data-i18n="gestion-infrastructures-intro">Grille de progression des infrastructures de votre club :</p>
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th data-i18n="th_infra">Infrastructures</th>
-                                <th data-i18n="th_lvl1">Niveau 1</th>
-                                <th data-i18n="th_lvl2">Niveau 2</th>
-                                <th data-i18n="th_lvl3">Niveau 3</th>
-                                <th data-i18n="th_lvl4">Niveau 4</th>
-                                <th data-i18n="th_lvl5">Niveau 5</th>
+                                <th data-i18n="table-infra">Infrastructures</th>
+                                <th data-i18n="table-level1">Niveau 1</th>
+                                <th data-i18n="table-level2">Niveau 2</th>
+                                <th data-i18n="table-level3">Niveau 3</th>
+                                <th data-i18n="table-level4">Niveau 4</th>
+                                <th data-i18n="table-level5">Niveau 5</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td data-i18n="infra_stadium">Stade</td>
-                                <td>Gratuit (1 000 p.)</td>
-                                <td>1 M€ (5 000 p.)</td>
-                                <td>2.5 M€ (10 000 p.)</td>
-                                <td>5 M€ (25 000 p.)</td>
-                                <td>10 M€ (50 000 p.)</td>
+                                <td><strong data-i18n="infra-stade">Stade</strong></td>
+                                <td data-i18n="infra-stade-l1">Gratuit (1 000 p.)</td>
+                                <td data-i18n="infra-stade-l2">1 M€ (5 000 p.)</td>
+                                <td data-i18n="infra-stade-l3">2.5 M€ (10 000 p.)</td>
+                                <td data-i18n="infra-stade-l4">5 M€ (25 000 p.)</td>
+                                <td data-i18n="infra-stade-l5">10 M€ (50 000 p.)</td>
                             </tr>
                             <tr>
-                                <td data-i18n="infra_shop">Boutique</td>
+                                <td><strong data-i18n="infra-boutique">Boutique</strong></td>
                                 <td>—</td>
-                                <td>500 k€</td>
-                                <td>1 M€</td>
-                                <td>2.5 M€</td>
-                                <td>5 M€</td>
+                                <td data-i18n="infra-boutique-l2">500 k€</td>
+                                <td data-i18n="infra-boutique-l3">1 M€</td>
+                                <td data-i18n="infra-boutique-l4">2.5 M€</td>
+                                <td data-i18n="infra-boutique-l5">5 M€</td>
                             </tr>
                             <tr>
-                                <td data-i18n="infra_youth">Centre de Formation</td>
+                                <td><strong data-i18n="infra-centreformation">Centre de Formation</strong></td>
                                 <td>—</td>
-                                <td>1 M€</td>
-                                <td>2 M€</td>
-                                <td>5 M€</td>
-                                <td>10 M€</td>
+                                <td data-i18n="infra-centreformation-l2">1 M€</td>
+                                <td data-i18n="infra-centreformation-l3">2 M€</td>
+                                <td data-i18n="infra-centreformation-l4">5 M€</td>
+                                <td data-i18n="infra-centreformation-l5">10 M€</td>
                             </tr>
                             <tr>
-                                <td data-i18n="infra_train">Centre d'Entraînement</td>
+                                <td><strong data-i18n="infra-centrentrainement">Centre d'Entraînement</strong></td>
                                 <td>—</td>
-                                <td>1 M€</td>
-                                <td>2 M€</td>
-                                <td>5 M€</td>
-                                <td>10 M€</td>
+                                <td data-i18n="infra-centrentrainement-l2">1 M€</td>
+                                <td data-i18n="infra-centrentrainement-l3">2 M€</td>
+                                <td data-i18n="infra-centrentrainement-l4">5 M€</td>
+                                <td data-i18n="infra-centrentrainement-l5">10 M€</td>
                             </tr>
                             <tr>
-                                <td data-i18n="infra_med">Centre Médical</td>
+                                <td><strong data-i18n="infra-centremedical">Centre Médical</strong></td>
                                 <td>—</td>
-                                <td>500 k€</td>
-                                <td>1 M€</td>
-                                <td>2.5 M€</td>
-                                <td>5 M€</td>
+                                <td data-i18n="infra-centremedical-l2">500 k€</td>
+                                <td data-i18n="infra-centremedical-l3">1 M€</td>
+                                <td data-i18n="infra-centremedical-l4">2.5 M€</td>
+                                <td data-i18n="infra-centremedical-l5">5 M€</td>
                             </tr>
                         </tbody>
                     </table>
@@ -126,263 +131,323 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- SECTION CONSIGNES                                             -->
+        <!-- ============================================================ -->
         <section id="consignes" class="tab-content">
-            <h2 data-i18n="consignes_title">📜 Tutoriel : Consignes Individuelles & Impacts</h2>
+            <h2 data-i18n="consignes-title">📜 Tutoriel : Consignes Individuelles & Impacts</h2>
             <div class="card intro-card">
-                <p data-i18n="consignes_intro">Le terrain de football est divisé en 9 sections (Défense, Milieu, Attaque × Axe, Gauche, Droite). Les consignes individuelles déterminent l'impact de chaque joueur sur ces zones et définissent les caractéristiques clés à entraîner.</p>
+                <p data-i18n="consignes-intro">Le terrain de football est divisé en 9 sections (Défense, Milieu, Attaque × Axe, Gauche, Droite). Les consignes individuelles déterminent l'impact de chaque joueur sur ces zones et définissent les caractéristiques clés à entraîner.</p>
             </div>
 
+            <!-- Gardiens -->
             <div class="card">
-                <h3 data-i18n="gk_title">🧤 Gardiens (GAC)</h3>
+                <h3 data-i18n="consignes-gardiens">🧤 Gardiens (GAC)</h3>
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th data-i18n="th_instruction">Consigne</th>
-                            <th data-i18n="th_rating_split">Répartition Note en Match</th>
-                            <th data-i18n="th_stat_weight">Poids des Caractéristiques</th>
+                            <th data-i18n="table-consigne">Consigne</th>
+                            <th data-i18n="table-repartition">Répartition Note en Match</th>
+                            <th data-i18n="table-poids">Poids des Caractéristiques</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong data-i18n="gk_norm">GAC Normal</strong></td>
-                            <td data-i18n="split_def100">Défense 100%</td>
-                            <td data-i18n="weight_gk_norm">Gardien 3 | Défense 1 | Tacles 1 | Placement 1</td>
+                            <td><strong data-i18n="gac-normal">GAC Normal</strong></td>
+                            <td data-i18n="gac-normal-repart">Défense 100%</td>
+                            <td data-i18n="gac-normal-poids">Gardien 3 | Défense 1 | Tacles 1 | Placement 1</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="gk_rel">GAC Relanceur</strong></td>
-                            <td data-i18n="split_gk_rel">Défense 80% - Milieu 20%</td>
-                            <td data-i18n="weight_gk_rel">Gardien 3 | Tacles 1 | Placement 1 | Passes 1</td>
+                            <td><strong data-i18n="gac-relanceur">GAC Relanceur</strong></td>
+                            <td data-i18n="gac-relanceur-repart">Défense 80% - Milieu 20%</td>
+                            <td data-i18n="gac-relanceur-poids">Gardien 3 | Tacles 1 | Placement 1 | Passes 1</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
+            <!-- Défenseurs -->
             <div class="card">
-                <h3 data-i18n="def_title">🛡️ Défenseurs (DL / DFL / DFC)</h3>
+                <h3 data-i18n="consignes-defenseurs">🛡️ Défenseurs (DL / DFL / DFC)</h3>
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th data-i18n="th_pos_inst">Poste / Consigne</th>
-                            <th data-i18n="th_rating_split">Répartition Note en Match</th>
-                            <th data-i18n="th_stat_weight">Poids des Caractéristiques</th>
+                            <th data-i18n="table-posteconsigne">Poste / Consigne</th>
+                            <th data-i18n="table-repartition">Répartition Note en Match</th>
+                            <th data-i18n="table-poids">Poids des Caractéristiques</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong data-i18n="dl_norm">DL Normal</strong></td>
-                            <td data-i18n="split_def100">Défense 100%</td>
-                            <td data-i18n="weight_dl_norm">Défense 2 | Tacles 1 | Placement 1</td>
+                            <td><strong data-i18n="def-dl">DL Normal</strong></td>
+                            <td data-i18n="def-dl-repart">Défense 100%</td>
+                            <td data-i18n="def-dl-poids">Défense 2 | Tacles 1 | Placement 1</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="dfl_norm">DFL Normal</strong></td>
-                            <td data-i18n="split_dfl_norm">Défense 66% - Milieu 17% - Attaque 17%</td>
-                            <td data-i18n="weight_dfl_norm">Défense 3 | Tacles 1 | Passes 1 | Vitesse 1</td>
+                            <td><strong data-i18n="def-dfl">DFL Normal</strong></td>
+                            <td data-i18n="def-dfl-repart">Défense 66% - Milieu 17% - Attaque 17%</td>
+                            <td data-i18n="def-dfl-poids">Défense 3 | Tacles 1 | Passes 1 | Vitesse 1</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="dfl_flank">DFL Prendre le couloir</strong></td>
-                            <td data-i18n="split_dfl_flank">Défense 60% - Attaque 40%</td>
-                            <td data-i18n="weight_dfl_flank">Défense 2 | Tacles 1 | Vitesse 2</td>
+                            <td><strong data-i18n="def-dflcouloir">DFL Prendre le couloir</strong></td>
+                            <td data-i18n="def-dflcouloir-repart">Défense 60% - Attaque 40%</td>
+                            <td data-i18n="def-dflcouloir-poids">Défense 2 | Tacles 1 | Vitesse 2</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="dfc_norm">DFC Normal</strong></td>
-                            <td data-i18n="split_def100">Défense 100%</td>
-                            <td data-i18n="weight_dfc_norm">Défense 3 | Tacles 1 | Placement 1 | Puissance 1</td>
+                            <td><strong data-i18n="def-dfc">DFC Normal</strong></td>
+                            <td data-i18n="def-dfc-repart">Défense 100%</td>
+                            <td data-i18n="def-dfc-poids">Défense 3 | Tacles 1 | Placement 1 | Puissance 1</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="dfc_setpiece">DFC Phases Arrêtées</strong></td>
-                            <td data-i18n="split_dfc_setpiece">Défense 66% - Attaque 33%</td>
-                            <td data-i18n="weight_dfc_setpiece">Défense 3 | Tacles 1 | Puissance 2</td>
+                            <td><strong data-i18n="def-dfcphases">DFC Phases Arrêtées</strong></td>
+                            <td data-i18n="def-dfcphases-repart">Défense 66% - Attaque 33%</td>
+                            <td data-i18n="def-dfcphases-poids">Défense 3 | Tacles 1 | Puissance 2</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="dfc_build">DFC Construction</strong></td>
-                            <td data-i18n="split_dfc_build">Défense 70% - Milieu 30%</td>
-                            <td data-i18n="weight_dfc_build">Défense 3 | Tacles 1 | Puissance 1 | Passes 2</td>
+                            <td><strong data-i18n="def-dfcconstruction">DFC Construction</strong></td>
+                            <td data-i18n="def-dfcconstruction-repart">Défense 70% - Milieu 30%</td>
+                            <td data-i18n="def-dfcconstruction-poids">Défense 3 | Tacles 1 | Puissance 1 | Passes 2</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
+            <!-- Milieux -->
             <div class="card">
-                <h3 data-i18n="mid_title">⚙️ Milieux (MD / MOC / MOL)</h3>
+                <h3 data-i18n="consignes-milieux">⚙️ Milieux (MD / MOC / MOL)</h3>
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th data-i18n="th_pos_inst">Poste / Consigne</th>
-                            <th data-i18n="th_rating_split">Répartition Note en Match</th>
-                            <th data-i18n="th_stat_weight">Poids des Caractéristiques</th>
+                            <th data-i18n="table-posteconsigne">Poste / Consigne</th>
+                            <th data-i18n="table-repartition">Répartition Note en Match</th>
+                            <th data-i18n="table-poids">Poids des Caractéristiques</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong data-i18n="md_norm">MD Normal</strong></td>
-                            <td data-i18n="split_md_norm">Défense 25% - Milieu 75%</td>
-                            <td data-i18n="weight_md_norm">Défense 1 | Passes 2 | Technique 1</td>
+                            <td><strong data-i18n="mid-mdnormal">MD Normal</strong></td>
+                            <td data-i18n="mid-mdnormal-repart">Défense 25% - Milieu 75%</td>
+                            <td data-i18n="mid-mdnormal-poids">Défense 1 | Passes 2 | Technique 1</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="md_prov">MD Provoquer</strong></td>
-                            <td data-i18n="split_md_norm">Défense 25% - Milieu 75%</td>
-                            <td data-i18n="weight_md_prov">Défense 1 | Passes 1 | Technique 2</td>
+                            <td><strong data-i18n="mid-mdprovoquer">MD Provoquer</strong></td>
+                            <td data-i18n="mid-mdprovoquer-repart">Défense 25% - Milieu 75%</td>
+                            <td data-i18n="mid-mdprovoquer-poids">Défense 1 | Passes 1 | Technique 2</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="md_def">MD Défendre</strong></td>
-                            <td data-i18n="split_md_def">Défense 50% - Milieu 50%</td>
-                            <td data-i18n="weight_md_def">Défense 2 | Passes 1 | Technique 1</td>
+                            <td><strong data-i18n="mid-mddefendre">MD Défendre</strong></td>
+                            <td data-i18n="mid-mddefendre-repart">Défense 50% - Milieu 50%</td>
+                            <td data-i18n="mid-mddefendre-poids">Défense 2 | Passes 1 | Technique 1</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="md_att">MD Attaquer</strong></td>
-                            <td data-i18n="split_md_att">Milieu 50% - Attaque 50%</td>
-                            <td data-i18n="weight_md_att">Passes 2 | Technique 1 | Attaque 1</td>
+                            <td><strong data-i18n="mid-mdattaquer">MD Attaquer</strong></td>
+                            <td data-i18n="mid-mdattaquer-repart">Milieu 50% - Attaque 50%</td>
+                            <td data-i18n="mid-mdattaquer-poids">Passes 2 | Technique 1 | Attaque 1</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="moc_norm">MOC Normal</strong></td>
-                            <td data-i18n="split_moc_norm">Milieu 75% - Attaque 25%</td>
-                            <td data-i18n="weight_moc_norm">Passes 1 | Technique 1 | Attaque 1</td>
+                            <td><strong data-i18n="mid-mocnormal">MOC Normal</strong></td>
+                            <td data-i18n="mid-mocnormal-repart">Milieu 75% - Attaque 25%</td>
+                            <td data-i18n="mid-mocnormal-poids">Passes 1 | Technique 1 | Attaque 1</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="moc_def">MOC Défendre</strong></td>
-                            <td data-i18n="split_moc_def">Défense 33% - Milieu 66%</td>
-                            <td data-i18n="weight_moc_def">Défense 1 | Passes 1 | Technique 1</td>
+                            <td><strong data-i18n="mid-mocdefendre">MOC Défendre</strong></td>
+                            <td data-i18n="mid-mocdefendre-repart">Défense 33% - Milieu 66%</td>
+                            <td data-i18n="mid-mocdefendre-poids">Défense 1 | Passes 1 | Technique 1</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="moc_att">MOC Attaquer</strong></td>
-                            <td data-i18n="split_md_att">Milieu 50% - Attaque 50%</td>
-                            <td data-i18n="weight_moc_att">Passes 1 | Technique 1 | Attaque 2</td>
+                            <td><strong data-i18n="mid-mocattaquer">MOC Attaquer</strong></td>
+                            <td data-i18n="mid-mocattaquer-repart">Milieu 50% - Attaque 50%</td>
+                            <td data-i18n="mid-mocattaquer-poids">Passes 1 | Technique 1 | Attaque 2</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="mol_norm">MOL Normal / Centrer / Provoquer</strong></td>
-                            <td data-i18n="split_mol_norm">Milieu 80% - Attaque 20%</td>
-                            <td data-i18n="weight_mol_comb">P1-T1-V2-A1 (Norm) / P2-T1-V1-A1 (Centr) / P1-T2-V1-A1 (Prov)</td>
+                            <td><strong data-i18n="mid-molnormal">MOL Normal / Centrer / Provoquer</strong></td>
+                            <td data-i18n="mid-molnormal-repart">Milieu 80% - Attaque 20%</td>
+                            <td data-i18n="mid-molnormal-poids">P1-T1-V2-A1 (Norm) / P2-T1-V1-A1 (Centr) / P1-T2-V1-A1 (Prov)</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="mol_run">MOL Déborder</strong></td>
-                            <td data-i18n="split_mol_run">Milieu 83% - Attaque 17%</td>
-                            <td data-i18n="weight_mol_run">Passes 1 | Technique 1 | Vitesse 3 | Attaque 1</td>
+                            <td><strong data-i18n="mid-moldeborder">MOL Déborder</strong></td>
+                            <td data-i18n="mid-moldeborder-repart">Milieu 83% - Attaque 17%</td>
+                            <td data-i18n="mid-moldeborder-poids">Passes 1 | Technique 1 | Vitesse 3 | Attaque 1</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
+            <!-- Attaquants -->
             <div class="card">
-                <h3 data-i18n="att_title">⚽ Attaquants (AS / AT)</h3>
+                <h3 data-i18n="consignes-attaquants">⚽ Attaquants (AS / AT)</h3>
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th data-i18n="th_pos_inst">Poste / Consigne</th>
-                            <th data-i18n="th_rating_split">Répartition Note en Match</th>
-                            <th data-i18n="th_stat_weight">Poids des Caractéristiques</th>
+                            <th data-i18n="table-posteconsigne">Poste / Consigne</th>
+                            <th data-i18n="table-repartition">Répartition Note en Match</th>
+                            <th data-i18n="table-poids">Poids des Caractéristiques</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong data-i18n="as_norm">AS Normal (Soutien)</strong></td>
-                            <td data-i18n="split_as_norm">Milieu 20% - Attaque 80%</td>
-                            <td data-i18n="weight_as_norm">Passes 1 | Technique 1 | Vitesse 1 | Attaque 2</td>
+                            <td><strong data-i18n="att-asnormal">AS Normal (Soutien)</strong></td>
+                            <td data-i18n="att-asnormal-repart">Milieu 20% - Attaque 80%</td>
+                            <td data-i18n="att-asnormal-poids">Passes 1 | Technique 1 | Vitesse 1 | Attaque 2</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="at_norm">AT Normal</strong></td>
-                            <td data-i18n="split_att100">Attaque 100%</td>
-                            <td data-i18n="weight_at_norm">Technique 1 | Vitesse 1 | Attaque 2</td>
+                            <td><strong data-i18n="att-atnormal">AT Normal</strong></td>
+                            <td data-i18n="att-atnormal-repart">Attaque 100%</td>
+                            <td data-i18n="att-atnormal-poids">Technique 1 | Vitesse 1 | Attaque 2</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="at_deep">AT Jeu en profondeur</strong></td>
-                            <td data-i18n="split_att100">Attaque 100%</td>
-                            <td data-i18n="weight_at_deep">Technique 1 | Vitesse 2 | Attaque 2</td>
+                            <td><strong data-i18n="att-atprofondeur">AT Jeu en profondeur</strong></td>
+                            <td data-i18n="att-atprofondeur-repart">Attaque 100%</td>
+                            <td data-i18n="att-atprofondeur-poids">Technique 1 | Vitesse 2 | Attaque 2</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="at_prov">AT Provoquer</strong></td>
-                            <td data-i18n="split_att100">Attaque 100%</td>
-                            <td data-i18n="weight_at_prov">Technique 2 | Vitesse 1 | Attaque 2</td>
+                            <td><strong data-i18n="att-atprovoquer">AT Provoquer</strong></td>
+                            <td data-i18n="att-atprovoquer-repart">Attaque 100%</td>
+                            <td data-i18n="att-atprovoquer-poids">Technique 2 | Vitesse 1 | Attaque 2</td>
                         </tr>
                         <tr>
-                            <td><strong data-i18n="at_target">AT Attaquant en pivot</strong></td>
-                            <td data-i18n="split_att100">Attaque 100%</td>
-                            <td data-i18n="weight_at_target">Puissance 1 | Passes 1 | Vitesse 1 | Technique 1 | Attaque 2</td>
+                            <td><strong data-i18n="att-atpivot">AT Attaquant en pivot</strong></td>
+                            <td data-i18n="att-atpivot-repart">Attaque 100%</td>
+                            <td data-i18n="att-atpivot-poids">Puissance 1 | Passes 1 | Vitesse 1 | Technique 1 | Attaque 2</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- SECTION TACTIQUE                                              -->
+        <!-- ============================================================ -->
         <section id="tactique" class="tab-content">
-            <h2 data-i18n="tactique_title">⚽ Analyses Tactiques & Tutoriels de Lahi</h2>
+            <h2 data-i18n="tactique-title">⚽ Analyses Tactiques & Tutoriels de Lahi</h2>
 
             <div class="card intro-card">
-                <h3 data-i18n="tuto1_title">💡 Tuto 1 : Débloquer le Moteur De Match (MDM)</h3>
-                <p data-i18n="tuto1_rule"><strong>Règle d'or :</strong> Ne JAMAIS attaquer et défendre en même temps sur le même côté ! (Ex: Attaquer dans l'axe et bloquer l'axe, ou attaquer à droite et bloquer à droite). Cela bloque le MDM et provoque des buts évitables.</p>
+                <h3 data-i18n="tactique-tuto1">💡 Tuto 1 : Débloquer le Moteur De Match (MDM)</h3>
+                <p data-i18n="tactique-tuto1-intro"><strong>Règle d'or :</strong> Ne JAMAIS attaquer et défendre en même temps sur le même côté ! (Ex: Attaquer dans l'axe et bloquer l'axe, ou attaquer à droite et bloquer à droite). Cela bloque le MDM et provoque des buts évitables.</p>
                 <hr>
-                <h4 data-i18n="tuto1_recom">Combinaisons Tactiques Recommandées :</h4>
+                <h4 data-i18n="tactique-combinaisons">Combinaisons Tactiques Recommandées :</h4>
                 <ul>
-                    <li data-i18n="tuto1_flanks"><strong>Si vous attaquez sur les Ailes :</strong> Options Défense : Bloquer l'axe, Défendre bas, Bloquer côté droit, Bloquer côté gauche, Pressing haut, ou Normal.</li>
-                    <li data-i18n="tuto1_center"><strong>Si vous attaquez dans l'Axe :</strong> Options Défense : Bloquer les couloirs, Défendre bas, Bloquer côté gauche, Bloquer côté droit, Pressing haut, ou Normal.</li>
-                    <li data-i18n="tuto1_right"><strong>Si vous attaquez Côté Droit :</strong> Option Défense idéale : Bloquer Côté Gauche (et vice versa).</li>
+                    <li data-i18n="tactique-ailes"><strong>Si vous attaquez sur les Ailes :</strong>
+                        <ul>
+                            <li data-i18n="tactique-ailes-options">Options Défense : Bloquer l'axe, Défendre bas, Bloquer côté droit, Bloquer côté gauche, Pressing haut, ou Normal.</li>
+                        </ul>
+                    </li>
+                    <li data-i18n="tactique-axe"><strong>Si vous attaquez dans l'Axe :</strong>
+                        <ul>
+                            <li data-i18n="tactique-axe-options">Options Défense : Bloquer les couloirs, Défendre bas, Bloquer côté gauche, Bloquer côté droit, Pressing haut, ou Normal.</li>
+                        </ul>
+                    </li>
+                    <li data-i18n="tactique-droit"><strong>Si vous attaquez Côté Droit :</strong>
+                        <ul>
+                            <li data-i18n="tactique-droit-options">Option Défense idéale : Bloquer Côté Gauche (et vice versa).</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
             <div class="card intro-card" style="border-left-color: #1976d2; background-color: #e3f2fd;">
-                <h3 data-i18n="tuto2_title">👁️ Tuto 2 : L'Anticipation pendant le Match en Direct</h3>
-                <p data-i18n="tuto2_desc">L'<strong>anticipation</strong> consiste à deviner la zone d'attaque de l'adversaire lors de la prochaine actualisation (actu) pour bloquer cette zone à temps.</p>
+                <h3 data-i18n="tactique-tuto2">👁️ Tuto 2 : L'Anticipation pendant le Match en Direct</h3>
+                <p data-i18n="tactique-tuto2-intro">L'<strong>anticipation</strong> consiste à deviner la zone d'attaque de l'adversaire lors de la prochaine actualisation (actu) pour bloquer cette zone à temps.</p>
                 <hr>
-                <h4 data-i18n="tuto2_m1_title">Méthode 1 : Surveillance via l'onglet Style (Méthode Anti-Bug)</h4>
+                <h4 data-i18n="tactique-methode1">Méthode 1 : Surveillance via l'onglet Style (Méthode Anti-Bug)</h4>
                 <ul>
-                    <li data-i18n="tuto2_m1_1">Allez dans le menu <strong>Consigne</strong> &gt; <strong>Tactique</strong> &gt; <strong>Style de jeu</strong>, puis descendez pour observer le positionnement exact des attaquants adverses.</li>
-                    <li data-i18n="tuto2_m1_2"><em>Pourquoi cette méthode ?</em> La fiche principale du club souffre d'un bug de réactivité et ne met pas à jour immédiatement les mouvements adverses !</li>
-                    <li data-i18n="tuto2_m1_3"><strong>Exemple :</strong> Si l'adversaire aligne un ATC et un ATD (Attaquant Droit), il prépare une attaque côté droit. Vous devez immédiatement bloquer votre côté gauche !</li>
-                    <li data-i18n="tuto2_m1_4"><strong>Astuce Live :</strong> Rafraîchissez l'onglet Style toutes les 10 secondes avant la fin de l'actu pour contrer les managers qui déplacent leurs attaquants à la dernière seconde.</li>
+                    <li data-i18n="tactique-methode1-1">Allez dans le menu <strong>Consigne</strong> &gt; <strong>Tactique</strong> &gt; <strong>Style de jeu</strong>, puis descendez pour observer le positionnement exact des attaquants adverses.</li>
+                    <li data-i18n="tactique-methode1-2"><em>Pourquoi cette méthode ?</em> La fiche principale du club souffre d'un bug de réactivité et ne met pas à jour immédiatement les mouvements adverses !</li>
+                    <li data-i18n="tactique-methode1-3"><strong>Exemple :</strong> Si l'adversaire aligne un ATC et un ATD (Attaquant Droit), il prépare une attaque côté droit. Vous devez immédiatement bloquer votre côté gauche !</li>
+                    <li data-i18n="tactique-methode1-4"><strong>Astuce Live :</strong> Rafraîchissez l'onglet Style toutes les 10 secondes avant la fin de l'actu pour contrer les managers qui déplacent leurs attaquants à la dernière seconde.</li>
                 </ul>
                 <hr>
-                <h4 data-i18n="tuto2_m2_title">Méthode 2 : Analyse des cycles d'attaque</h4>
+                <h4 data-i18n="tactique-methode2">Méthode 2 : Analyse des cycles d'attaque</h4>
                 <ul>
-                    <li data-i18n="tuto2_m2_1">Analysez le schéma répétitif de l'adversaire (ex: Min 1: Axe, Min 2: Gauche, Min 3: Droite). S'il suit un cycle régulier, prenez un temps d'avance en positionnant votre bloc défensif sur sa prochaine cible.</li>
+                    <li data-i18n="tactique-methode2-1">Analysez le schéma répétitif de l'adversaire (ex: Min 1: Axe, Min 2: Gauche, Min 3: Droite). S'il suit un cycle régulier, prenez un temps d'avance en positionnant votre bloc défensif sur sa prochaine cible.</li>
                 </ul>
             </div>
 
             <div class="card">
-                <h3 data-i18n="style_title">🎯 Impact des Styles de Jeu</h3>
+                <h3 data-i18n="tactique-styles">🎯 Impact des Styles de Jeu</h3>
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th data-i18n="th_style">Style</th>
-                            <th data-i18n="th_impact_zone">Zone d'Impact</th>
-                            <th data-i18n="th_effect">Effet & Répartition (Exemple pour +200)</th>
+                            <th data-i18n="table-style">Style</th>
+                            <th data-i18n="table-zone">Zone d'Impact</th>
+                            <th data-i18n="table-effet">Effet & Répartition (Exemple pour +200)</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong data-i18n="st_norm">Normal</strong></td><td data-i18n="st_none">Aucun</td><td data-i18n="st_no_impact">Pas d'impact sur le style.</td></tr>
-                        <tr><td><strong data-i18n="st_short">Passes Courtes</strong></td><td data-i18n="st_mid">Milieu</td><td data-i18n="st_mid_split">100 Axe, 50 Gauche, 50 Droite.</td></tr>
-                        <tr><td><strong data-i18n="st_creative">Jeu Créatif</strong></td><td data-i18n="st_mid">Milieu</td><td data-i18n="st_creative_split">100 Axe, 50 Gauche, 50 Droite. (Bonus = 2/3 des points requis)</td></tr>
-                        <tr><td><strong data-i18n="st_direct">Jeu Direct</strong></td><td data-i18n="st_att">Attaque</td><td data-i18n="st_direct_split">100 Axe, 50 Gauche, 50 Droite. (Recommandé en attaque)</td></tr>
-                        <tr><td><strong data-i18n="st_counter">Contre-Attaques</strong></td><td data-i18n="st_att">Attaque</td><td data-i18n="st_mid_split">100 Axe, 50 Gauche, 50 Droite.</td></tr>
-                        <tr><td><strong data-i18n="st_offside">Piège du Hors-jeu</strong></td><td data-i18n="st_def">Défense</td><td data-i18n="st_mid_split">100 Axe, 50 Gauche, 50 Droite.</td></tr>
+                        <tr>
+                            <td><strong data-i18n="style-normal">Normal</strong></td>
+                            <td data-i18n="style-normal-zone">Aucun</td>
+                            <td data-i18n="style-normal-effet">Pas d'impact sur le style.</td>
+                        </tr>
+                        <tr>
+                            <td><strong data-i18n="style-courtes">Passes Courtes</strong></td>
+                            <td data-i18n="style-courtes-zone">Milieu</td>
+                            <td data-i18n="style-courtes-effet">100 Axe, 50 Gauche, 50 Droite.</td>
+                        </tr>
+                        <tr>
+                            <td><strong data-i18n="style-creatif">Jeu Créatif</strong></td>
+                            <td data-i18n="style-creatif-zone">Milieu</td>
+                            <td data-i18n="style-creatif-effet">100 Axe, 50 Gauche, 50 Droite. (Bonus = 2/3 des points requis)</td>
+                        </tr>
+                        <tr>
+                            <td><strong data-i18n="style-direct">Jeu Direct</strong></td>
+                            <td data-i18n="style-direct-zone">Attaque</td>
+                            <td data-i18n="style-direct-effet">100 Axe, 50 Gauche, 50 Droite. <em>(Recommandé en attaque)</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong data-i18n="style-contre">Contre-Attaques</strong></td>
+                            <td data-i18n="style-contre-zone">Attaque</td>
+                            <td data-i18n="style-contre-effet">100 Axe, 50 Gauche, 50 Droite.</td>
+                        </tr>
+                        <tr>
+                            <td><strong data-i18n="style-horsjeu">Piège du Hors-jeu</strong></td>
+                            <td data-i18n="style-horsjeu-zone">Défense</td>
+                            <td data-i18n="style-horsjeu-effet">100 Axe, 50 Gauche, 50 Droite.</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
+
+            <div class="card">
+                <h3 data-i18n="tactique-ratios">📈 Utilisation des Ratios en Match</h3>
+                <p data-i18n="tactique-ratios-intro">Un goal provient presque toujours de la domination d'une zone spécifique du terrain (Milieu / Attaque vs Défense adverse) :</p>
+                <ul>
+                    <li data-i18n="tactique-ratios1"><strong>Blocage de l'Axe & Perforation des Ailes :</strong> Si l'adversaire force l'axe, orientez votre compo pour bloquer l'axe défensif tout en dominant les ailes en attaque.</li>
+                    <li data-i18n="tactique-ratios2"><strong>Réaction aux ajustements :</strong> Suivez la possession et les XG à la mi-temps pour corriger vos consignes.</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- SECTION IS                                                    -->
+        <!-- ============================================================ -->
         <section id="is" class="tab-content">
-            <h2 data-i18n="is_title">🦁 Inter-Sélection (IS) - African Union</h2>
+            <h2 data-i18n="is-title">🦁 Inter-Sélection (IS) - African Union</h2>
 
             <div class="card intro-card" style="border-left-color: #ff9800; background-color: #fff3e0;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                     <div>
-                        <h3 style="margin: 0; color: #e65100;" data-i18n="is_match_title">⚔️ Prochain Match : African Union (AfU) vs EVF</h3>
-                        <p style="margin: 5px 0 0 0;" data-i18n="is_match_date"><strong>Date :</strong> Vendredi 24 Juillet 2026</p>
+                        <h3 style="margin: 0; color: #e65100;" data-i18n="is-match">⚔️ Prochain Match : African Union (AfU) vs EVF</h3>
+                        <p style="margin: 5px 0 0 0;"><strong data-i18n="is-date">Date :</strong> <span data-i18n="is-date-value">Vendredi 24 Juillet 2026</span></p>
                     </div>
-                    <a href="https://www.virtuafoot.com/#entente?eid=801&selection" target="_blank" style="background-color: #e65100; color: white; padding: 0.7rem 1.2rem; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.3s;" data-i18n="is_link">
-                        🔗 Voir la Sélection sur Virtuafoot
+                    <a href="https://www.virtuafoot.com/#entente?eid=801&selection" target="_blank" style="background-color: #e65100; color: white; padding: 0.7rem 1.2rem; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.3s;">
+                        🔗 <span data-i18n="is-link">Voir la Sélection sur Virtuafoot</span>
                     </a>
                 </div>
             </div>
 
             <div class="card">
-                <h3 data-i18n="is_squad_title">📋 Liste des 16 Joueurs Convoqués</h3>
+                <h3 data-i18n="is-liste">📋 Liste des 16 Joueurs Convoqués</h3>
+                <p data-i18n="is-liste-intro">Affichez ou recherchez un joueur par poste ou par club :</p>
+
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>N°</th>
-                                <th data-i18n="th_player">Nom du Joueur</th>
-                                <th data-i18n="th_position">Poste</th>
-                                <th data-i18n="th_club">Club</th>
+                                <th data-i18n="is-num">N°</th>
+                                <th data-i18n="is-nom">Nom du Joueur</th>
+                                <th data-i18n="is-poste">Poste</th>
+                                <th data-i18n="is-club">Club</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -408,11 +473,14 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- SECTION CALCULATEUR                                           -->
+        <!-- ============================================================ -->
         <section id="calculateur" class="tab-content">
-            <h2 data-i18n="calc_title">🧮 Calculateur de NG Brute & Proportions d'Entraînement</h2>
+            <h2 data-i18n="calculateur-title">🧮 Calculateur de NG Brute & Proportions d'Entraînement</h2>
             <div class="card">
                 <div class="form-group">
-                    <label for="posteSelect" data-i18n="calc_select">Sélectionnez le Poste & Consigne :</label>
+                    <label for="posteSelect" data-i18n="calculateur-poste">Sélectionnez le Poste & Consigne :</label>
                     <select id="posteSelect" onchange="calculerTout()">
                         <option value="GAC">GAC (Gardien)</option>
                         <option value="GAC - Relanceur">GAC - Relanceur</option>
@@ -441,29 +509,29 @@
                     </select>
                 </div>
 
-                <h3 data-i18n="calc_stats">Caractéristiques du Joueur :</h3>
+                <h3 data-i18n="calculateur-caracteristiques">Caractéristiques du Joueur :</h3>
                 <div class="stats-grid">
-                    <div class="form-group"><label data-i18n="lbl_gar">Gardien :</label><input type="number" id="st_gar" value="91" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_def">Défense :</label><input type="number" id="st_def" value="29" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_tac">Tacles :</label><input type="number" id="st_tac" value="30" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_pla">Placement :</label><input type="number" id="st_pla" value="29" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_mar">Marquage :</label><input type="number" id="st_mar" value="1" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_pui">Puissance :</label><input type="number" id="st_pui" value="1" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_pas">Passes :</label><input type="number" id="st_pas" value="1" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_tec">Technique :</label><input type="number" id="st_tec" value="1" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_vit">Vitesse :</label><input type="number" id="st_vit" value="1" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_att">Attaque :</label><input type="number" id="st_att" value="1" oninput="calculerTout()"></div>
-                    <div class="form-group"><label data-i18n="lbl_end">Endurance :</label><input type="number" id="st_end" value="100" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-gardien">Gardien :</label><input type="number" id="st_gar" value="91" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-defense">Défense :</label><input type="number" id="st_def" value="29" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-tacles">Tacles :</label><input type="number" id="st_tac" value="30" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-placement">Placement :</label><input type="number" id="st_pla" value="29" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-marquage">Marquage :</label><input type="number" id="st_mar" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-puissance">Puissance :</label><input type="number" id="st_pui" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-passes">Passes :</label><input type="number" id="st_pas" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-technique">Technique :</label><input type="number" id="st_tec" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-vitesse">Vitesse :</label><input type="number" id="st_vit" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-attaque">Attaque :</label><input type="number" id="st_att" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label data-i18n="stat-endurance">Endurance :</label><input type="number" id="st_end" value="100" oninput="calculerTout()"></div>
                 </div>
 
                 <div class="results-panel">
                     <div class="result-card">
-                        <span data-i18n="lbl_ng_result">Note Globale Brute (NG) :</span>
+                        <span data-i18n="calculateur-ng">Note Globale Brute (NG) :</span>
                         <h1 id="ngResult">88.67</h1>
                     </div>
                 </div>
 
-                <h3 data-i18n="calc_ratio_title">Répartition Idéale d'Entraînement pour ce Poste :</h3>
+                <h3 data-i18n="calculateur-entrainement">Répartition Idéale d'Entraînement pour ce Poste :</h3>
                 <div id="entrainementRatio" class="ratio-box"></div>
             </div>
         </section>
@@ -471,7 +539,7 @@
     </main>
 
     <footer>
-        <p data-i18n="footer_text">African Union (AfU) © 2026 - Plateforme de l'Entente Virtuafoot</p>
+        <p data-i18n="footer">African Union (AfU) © 2026 - Plateforme de l'Entente Virtuafoot</p>
     </footer>
 
     <script src="translations.js"></script>

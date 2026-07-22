@@ -1,461 +1,168 @@
 /* ==========================================================================
-   BIBLIO AFU - TRADUCTIONS FR/EN
+   BIBLIO AFU - SCRIPT PRINCIPAL
    ========================================================================== */
 
-const translations = {
-    fr: {
-        // ===== HEADER =====
-        'header-subtitle': 'Plateforme Officielle, Outils & Guides de l\'Entente African Union',
-        
-        // ===== NAVIGATION =====
-        'nav-gestion': '📊 Gestion & Infrastructures',
-        'nav-consignes': '📜 Consignes Individuelles',
-        'nav-tactique': '⚽ Tactiques & Tutos Lahi',
-        'nav-is': '🦁 Sélection IS',
-        'nav-calculateur': '🧮 Calculateur Excel AfU',
-        
-        // ===== SECTION GESTION =====
-        'gestion-title': '📊 Stratégie, Gestion Financière & Infrastructures',
-        'gestion-intro': '<strong>Les clés de la réussite sur Virtuafoot :</strong> La Patience, La Formation et l\'Intelligence. Tout tourne autour de la gestion de votre trésorerie (banque) et de l\'élévation de vos infrastructures.',
-        'gestion-revenus': '💵 A. Les Revenus de Matchs',
-        'gestion-revenus1': '<strong>A1. Matchs amicaux à domicile :</strong> Organisez vos matchs amicaux à domicile au moins 1 heure à l\'avance pour laisser le temps aux autres clubs d\'acheter vos droits TV.',
-        'gestion-revenus2': '<strong>A2. Interviews d\'après-match :</strong> Rejoignez un championnat pour faire l\'interview après chaque rencontre à domicile afin de cumuler les gains.',
-        'gestion-transferts': '🔁 B. Les Revenus de Transferts',
-        'gestion-transferts1': '<strong>B1. Formation de jeunes en prêt :</strong> Prenez 6 jeunes en prêt avec prime de formation (minimum 100k/point). Priorisez les coefficients de progression élevés.',
-        'gestion-transferts2': '<strong>B2. Achat / Revente rapide :</strong> Libérez les places restantes pour faire du trading régulier. Objectif : 1M/jour de bénéfice = 60M+/saison.',
-        'gestion-transferts3': '<strong>B3. Achat de jeunes à 1 saison de la fin :</strong> Achetez aux enchères des jeunes presque formés, terminez leur formation et revendez-les plus cher.',
-        'gestion-philosophie': '🏆 C. Philosophie Équipe A / Équipe B',
-        'gestion-philosophie-intro': 'Adoptez la philosophie <strong>Équipe A (Compétitive)</strong> + <strong>Équipe B (100% Formation)</strong> :',
-        'gestion-philosophie1': 'Achetez vos futurs cadres très jeunes (18 ans, potentiel 75) à 3M-5M au lieu d\'investir 10M+ sur des joueurs de 27 ans.',
-        'gestion-philosophie2': 'Formez-les vous-même. Lorsqu\'ils arrivent à maturité (27 ans environ), faites monter l\'Équipe B et revendez l\'Équipe A avec une forte plus-value.',
-        'gestion-philosophie3': 'Vos joueurs formés ensemble développeront une <strong>Affinité maximale</strong>, facteur déterminant en compétition.',
-        'gestion-infrastructures': '🏟️ Coûts et Amélioration des Infrastructures',
-        'gestion-infrastructures-intro': 'Grille de progression des infrastructures de votre club :',
-        
-        // ===== TABLEAU INFRASTRUCTURES =====
-        'table-infra': 'Infrastructures',
-        'table-level1': 'Niveau 1',
-        'table-level2': 'Niveau 2',
-        'table-level3': 'Niveau 3',
-        'table-level4': 'Niveau 4',
-        'table-level5': 'Niveau 5',
-        'infra-stade': 'Stade',
-        'infra-stade-l1': 'Gratuit (1 000 p.)',
-        'infra-stade-l2': '1 M€ (5 000 p.)',
-        'infra-stade-l3': '2.5 M€ (10 000 p.)',
-        'infra-stade-l4': '5 M€ (25 000 p.)',
-        'infra-stade-l5': '10 M€ (50 000 p.)',
-        'infra-boutique': 'Boutique',
-        'infra-boutique-l2': '500 k€',
-        'infra-boutique-l3': '1 M€',
-        'infra-boutique-l4': '2.5 M€',
-        'infra-boutique-l5': '5 M€',
-        'infra-centreformation': 'Centre de Formation',
-        'infra-centreformation-l2': '1 M€',
-        'infra-centreformation-l3': '2 M€',
-        'infra-centreformation-l4': '5 M€',
-        'infra-centreformation-l5': '10 M€',
-        'infra-centrentrainement': 'Centre d\'Entraînement',
-        'infra-centrentrainement-l2': '1 M€',
-        'infra-centrentrainement-l3': '2 M€',
-        'infra-centrentrainement-l4': '5 M€',
-        'infra-centrentrainement-l5': '10 M€',
-        'infra-centremedical': 'Centre Médical',
-        'infra-centremedical-l2': '500 k€',
-        'infra-centremedical-l3': '1 M€',
-        'infra-centremedical-l4': '2.5 M€',
-        'infra-centremedical-l5': '5 M€',
-        
-        // ===== SECTION CONSIGNES =====
-        'consignes-title': '📜 Tutoriel : Consignes Individuelles & Impacts',
-        'consignes-intro': 'Le terrain de football est divisé en 9 sections (Défense, Milieu, Attaque × Axe, Gauche, Droite). Les consignes individuelles déterminent l\'impact de chaque joueur sur ces zones et définissent les caractéristiques clés à entraîner.',
-        'consignes-gardiens': '🧤 Gardiens (GAC)',
-        'table-consigne': 'Consigne',
-        'table-repartition': 'Répartition Note en Match',
-        'table-poids': 'Poids des Caractéristiques',
-        'gac-normal': 'GAC Normal',
-        'gac-normal-repart': 'Défense 100%',
-        'gac-normal-poids': 'Gardien 3 | Défense 1 | Tacles 1 | Placement 1',
-        'gac-relanceur': 'GAC Relanceur',
-        'gac-relanceur-repart': 'Défense 80% - Milieu 20%',
-        'gac-relanceur-poids': 'Gardien 3 | Tacles 1 | Placement 1 | Passes 1',
-        
-        'consignes-defenseurs': '🛡️ Défenseurs (DL / DFL / DFC)',
-        'table-posteconsigne': 'Poste / Consigne',
-        'def-dl': 'DL Normal',
-        'def-dl-repart': 'Défense 100%',
-        'def-dl-poids': 'Défense 2 | Tacles 1 | Placement 1',
-        'def-dfl': 'DFL Normal',
-        'def-dfl-repart': 'Défense 66% - Milieu 17% - Attaque 17%',
-        'def-dfl-poids': 'Défense 3 | Tacles 1 | Passes 1 | Vitesse 1',
-        'def-dflcouloir': 'DFL Prendre le couloir',
-        'def-dflcouloir-repart': 'Défense 60% - Attaque 40%',
-        'def-dflcouloir-poids': 'Défense 2 | Tacles 1 | Vitesse 2',
-        'def-dfc': 'DFC Normal',
-        'def-dfc-repart': 'Défense 100%',
-        'def-dfc-poids': 'Défense 3 | Tacles 1 | Placement 1 | Puissance 1',
-        'def-dfcphases': 'DFC Phases Arrêtées',
-        'def-dfcphases-repart': 'Défense 66% - Attaque 33%',
-        'def-dfcphases-poids': 'Défense 3 | Tacles 1 | Puissance 2',
-        'def-dfcconstruction': 'DFC Construction',
-        'def-dfcconstruction-repart': 'Défense 70% - Milieu 30%',
-        'def-dfcconstruction-poids': 'Défense 3 | Tacles 1 | Puissance 1 | Passes 2',
-        
-        'consignes-milieux': '⚙️ Milieux (MD / MOC / MOL)',
-        'mid-mdnormal': 'MD Normal',
-        'mid-mdnormal-repart': 'Défense 25% - Milieu 75%',
-        'mid-mdnormal-poids': 'Défense 1 | Passes 2 | Technique 1',
-        'mid-mdprovoquer': 'MD Provoquer',
-        'mid-mdprovoquer-repart': 'Défense 25% - Milieu 75%',
-        'mid-mdprovoquer-poids': 'Défense 1 | Passes 1 | Technique 2',
-        'mid-mddefendre': 'MD Défendre',
-        'mid-mddefendre-repart': 'Défense 50% - Milieu 50%',
-        'mid-mddefendre-poids': 'Défense 2 | Passes 1 | Technique 1',
-        'mid-mdattaquer': 'MD Attaquer',
-        'mid-mdattaquer-repart': 'Milieu 50% - Attaque 50%',
-        'mid-mdattaquer-poids': 'Passes 2 | Technique 1 | Attaque 1',
-        'mid-mocnormal': 'MOC Normal',
-        'mid-mocnormal-repart': 'Milieu 75% - Attaque 25%',
-        'mid-mocnormal-poids': 'Passes 1 | Technique 1 | Attaque 1',
-        'mid-mocdefendre': 'MOC Défendre',
-        'mid-mocdefendre-repart': 'Défense 33% - Milieu 66%',
-        'mid-mocdefendre-poids': 'Défense 1 | Passes 1 | Technique 1',
-        'mid-mocattaquer': 'MOC Attaquer',
-        'mid-mocattaquer-repart': 'Milieu 50% - Attaque 50%',
-        'mid-mocattaquer-poids': 'Passes 1 | Technique 1 | Attaque 2',
-        'mid-molnormal': 'MOL Normal / Centrer / Provoquer',
-        'mid-molnormal-repart': 'Milieu 80% - Attaque 20%',
-        'mid-molnormal-poids': 'P1-T1-V2-A1 (Norm) / P2-T1-V1-A1 (Centr) / P1-T2-V1-A1 (Prov)',
-        'mid-moldeborder': 'MOL Déborder',
-        'mid-moldeborder-repart': 'Milieu 83% - Attaque 17%',
-        'mid-moldeborder-poids': 'Passes 1 | Technique 1 | Vitesse 3 | Attaque 1',
-        
-        'consignes-attaquants': '⚽ Attaquants (AS / AT)',
-        'att-asnormal': 'AS Normal (Soutien)',
-        'att-asnormal-repart': 'Milieu 20% - Attaque 80%',
-        'att-asnormal-poids': 'Passes 1 | Technique 1 | Vitesse 1 | Attaque 2',
-        'att-atnormal': 'AT Normal',
-        'att-atnormal-repart': 'Attaque 100%',
-        'att-atnormal-poids': 'Technique 1 | Vitesse 1 | Attaque 2',
-        'att-atprofondeur': 'AT Jeu en profondeur',
-        'att-atprofondeur-repart': 'Attaque 100%',
-        'att-atprofondeur-poids': 'Technique 1 | Vitesse 2 | Attaque 2',
-        'att-atprovoquer': 'AT Provoquer',
-        'att-atprovoquer-repart': 'Attaque 100%',
-        'att-atprovoquer-poids': 'Technique 2 | Vitesse 1 | Attaque 2',
-        'att-atpivot': 'AT Attaquant en pivot',
-        'att-atpivot-repart': 'Attaque 100%',
-        'att-atpivot-poids': 'Puissance 1 | Passes 1 | Vitesse 1 | Technique 1 | Attaque 2',
-        
-        // ===== SECTION TACTIQUE =====
-        'tactique-title': '⚽ Analyses Tactiques & Tutoriels de Lahi',
-        'tactique-tuto1': '💡 Tuto 1 : Débloquer le Moteur De Match (MDM)',
-        'tactique-tuto1-intro': '<strong>Règle d\'or :</strong> Ne JAMAIS attaquer et défendre en même temps sur le même côté ! (Ex: Attaquer dans l\'axe et bloquer l\'axe, ou attaquer à droite et bloquer à droite). Cela bloque le MDM et provoque des buts évitables.',
-        'tactique-combinaisons': 'Combinaisons Tactiques Recommandées :',
-        'tactique-ailes': '<strong>Si vous attaquez sur les Ailes :</strong>',
-        'tactique-ailes-options': 'Options Défense : Bloquer l\'axe, Défendre bas, Bloquer côté droit, Bloquer côté gauche, Pressing haut, ou Normal.',
-        'tactique-axe': '<strong>Si vous attaquez dans l\'Axe :</strong>',
-        'tactique-axe-options': 'Options Défense : Bloquer les couloirs, Défendre bas, Bloquer côté gauche, Bloquer côté droit, Pressing haut, ou Normal.',
-        'tactique-droit': '<strong>Si vous attaquez Côté Droit :</strong>',
-        'tactique-droit-options': 'Option Défense idéale : Bloquer Côté Gauche (et vice versa).',
-        'tactique-tuto2': '👁️ Tuto 2 : L\'Anticipation pendant le Match en Direct',
-        'tactique-tuto2-intro': 'L\'<strong>anticipation</strong> consiste à deviner la zone d\'attaque de l\'adversaire lors de la prochaine actualisation (actu) pour bloquer cette zone à temps.',
-        'tactique-methode1': 'Méthode 1 : Surveillance via l\'onglet Style (Méthode Anti-Bug)',
-        'tactique-methode1-1': 'Allez dans le menu <strong>Consigne</strong> &gt; <strong>Tactique</strong> &gt; <strong>Style de jeu</strong>, puis descendez pour observer le positionnement exact des attaquants adverses.',
-        'tactique-methode1-2': '<em>Pourquoi cette méthode ?</em> La fiche principale du club souffre d\'un bug de réactivité et ne met pas à jour immédiatement les mouvements adverses !',
-        'tactique-methode1-3': '<strong>Exemple :</strong> Si l\'adversaire aligne un ATC et un ATD (Attaquant Droit), il prépare une attaque côté droit. Vous devez immédiatement bloquer votre côté gauche !',
-        'tactique-methode1-4': '<strong>Astuce Live :</strong> Rafraîchissez l\'onglet Style toutes les 10 secondes avant la fin de l\'actu pour contrer les managers qui déplacent leurs attaquants à la dernière seconde.',
-        'tactique-methode2': 'Méthode 2 : Analyse des cycles d\'attaque',
-        'tactique-methode2-1': 'Analysez le schéma répétitif de l\'adversaire (ex: Min 1: Axe, Min 2: Gauche, Min 3: Droite). S\'il suit un cycle régulier, prenez un temps d\'avance en positionnant votre bloc défensif sur sa prochaine cible.',
-        'tactique-styles': '🎯 Impact des Styles de Jeu',
-        'table-style': 'Style',
-        'table-zone': 'Zone d\'Impact',
-        'table-effet': 'Effet & Répartition (Exemple pour +200)',
-        'style-normal': 'Normal',
-        'style-normal-zone': 'Aucun',
-        'style-normal-effet': 'Pas d\'impact sur le style.',
-        'style-courtes': 'Passes Courtes',
-        'style-courtes-zone': 'Milieu',
-        'style-courtes-effet': '100 Axe, 50 Gauche, 50 Droite.',
-        'style-creatif': 'Jeu Créatif',
-        'style-creatif-zone': 'Milieu',
-        'style-creatif-effet': '100 Axe, 50 Gauche, 50 Droite. (Bonus = 2/3 des points requis)',
-        'style-direct': 'Jeu Direct',
-        'style-direct-zone': 'Attaque',
-        'style-direct-effet': '100 Axe, 50 Gauche, 50 Droite. <em>(Recommandé en attaque)</em>',
-        'style-contre': 'Contre-Attaques',
-        'style-contre-zone': 'Attaque',
-        'style-contre-effet': '100 Axe, 50 Gauche, 50 Droite.',
-        'style-horsjeu': 'Piège du Hors-jeu',
-        'style-horsjeu-zone': 'Défense',
-        'style-horsjeu-effet': '100 Axe, 50 Gauche, 50 Droite.',
-        'tactique-ratios': '📈 Utilisation des Ratios en Match',
-        'tactique-ratios-intro': 'Un goal provient presque toujours de la domination d\'une zone spécifique du terrain (Milieu / Attaque vs Défense adverse) :',
-        'tactique-ratios1': '<strong>Blocage de l\'Axe & Perforation des Ailes :</strong> Si l\'adversaire force l\'axe, orientez votre compo pour bloquer l\'axe défensif tout en dominant les ailes en attaque.',
-        'tactique-ratios2': '<strong>Réaction aux ajustements :</strong> Suivez la possession et les XG à la mi-temps pour corriger vos consignes.',
-        
-        // ===== SECTION IS =====
-        'is-title': '🦁 Inter-Sélection (IS) - African Union',
-        'is-match': '⚔️ Prochain Match : African Union (AfU) vs EVF',
-        'is-date': 'Date :',
-        'is-date-value': 'Vendredi 24 Juillet 2026',
-        'is-link': 'Voir la Sélection sur Virtuafoot',
-        'is-liste': '📋 Liste des 16 Joueurs Convoqués',
-        'is-liste-intro': 'Affichez ou recherchez un joueur par poste ou par club :',
-        'is-num': 'N°',
-        'is-nom': 'Nom du Joueur',
-        'is-poste': 'Poste',
-        'is-club': 'Club',
-        
-        // ===== SECTION CALCULATEUR =====
-        'calculateur-title': '🧮 Calculateur de NG Brute & Proportions d\'Entraînement',
-        'calculateur-poste': 'Sélectionnez le Poste & Consigne :',
-        'calculateur-caracteristiques': 'Caractéristiques du Joueur :',
-        'calculateur-ng': 'Note Globale Brute (NG) :',
-        'calculateur-entrainement': 'Répartition Idéale d\'Entraînement pour ce Poste :',
-        
-        // ===== STATISTIQUES (pour le calculateur) =====
-        'stat-gardien': 'Gardien :',
-        'stat-defense': 'Défense :',
-        'stat-tacles': 'Tacles :',
-        'stat-placement': 'Placement :',
-        'stat-marquage': 'Marquage :',
-        'stat-puissance': 'Puissance :',
-        'stat-passes': 'Passes :',
-        'stat-technique': 'Technique :',
-        'stat-vitesse': 'Vitesse :',
-        'stat-attaque': 'Attaque :',
-        'stat-endurance': 'Endurance :',
-        
-        // ===== FOOTER =====
-        'footer': 'African Union (AfU) © 2026 - Plateforme de l\'Entente Virtuafoot'
-    },
-    
-    en: {
-        // ===== HEADER =====
-        'header-subtitle': 'Official Platform, Tools & Guides of the African Union Alliance',
-        
-        // ===== NAVIGATION =====
-        'nav-gestion': '📊 Management & Infrastructure',
-        'nav-consignes': '📜 Individual Instructions',
-        'nav-tactique': '⚽ Tactics & Lahi Tutorials',
-        'nav-is': '🦁 IS Selection',
-        'nav-calculateur': '🧮 AfU Excel Calculator',
-        
-        // ===== SECTION MANAGEMENT =====
-        'gestion-title': '📊 Strategy, Financial Management & Infrastructure',
-        'gestion-intro': '<strong>Keys to success on Virtuafoot:</strong> Patience, Training and Intelligence. Everything revolves around managing your treasury (bank) and upgrading your infrastructure.',
-        'gestion-revenus': '💵 A. Match Revenues',
-        'gestion-revenus1': '<strong>A1. Home friendlies :</strong> Schedule your home friendlies at least 1 hour in advance to give other clubs time to buy your TV rights.',
-        'gestion-revenus2': '<strong>A2. Post-match interviews :</strong> Join a league to do the interview after each home game to accumulate earnings.',
-        'gestion-transferts': '🔁 B. Transfer Revenues',
-        'gestion-transferts1': '<strong>B1. Youth loan training :</strong> Take 6 young players on loan with training bonus (minimum 100k/point). Prioritize high progression coefficients.',
-        'gestion-transferts2': '<strong>B2. Quick buy/sell :</strong> Free up remaining slots for regular trading. Target: 1M/day profit = 60M+/season.',
-        'gestion-transferts3': '<strong>B3. Buying youth with 1 season left :</strong> Buy nearly trained youngsters at auction, complete their training and resell them at a higher price.',
-        'gestion-philosophie': '🏆 C. Team A / Team B Philosophy',
-        'gestion-philosophie-intro': 'Adopt the <strong>Team A (Competitive)</strong> + <strong>Team B (100% Training)</strong> philosophy:',
-        'gestion-philosophie1': 'Buy your future stars very young (18 years, potential 75) at 3M-5M instead of investing 10M+ on 27-year-old players.',
-        'gestion-philosophie2': 'Train them yourself. When they reach maturity (around 27), promote Team B and sell Team A with a strong profit.',
-        'gestion-philosophie3': 'Your players trained together will develop <strong>Maximum Affinity</strong>, a determining factor in competition.',
-        'gestion-infrastructures': '🏟️ Infrastructure Costs & Upgrades',
-        'gestion-infrastructures-intro': 'Infrastructure progression grid for your club:',
-        
-        // ===== INFRASTRUCTURE TABLE =====
-        'table-infra': 'Infrastructure',
-        'table-level1': 'Level 1',
-        'table-level2': 'Level 2',
-        'table-level3': 'Level 3',
-        'table-level4': 'Level 4',
-        'table-level5': 'Level 5',
-        'infra-stade': 'Stadium',
-        'infra-stade-l1': 'Free (1,000 seats)',
-        'infra-stade-l2': '1 M€ (5,000 seats)',
-        'infra-stade-l3': '2.5 M€ (10,000 seats)',
-        'infra-stade-l4': '5 M€ (25,000 seats)',
-        'infra-stade-l5': '10 M€ (50,000 seats)',
-        'infra-boutique': 'Shop',
-        'infra-boutique-l2': '500 k€',
-        'infra-boutique-l3': '1 M€',
-        'infra-boutique-l4': '2.5 M€',
-        'infra-boutique-l5': '5 M€',
-        'infra-centreformation': 'Training Center',
-        'infra-centreformation-l2': '1 M€',
-        'infra-centreformation-l3': '2 M€',
-        'infra-centreformation-l4': '5 M€',
-        'infra-centreformation-l5': '10 M€',
-        'infra-centrentrainement': 'Training Center',
-        'infra-centrentrainement-l2': '1 M€',
-        'infra-centrentrainement-l3': '2 M€',
-        'infra-centrentrainement-l4': '5 M€',
-        'infra-centrentrainement-l5': '10 M€',
-        'infra-centremedical': 'Medical Center',
-        'infra-centremedical-l2': '500 k€',
-        'infra-centremedical-l3': '1 M€',
-        'infra-centremedical-l4': '2.5 M€',
-        'infra-centremedical-l5': '5 M€',
-        
-        // ===== SECTION INSTRUCTIONS =====
-        'consignes-title': '📜 Tutorial: Individual Instructions & Impacts',
-        'consignes-intro': 'The football pitch is divided into 9 sections (Defense, Midfield, Attack × Center, Left, Right). Individual instructions determine each player\'s impact on these areas and define the key attributes to train.',
-        'consignes-gardiens': '🧤 Goalkeepers (GAC)',
-        'table-consigne': 'Instruction',
-        'table-repartition': 'Match Rating Split',
-        'table-poids': 'Attribute Weights',
-        'gac-normal': 'GAC Normal',
-        'gac-normal-repart': 'Defense 100%',
-        'gac-normal-poids': 'Goalkeeping 3 | Defense 1 | Tackling 1 | Positioning 1',
-        'gac-relanceur': 'GAC Sweeper',
-        'gac-relanceur-repart': 'Defense 80% - Midfield 20%',
-        'gac-relanceur-poids': 'Goalkeeping 3 | Tackling 1 | Positioning 1 | Passing 1',
-        
-        'consignes-defenseurs': '🛡️ Defenders (DL / DFL / DFC)',
-        'table-posteconsigne': 'Position / Instruction',
-        'def-dl': 'DL Normal',
-        'def-dl-repart': 'Defense 100%',
-        'def-dl-poids': 'Defense 2 | Tackling 1 | Positioning 1',
-        'def-dfl': 'DFL Normal',
-        'def-dfl-repart': 'Defense 66% - Midfield 17% - Attack 17%',
-        'def-dfl-poids': 'Defense 3 | Tackling 1 | Passing 1 | Speed 1',
-        'def-dflcouloir': 'DFL Take the flank',
-        'def-dflcouloir-repart': 'Defense 60% - Attack 40%',
-        'def-dflcouloir-poids': 'Defense 2 | Tackling 1 | Speed 2',
-        'def-dfc': 'DFC Normal',
-        'def-dfc-repart': 'Defense 100%',
-        'def-dfc-poids': 'Defense 3 | Tackling 1 | Positioning 1 | Power 1',
-        'def-dfcphases': 'DFC Set Pieces',
-        'def-dfcphases-repart': 'Defense 66% - Attack 33%',
-        'def-dfcphases-poids': 'Defense 3 | Tackling 1 | Power 2',
-        'def-dfcconstruction': 'DFC Build-up',
-        'def-dfcconstruction-repart': 'Defense 70% - Midfield 30%',
-        'def-dfcconstruction-poids': 'Defense 3 | Tackling 1 | Power 1 | Passing 2',
-        
-        'consignes-milieux': '⚙️ Midfielders (MD / MOC / MOL)',
-        'mid-mdnormal': 'MD Normal',
-        'mid-mdnormal-repart': 'Defense 25% - Midfield 75%',
-        'mid-mdnormal-poids': 'Defense 1 | Passing 2 | Technique 1',
-        'mid-mdprovoquer': 'MD Provoke',
-        'mid-mdprovoquer-repart': 'Defense 25% - Midfield 75%',
-        'mid-mdprovoquer-poids': 'Defense 1 | Passing 1 | Technique 2',
-        'mid-mddefendre': 'MD Defend',
-        'mid-mddefendre-repart': 'Defense 50% - Midfield 50%',
-        'mid-mddefendre-poids': 'Defense 2 | Passing 1 | Technique 1',
-        'mid-mdattaquer': 'MD Attack',
-        'mid-mdattaquer-repart': 'Midfield 50% - Attack 50%',
-        'mid-mdattaquer-poids': 'Passing 2 | Technique 1 | Attack 1',
-        'mid-mocnormal': 'MOC Normal',
-        'mid-mocnormal-repart': 'Midfield 75% - Attack 25%',
-        'mid-mocnormal-poids': 'Passing 1 | Technique 1 | Attack 1',
-        'mid-mocdefendre': 'MOC Defend',
-        'mid-mocdefendre-repart': 'Defense 33% - Midfield 66%',
-        'mid-mocdefendre-poids': 'Defense 1 | Passing 1 | Technique 1',
-        'mid-mocattaquer': 'MOC Attack',
-        'mid-mocattaquer-repart': 'Midfield 50% - Attack 50%',
-        'mid-mocattaquer-poids': 'Passing 1 | Technique 1 | Attack 2',
-        'mid-molnormal': 'MOL Normal / Cross / Provoke',
-        'mid-molnormal-repart': 'Midfield 80% - Attack 20%',
-        'mid-molnormal-poids': 'P1-T1-S2-A1 (Norm) / P2-T1-S1-A1 (Cross) / P1-T2-S1-A1 (Prov)',
-        'mid-moldeborder': 'MOL Overlap',
-        'mid-moldeborder-repart': 'Midfield 83% - Attack 17%',
-        'mid-moldeborder-poids': 'Passing 1 | Technique 1 | Speed 3 | Attack 1',
-        
-        'consignes-attaquants': '⚽ Attackers (AS / AT)',
-        'att-asnormal': 'AS Normal (Support)',
-        'att-asnormal-repart': 'Midfield 20% - Attack 80%',
-        'att-asnormal-poids': 'Passing 1 | Technique 1 | Speed 1 | Attack 2',
-        'att-atnormal': 'AT Normal',
-        'att-atnormal-repart': 'Attack 100%',
-        'att-atnormal-poids': 'Technique 1 | Speed 1 | Attack 2',
-        'att-atprofondeur': 'AT Deep Play',
-        'att-atprofondeur-repart': 'Attack 100%',
-        'att-atprofondeur-poids': 'Technique 1 | Speed 2 | Attack 2',
-        'att-atprovoquer': 'AT Provoke',
-        'att-atprovoquer-repart': 'Attack 100%',
-        'att-atprovoquer-poids': 'Technique 2 | Speed 1 | Attack 2',
-        'att-atpivot': 'AT Target Man',
-        'att-atpivot-repart': 'Attack 100%',
-        'att-atpivot-poids': 'Power 1 | Passing 1 | Speed 1 | Technique 1 | Attack 2',
-        
-        // ===== SECTION TACTICS =====
-        'tactique-title': '⚽ Tactical Analysis & Lahi Tutorials',
-        'tactique-tuto1': '💡 Tutorial 1: Unlocking the Match Engine (MDM)',
-        'tactique-tuto1-intro': '<strong>Golden rule:</strong> NEVER attack and defend on the same side at the same time! (e.g., Attack through the center and block the center, or attack right and block right). This blocks the MDM and causes avoidable goals.',
-        'tactique-combinaisons': 'Recommended Tactical Combinations:',
-        'tactique-ailes': '<strong>If you attack on the Wings:</strong>',
-        'tactique-ailes-options': 'Defense Options: Block center, Drop back, Block right side, Block left side, High press, or Normal.',
-        'tactique-axe': '<strong>If you attack through the Center:</strong>',
-        'tactique-axe-options': 'Defense Options: Block flanks, Drop back, Block left side, Block right side, High press, or Normal.',
-        'tactique-droit': '<strong>If you attack Right Side:</strong>',
-        'tactique-droit-options': 'Ideal Defense Option: Block Left Side (and vice versa).',
-        'tactique-tuto2': '👁️ Tutorial 2: Anticipation during Live Match',
-        'tactique-tuto2-intro': '<strong>Anticipation</strong> consists of predicting the opponent\'s attack zone during the next update (actu) to block that zone in time.',
-        'tactique-methode1': 'Method 1: Monitoring via Style Tab (Anti-Bug Method)',
-        'tactique-methode1-1': 'Go to <strong>Instructions</strong> &gt; <strong>Tactics</strong> &gt; <strong>Playing Style</strong>, then scroll down to observe the exact positioning of opponent attackers.',
-        'tactique-methode1-2': '<em>Why this method?</em> The main club sheet suffers from a reactivity bug and does not immediately update opponent movements!',
-        'tactique-methode1-3': '<strong>Example:</strong> If the opponent lines up an ATC and an ATD (Right Attacker), they are preparing a right-side attack. You must immediately block your left side!',
-        'tactique-methode1-4': '<strong>Live Tip:</strong> Refresh the Style tab every 10 seconds before the end of the update to counter managers who move their attackers at the last second.',
-        'tactique-methode2': 'Method 2: Analyzing attack cycles',
-        'tactique-methode2-1': 'Analyze the opponent\'s repetitive pattern (e.g., Min 1: Center, Min 2: Left, Min 3: Right). If they follow a regular cycle, take a head start by positioning your defensive block on their next target.',
-        'tactique-styles': '🎯 Impact of Playing Styles',
-        'table-style': 'Style',
-        'table-zone': 'Impact Zone',
-        'table-effet': 'Effect & Split (Example for +200)',
-        'style-normal': 'Normal',
-        'style-normal-zone': 'None',
-        'style-normal-effet': 'No impact on style.',
-        'style-courtes': 'Short Passes',
-        'style-courtes-zone': 'Midfield',
-        'style-courtes-effet': '100 Center, 50 Left, 50 Right.',
-        'style-creatif': 'Creative Play',
-        'style-creatif-zone': 'Midfield',
-        'style-creatif-effet': '100 Center, 50 Left, 50 Right. (Bonus = 2/3 of required points)',
-        'style-direct': 'Direct Play',
-        'style-direct-zone': 'Attack',
-        'style-direct-effet': '100 Center, 50 Left, 50 Right. <em>(Recommended for attack)</em>',
-        'style-contre': 'Counter-Attacks',
-        'style-contre-zone': 'Attack',
-        'style-contre-effet': '100 Center, 50 Left, 50 Right.',
-        'style-horsjeu': 'Offside Trap',
-        'style-horsjeu-zone': 'Defense',
-        'style-horsjeu-effet': '100 Center, 50 Left, 50 Right.',
-        'tactique-ratios': '📈 Using Match Ratios',
-        'tactique-ratios-intro': 'A goal almost always comes from dominating a specific area of the pitch (Midfield / Attack vs Opponent Defense):',
-        'tactique-ratios1': '<strong>Block Center & Attack Flanks:</strong> If the opponent forces the center, orient your composition to block the defensive center while dominating the flanks in attack.',
-        'tactique-ratios2': '<strong>React to adjustments:</strong> Follow possession and XG at half-time to correct your instructions.',
-        
-        // ===== SECTION IS =====
-        'is-title': '🦁 Inter-Selection (IS) - African Union',
-        'is-match': '⚔️ Next Match: African Union (AfU) vs EVF',
-        'is-date': 'Date:',
-        'is-date-value': 'Friday, July 24, 2026',
-        'is-link': 'View Selection on Virtuafoot',
-        'is-liste': '📋 List of 16 Selected Players',
-        'is-liste-intro': 'Display or search for a player by position or club:',
-        'is-num': 'No.',
-        'is-nom': 'Player Name',
-        'is-poste': 'Position',
-        'is-club': 'Club',
-        
-        // ===== SECTION CALCULATOR =====
-        'calculateur-title': '🧮 Gross NG Calculator & Training Proportions',
-        'calculateur-poste': 'Select Position & Instruction:',
-        'calculateur-caracteristiques': 'Player Attributes:',
-        'calculateur-ng': 'Gross Overall Rating (NG):',
-        'calculateur-entrainement': 'Ideal Training Split for this Position:',
-        
-        // ===== STATISTICS (for calculator) =====
-        'stat-gardien': 'Goalkeeping:',
-        'stat-defense': 'Defense:',
-        'stat-tacles': 'Tackling:',
-        'stat-placement': 'Positioning:',
-        'stat-marquage': 'Marking:',
-        'stat-puissance': 'Power:',
-        'stat-passes': 'Passing:',
-        'stat-technique': 'Technique:',
-        'stat-vitesse': 'Speed:',
-        'stat-attaque': 'Attack:',
-        'stat-endurance': 'Stamina:',
-        
-        // ===== FOOTER =====
-        'footer': 'African Union (AfU) © 2026 - Virtuafoot Alliance Platform'
-    }
+// 1. VARIABLE GLOBALE DE LANGUE
+let currentLang = 'fr';
+
+// 2. NOMS DES CARACTÉRISTIQUES EN ANGLAIS (POUR LE CALCULATEUR)
+const statNamesEN = {
+    "Gardien": "Goalkeeping",
+    "Défense": "Defense",
+    "Tacles": "Tackling",
+    "Placement": "Positioning",
+    "Marquage": "Marking",
+    "Puissance": "Power",
+    "Passes": "Passing",
+    "Technique": "Technique",
+    "Vitesse": "Speed",
+    "Attaque": "Attack",
+    "Endurance": "Stamina"
 };
+
+// 3. TABLEAU DES PROPORTIONS D'ENTRAÎNEMENT (EXCEL AFU)
+const proportionsEntrainement = {
+    "GAC": { "Gardien": "50%", "Défense": "16.67%", "Tacles": "16.67%", "Placement": "16.67%" },
+    "GAC - Relanceur": { "Gardien": "50%", "Tacles": "16.67%", "Placement": "16.67%", "Passes": "16.67%" },
+    "DL - Normal": { "Défense": "50%", "Tacles": "25%", "Placement": "25%" },
+    "DFC - Normal": { "Défense": "50%", "Tacles": "16.67%", "Placement": "16.67%", "Puissance": "16.67%" },
+    "DFC - Participer à la construction": { "Défense": "42.86%", "Tacles": "14.29%", "Puissance": "14.29%", "Passes": "28.57%" },
+    "DFC - Monter sur phases arrêtées": { "Défense": "50%", "Tacles": "16.67%", "Puissance": "33.33%" },
+    "DFL - Normal": { "Défense": "50%", "Tacles": "16.67%", "Passes": "16.67%", "Vitesse": "16.67%" },
+    "DFL - Prendre le couloir": { "Défense": "40%", "Tacles": "20%", "Vitesse": "40%" },
+    "MD - Normal": { "Défense": "25%", "Passes": "50%", "Technique": "25%" },
+    "MD - Défendre": { "Défense": "50%", "Passes": "25%", "Technique": "25%" },
+    "MD - Attaquer": { "Passes": "50%", "Technique": "25%", "Attaque": "25%" },
+    "MD - Provoquer": { "Défense": "25%", "Passes": "25%", "Technique": "50%" },
+    "MOC - Normal": { "Passes": "33.33%", "Technique": "33.33%", "Attaque": "33.33%" },
+    "MOC - Attaque": { "Passes": "25%", "Technique": "25%", "Attaque": "50%" },
+    "MOC - Défendre": { "Défense": "33.33%", "Passes": "33.33%", "Technique": "33.33%" },
+    "MOL - Normal": { "Passes": "20%", "Technique": "20%", "Vitesse": "40%", "Attaque": "20%" },
+    "MOL - Centrer": { "Passes": "40%", "Technique": "20%", "Vitesse": "20%", "Attaque": "20%" },
+    "MOL - Provoquer": { "Passes": "20%", "Technique": "40%", "Vitesse": "20%", "Attaque": "20%" },
+    "MOL - Déborder": { "Passes": "16.67%", "Technique": "16.67%", "Vitesse": "50%", "Attaque": "16.67%" },
+    "AS - Normal": { "Passes": "20%", "Technique": "20%", "Vitesse": "20%", "Attaque": "40%" },
+    "AC - Normal": { "Technique": "25%", "Vitesse": "25%", "Attaque": "50%" },
+    "AT - Jeu en profondeur": { "Technique": "20%", "Vitesse": "40%", "Attaque": "40%" },
+    "AT - Provoquer": { "Technique": "40%", "Vitesse": "20%", "Attaque": "40%" },
+    "AT - Pivot": { "Puissance": "16.67%", "Passes": "16.67%", "Vitesse": "16.67%", "Technique": "16.67%", "Attaque": "33.33%" }
+};
+
+// 4. FONCTION POUR CHANGER DE LANGUE
+function switchLanguage(lang) {
+    currentLang = lang;
+    
+    // Mise à jour des boutons FR/EN
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnEn.classList.toggle('active', lang === 'en');
+    }
+
+    // Mise à jour des textes avec data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key] !== undefined) {
+            element.innerHTML = translations[lang][key];
+        }
+    });
+
+    // Recalculer pour mettre à jour les libellés du calculateur
+    calculerTout();
+}
+
+// 5. FONCTION POUR LA NAVIGATION ENTRE ONGLETS
+function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+    
+    const selectedTab = document.getElementById(tabId);
+    if (selectedTab) {
+        selectedTab.classList.add('active');
+    }
+    
+    // Activer le bouton correspondant
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(tabId)) {
+            btn.classList.add('active');
+        }
+    });
+}
+
+// 6. FONCTION DE CALCUL DE LA NG BRUTE
+function calculerTout() {
+    // Récupération des valeurs
+    const gar = parseFloat(document.getElementById('st_gar')?.value) || 0;
+    const def = parseFloat(document.getElementById('st_def')?.value) || 0;
+    const tac = parseFloat(document.getElementById('st_tac')?.value) || 0;
+    const pla = parseFloat(document.getElementById('st_pla')?.value) || 0;
+    const pui = parseFloat(document.getElementById('st_pui')?.value) || 0;
+    const pas = parseFloat(document.getElementById('st_pas')?.value) || 0;
+    const tec = parseFloat(document.getElementById('st_tec')?.value) || 0;
+    const vit = parseFloat(document.getElementById('st_vit')?.value) || 0;
+    const att = parseFloat(document.getElementById('st_att')?.value) || 0;
+
+    const posteSelect = document.getElementById('posteSelect');
+    if (!posteSelect) return;
+    
+    const poste = posteSelect.value;
+    let ng = 0;
+
+    // Calcul selon le poste
+    switch(poste) {
+        case "GAC": ng = (3 * gar + def + tac + pla) / 6; break;
+        case "GAC - Relanceur": ng = (3 * gar + tac + pla + pas) / 6; break;
+        case "DL - Normal": ng = (2 * def + tac + pla) / 4; break;
+        case "DFC - Normal": ng = (3 * def + tac + pla + pui) / 6; break;
+        case "DFC - Monter sur phases arrêtées": ng = (3 * def + tac + 2 * pui) / 6; break;
+        case "DFC - Participer à la construction": ng = (3 * def + tac + pui + 2 * pas) / 7; break;
+        case "DFL - Normal": ng = (3 * def + tac + pas + vit) / 6; break;
+        case "DFL - Prendre le couloir": ng = (2 * def + tac + 2 * vit) / 5; break;
+        case "MD - Normal": ng = (def + 2 * pas + tec) / 4; break;
+        case "MD - Défendre": ng = (2 * def + pas + tec) / 4; break;
+        case "MD - Attaquer": ng = (2 * pas + tec + att) / 4; break;
+        case "MD - Provoquer": ng = (def + pas + 2 * tec) / 4; break;
+        case "MOC - Normal": ng = (pas + tec + att) / 3; break;
+        case "MOC - Attaque": ng = (pas + tec + 2 * att) / 4; break;
+        case "MOC - Défendre": ng = (def + pas + tec) / 3; break;
+        case "MOL - Normal": ng = (pas + tec + 2 * vit + att) / 5; break;
+        case "MOL - Centrer": ng = (2 * pas + tec + vit + att) / 5; break;
+        case "MOL - Provoquer": ng = (pas + 2 * tec + vit + att) / 5; break;
+        case "MOL - Déborder": ng = (pas + tec + 3 * vit + att) / 6; break;
+        case "AS - Normal": ng = (pas + tec + vit + 2 * att) / 5; break;
+        case "AC - Normal":
+        case "AT Normal": ng = (tec + vit + 2 * att) / 4; break;
+        case "AT - Jeu en profondeur": ng = (tec + 2 * vit + 2 * att) / 5; break;
+        case "AT - Provoquer": ng = (2 * tec + vit + 2 * att) / 5; break;
+        case "AT - Pivot": ng = (pui + pas + vit + tec + 2 * att) / 6; break;
+        default: ng = 0;
+    }
+
+    // Affichage de la NG
+    const ngResultElem = document.getElementById('ngResult');
+    if (ngResultElem) {
+        ngResultElem.innerText = ng.toFixed(2);
+    }
+
+    // Affichage des badges de proportions d'entraînement
+    const ratioBox = document.getElementById('entrainementRatio');
+    if (ratioBox) {
+        ratioBox.innerHTML = '';
+        const ratios = proportionsEntrainement[poste] || {};
+        for (const [stat, pct] of Object.entries(ratios)) {
+            const labelStat = (currentLang === 'en' && statNamesEN[stat]) ? statNamesEN[stat] : stat;
+            const badge = document.createElement('div');
+            badge.className = 'ratio-badge';
+            badge.innerText = `${labelStat} : ${pct}`;
+            ratioBox.appendChild(badge);
+        }
+    }
+}
+
+// 7. INITIALISATION AU CHARGEMENT DE LA PAGE
+document.addEventListener('DOMContentLoaded', function() {
+    // Appliquer la langue par défaut (français)
+    switchLanguage('fr');
+    calculerTout();
+});
