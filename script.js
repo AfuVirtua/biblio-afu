@@ -50,7 +50,7 @@ function calculerTout() {
 
     // FORMULES EXACTES EXCEL AFU
     if (poste === "GAC") {
-        ng = (gar + (def / 3) + (tac / 3) + (pla / 3)) / 2;
+        ng = (gar + def + tac+ pla) / 2;
     } else if (poste === "DL - Normal") {
         ng = (def + (tac / 2) + (pla / 2)) / 2;
     } else if (poste === "DFC - Normal") {
