@@ -8,14 +8,14 @@
 </head>
 <body>
     <header>
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; max-width: 1200px; margin: 0 auto;">
-            <div>
+        <div class="header-content">
+            <div class="header-title">
                 <h1>🌍 Biblio AfU</h1>
                 <p id="header-subtitle" data-i18n="header-subtitle">Plateforme Officielle, Outils & Guides de l'Entente African Union</p>
             </div>
-            <div style="display: flex; gap: 10px; align-items: center;">
-                <button onclick="switchLanguage('fr')" id="btn-fr" class="lang-btn active" style="background: #fff; color: #1b5e20; border: 2px solid #fff; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">🇫🇷 FR</button>
-                <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn" style="background: transparent; color: #fff; border: 2px solid #fff; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">🇬🇧 EN</button>
+            <div class="lang-switch">
+                <button onclick="switchLanguage('fr')" id="btn-fr" class="lang-btn active">🇫🇷 FR</button>
+                <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn">🇬🇧 EN</button>
             </div>
         </div>
     </header>
@@ -345,7 +345,7 @@
                 </ul>
             </div>
 
-            <div class="card intro-card" style="border-left-color: #1976d2; background-color: #e3f2fd;">
+            <div class="card intro-card-blue">
                 <h3 data-i18n="tactique-tuto2">👁️ Tuto 2 : L'Anticipation pendant le Match en Direct</h3>
                 <p data-i18n="tactique-tuto2-intro">L'<strong>anticipation</strong> consiste à deviner la zone d'attaque de l'adversaire lors de la prochaine actualisation (actu) pour bloquer cette zone à temps.</p>
                 <hr>
@@ -424,13 +424,13 @@
         <section id="is" class="tab-content">
             <h2 data-i18n="is-title">🦁 Inter-Sélection (IS) - African Union</h2>
 
-            <div class="card intro-card" style="border-left-color: #ff9800; background-color: #fff3e0;">
+            <div class="card intro-card-orange">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                     <div>
                         <h3 style="margin: 0; color: #e65100;" data-i18n="is-match">⚔️ Prochain Match : African Union (AfU) vs EVF</h3>
                         <p style="margin: 5px 0 0 0;"><strong data-i18n="is-date">Date :</strong> <span data-i18n="is-date-value">Vendredi 24 Juillet 2026</span></p>
                     </div>
-                    <a href="https://www.virtuafoot.com/#entente?eid=801&selection" target="_blank" style="background-color: #e65100; color: white; padding: 0.7rem 1.2rem; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.3s;">
+                    <a href="https://www.virtuafoot.com/#entente?eid=801&selection" target="_blank" style="background-color: #e65100; color: white; padding: 0.7rem 1.2rem; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.3s; display: inline-block;">
                         🔗 <span data-i18n="is-link">Voir la Sélection sur Virtuafoot</span>
                     </a>
                 </div>

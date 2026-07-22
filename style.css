@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BIBLIO AFU - STYLES COMPLETS
+   BIBLIO AFU - STYLES COMPLETS (VERSION CORRIGÉE)
    ========================================================================== */
 
 /* ----- RESET & BASE ----- */
@@ -24,21 +24,44 @@ header {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-header h1 {
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-title h1 {
     margin: 0;
     font-size: 2.4rem;
 }
 
-#header-subtitle {
+.header-title p {
     margin: 0.5rem 0 0 0;
     font-size: 1.1rem;
     opacity: 0.9;
 }
 
 /* ----- BOUTONS DE LANGUE ----- */
+.lang-switch {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 .lang-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
     transition: all 0.3s ease;
     font-size: 0.9rem;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
 }
 
 .lang-btn:hover {
@@ -47,9 +70,9 @@ header h1 {
 }
 
 .lang-btn.active {
-    background: #fff !important;
-    color: #1b5e20 !important;
-    border-color: #fff !important;
+    background: #fff;
+    color: #1b5e20;
+    border-color: #fff;
 }
 
 /* ----- NAVIGATION ----- */
@@ -122,6 +145,16 @@ nav {
 .intro-card {
     border-left: 6px solid #2e7d32;
     background-color: #e8f5e9;
+}
+
+.intro-card-blue {
+    border-left: 6px solid #1976d2;
+    background-color: #e3f2fd;
+}
+
+.intro-card-orange {
+    border-left: 6px solid #ff9800;
+    background-color: #fff3e0;
 }
 
 /* ----- GRILLES ----- */
@@ -293,19 +326,38 @@ footer {
     color: #555;
 }
 
-/* ----- RESPONSIVE ----- */
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+/* Tablettes et petits écrans */
 @media (max-width: 768px) {
-    header h1 {
+    .header-title h1 {
         font-size: 1.8rem;
+    }
+    
+    .header-title p {
+        font-size: 0.95rem;
     }
     
     header {
         padding: 1.5rem 1rem;
     }
     
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .lang-switch {
+        justify-content: center;
+    }
+    
     .nav-btn {
         padding: 0.7rem 1rem;
         font-size: 0.85rem;
+        flex: 1 1 auto;
+        min-width: 120px;
     }
     
     .card {
@@ -333,19 +385,82 @@ footer {
     .data-table td {
         padding: 0.5rem;
     }
-}
-
-@media (max-width: 480px) {
+    
     .grid-2 {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    .header-title h1 {
+        font-size: 1.4rem;
+    }
+    
+    .header-title p {
+        font-size: 0.8rem;
+    }
+    
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .nav-btn {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.75rem;
+        min-width: 80px;
+    }
+    
+    .card {
+        padding: 0.8rem;
     }
     
     .stats-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
     }
     
-    .lang-btn {
-        padding: 6px 12px !important;
-        font-size: 0.8rem !important;
+    .form-group label {
+        font-size: 0.75rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .result-card {
+        min-width: 160px;
+        padding: 0.8rem 1rem;
+    }
+    
+    .result-card span {
+        font-size: 0.9rem;
+    }
+    
+    .result-card h1 {
+        font-size: 1.8rem;
+    }
+    
+    .data-table {
+        font-size: 0.7rem;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 0.3rem 0.4rem;
+    }
+    
+    .ratio-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .badge {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        min-width: 30px;
     }
 }
