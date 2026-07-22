@@ -1,4 +1,3 @@
-// Navigation entre onglets
 function showTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
@@ -45,19 +44,57 @@ function calculerTout() {
     let end = parseFloat(document.getElementById('st_end').value) || 0;
 
     let poste = document.getElementById('posteSelect').value;
+    let ng = 0;
 
-    // Calcul de la NG (Formule exacte de l'Excel)
-    let totalCarac = gar + def + tac + pla + mar + pui + pas + tec + vit + att;
-    let ng = (totalCarac / 10) * (end / 100);
-
-    // Ajustements légers selon le poste
-    if (poste.includes("GAC")) {
-        ng = (gar * 0.5 + def * 0.2 + tac * 0.15 + pla * 0.15) * (end / 100);
+    // FORMULES EXACTES TIRÉES DE L'EXCEL AFU
+    if (poste === "GAC") {
+        ng = (gar + (def / 3) + (tac / 3) + (pla / 3)) / 2;
+    } else if (poste === "DL - Normal") {
+        ng = (def + (tac / 2) + (pla / 2)) / 2;
+    } else if (poste === "DFC - Normal") {
+        ng = (def + (tac / 3) + (pla / 3) + (pui / 3)) / 2;
+    } else if (poste === "DFC - Participer à la construction") {
+        ng = ((def * 0.857) + (tac * 0.285) + (pui * 0.285) + (pas * 0.571)) / 2;
+    } else if (poste === "DFC - Monter sur phases arrêtées") {
+        ng = (def + (tac / 3) + (mar * 0.667)) / 2;
+    } else if (poste === "DFL - Normal") {
+        ng = (def + (tac / 3) + (pas / 3) + (vit / 3)) / 2;
+    } else if (poste === "DFL - Prendre le couloir") {
+        ng = ((def * 0.8) + (tac * 0.4) + (vit * 0.8)) / 2;
+    } else if (poste === "MD - Normal") {
+        ng = ((def * 0.5) + pas + (tec * 0.5)) / 2;
+    } else if (poste === "MD - Défendre") {
+        ng = (def + (pas * 0.5) + (tec * 0.5)) / 2;
+    } else if (poste === "MD - Attaquer") {
+        ng = (pas + (tec * 0.5) + (att * 0.5)) / 2;
+    } else if (poste === "MD - Provoquer") {
+        ng = ((def * 0.5) + (pas * 0.5) + tec) / 2;
+    } else if (poste === "MOC - Normal") {
+        ng = (pas + tec + att) / 3;
+    } else if (poste === "MOC - Attaque") {
+        ng = ((pas * 0.75) + (tec * 0.75) + (att * 1.5)) / 3;
+    } else if (poste === "MOC - Défendre") {
+        ng = (def + pas + tec) / 3;
+    } else if (poste === "MOL - Normal") {
+        ng = (pas + tec + vit) / 3;
+    } else if (poste === "MOL - Attaque") {
+        ng = (tec + vit + att) / 3;
+    } else if (poste === "AC - Normal") {
+        ng = ((pui * 0.5) + (vit * 0.5) + att) / 2;
+    } else if (poste === "AC - Rester en pointe") {
+        ng = ((pui * 0.667) + (att * 1.333)) / 2;
+    } else if (poste === "AL - Normal") {
+        ng = ((tec * 0.5) + vit + (att * 0.5)) / 2;
+    } else if (poste === "AL - Repiquer au centre") {
+        ng = (tec + vit + att) / 3;
     }
+
+    // Prise en compte du coefficient d'endurance
+    ng = ng * (end / 100);
 
     document.getElementById('ngResult').innerText = ng.toFixed(2);
 
-    // Affichage des ratios d'entraînement
+    // Mettre à jour la boîte des proportions d'entraînement
     let ratioBox = document.getElementById('entrainementRatio');
     ratioBox.innerHTML = '';
     
@@ -70,7 +107,23 @@ function calculerTout() {
     }
 }
 
-// Lancement au chargement
-window.onload = function() {
+// Remplissage avec des valeurs de démonstration conformes (GAC -> NG 90)
+function chargerExempleGAC() {
+    document.getElementById('posteSelect').value = "GAC";
+    document.getElementById('st_gar').value = 91;
+    document.getElementById('st_def').value = 29;
+    document.getElementById('st_tac').value = 30;
+    document.getElementById('st_pla').value = 29;
+    document.getElementById('st_mar').value = 1;
+    document.getElementById('st_pui').value = 1;
+    document.getElementById('st_pas').value = 1;
+    document.getElementById('st_tec').value = 1;
+    document.getElementById('st_vit').value = 1;
+    document.getElementById('st_att').value = 1;
+    document.getElementById('st_end').value = 100;
     calculerTout();
+}
+
+window.onload = function() {
+    chargerExempleGAC();
 };
