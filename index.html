@@ -9,56 +9,172 @@
 <body>
     <header>
         <h1>🌍 Biblio AfU</h1>
-        <p>Plateforme Officielle & Outils de l'Entente African Union</p>
+        <p>Plateforme Officielle, Outils & Guides de l'Entente African Union</p>
     </header>
 
     <nav>
-        <button onclick="showTab('guides')">📖 Guides & Stratégies</button>
-        <button onclick="showTab('calculateur')">🧮 Calculateur de Formation</button>
+        <button class="nav-btn active" onclick="showTab('gestion')">📊 Gestion du Club</button>
+        <button class="nav-btn" onclick="showTab('tactique')">⚽ Tactiques & Styles</button>
+        <button class="nav-btn" onclick="showTab('calculateur')">🧮 Calculateur Excel AfU</button>
     </nav>
 
     <main class="container">
-        <section id="guides" class="tab-content active">
-            <h2>Guide du Manager AfU</h2>
-            <div class="card">
-                <h3>💡 Modèle Économique & Formation</h3>
-                <p>Priorisez la formation interne pour rajeunir l'effectif. Utilisez vos slots disponibles pour développer des pépites et revendez-les au bon moment pour financer la trésorerie du club à long terme sans dépendre du marché des transferts.</p>
+
+        <section id="gestion" class="tab-content active">
+            <h2>📊 Stratégie & Gestion Financière du Club (par Sam)</h2>
+            <div class="card intro-card">
+                <p><strong>Les clés de la réussite sur Virtuafoot :</strong> La Patience, La Formation et l'Intelligence. Tout tourne autour de la gestion de votre trésorerie (banque).</p>
             </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>💵 A. Les Revenus de Matchs</h3>
+                    <ul>
+                        <li><strong>A1. Matchs amicaux à domicile :</strong> Organisez vos matchs amicaux à domicile au moins 1 heure à l'avance pour laisser le temps aux autres clubs d'acheter vos droits TV.</li>
+                        <li><strong>A2. Interviews d'après-match :</strong> Rejoignez un championnat pour faire l'interview après chaque rencontre à domicile. L'objectif initial n'est pas forcément de tout gagner, mais de cumuler les gains.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🔁 B. Les Revenus de Transferts</h3>
+                    <ul>
+                        <li><strong>B1. Formation de jeunes en prêt :</strong> Prenez 6 jeunes en prêt avec prime de formation (minimum 100k/point). Priorisez les coefficients de progression élevés.</li>
+                        <li><strong>B2. Achat / Revente rapide :</strong> Libérez les places restantes (ex: 26 places) pour faire du trading régulier. Objectif : 1M/jour de bénéfice = 60M+/saison.</li>
+                        <li><strong>B3. Achat de jeunes à 1 saison de la fin :</strong> Achetez aux enchères des jeunes presque formés, terminez leur formation et revendez-les plus cher tout en profitant de leur rendement sur le terrain.</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="card">
-                <h3>⚽ Matchs & Réactivité</h3>
-                <p>Organisez votre interface en ouvrant plusieurs onglets ou appareils lors des matchs décisifs pour adapter les tactiques en temps réel et garder une longueur d'avance.</p>
+                <h3>🏆 C. Gestion de l'Équipe en Compétition</h3>
+                <p>Adoptez la philosophie <strong>Équipe A (Compétitive)</strong> + <strong>Équipe B (100% Formation)</strong> :</p>
+                <ul>
+                    <li>Achetez vos futurs cadres très jeunes (18 ans, potentiel 75) à 3M-5M au lieu d'investir 10M+ sur des joueurs de 27 ans.</li>
+                    <li>Formez-les vous-même. Lorsqu'ils arrivent à maturité (27 ans environ), faites monter l'Équipe B pour prendre le relais et revendez l'Équipe A avec une forte plus-value.</li>
+                    <li>Vos joueurs formés ensemble développeront une <strong>Affinité maximale</strong>, facteur déterminant en compétition.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="tactique" class="tab-content">
+            <h2>⚽ Analyse Tactique, Ratios & Styles de Jeu</h2>
+
+            <div class="card">
+                <h3>🎯 Impact des Styles de Jeu</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Style</th>
+                            <th>Zone d'Impact</th>
+                            <th>Effet & Répartition (Exemple pour +200)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Normal</strong></td>
+                            <td>Aucun</td>
+                            <td>Pas d'impact sur le style.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Passes Courtes</strong></td>
+                            <td>Milieu</td>
+                            <td>100 Axe, 50 Gauche, 50 Droite.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jeu Créatif</strong></td>
+                            <td>Milieu</td>
+                            <td>100 Axe, 50 Gauche, 50 Droite. (Bonus = 2/3 des points requis)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jeu Direct</strong></td>
+                            <td>Attaque</td>
+                            <td>100 Axe, 50 Gauche, 50 Droite. <em>(Fortement recommandé en attaque)</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contre-Attaques</strong></td>
+                            <td>Attaque</td>
+                            <td>100 Axe, 50 Gauche, 50 Droite.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Piège du Hors-jeu</strong></td>
+                            <td>Défense</td>
+                            <td>100 Axe, 50 Gauche, 50 Droite.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>📈 Utilisation des Ratios en Match</h3>
+                <p>Un but provient presque toujours de la domination d'une zone spécifique du terrain (Milieu / Attaque vs Défense adverse) :</p>
+                <ul>
+                    <li><strong>Blocage de l'Axe & Perforation des Ailes :</strong> Si l'adversaire force l'axe, orientez votre compo pour bloquer l'axe défensif tout en dominant les ailes en attaque pour marquer.</li>
+                    <li><strong>Réaction aux ajustements :</strong> Suivez les statistiques de possession et de XG (Expected Goals) à la mi-temps pour corriger vos consignes en direct.</li>
+                </ul>
             </div>
         </section>
 
         <section id="calculateur" class="tab-content">
-            <h2>Calculateur de Note & Caractéristiques</h2>
+            <h2>🧮 Calculateur de NG & Proportions d'Entraînement</h2>
             <div class="card">
-                <p>Entrez les caractéristiques de votre jeune joueur pour calculer sa note de formation selon les ratios Excel AfU :</p>
-                
                 <div class="form-group">
-                    <label>Endurance / Physique :</label>
-                    <input type="number" id="physique" value="80">
-                </div>
-                <div class="form-group">
-                    <label>Technique / Vitesse :</label>
-                    <input type="number" id="technique" value="80">
-                </div>
-                <div class="form-group">
-                    <label>Mental / Tactique :</label>
-                    <input type="number" id="mental" value="80">
+                    <label for="posteSelect">Sélectionnez le Poste & Consigne :</label>
+                    <select id="posteSelect" onchange="calculerTout()">
+                        <option value="GAC">GAC (Gardien)</option>
+                        <option value="DL - Normal">DL - Normal</option>
+                        <option value="DFC - Normal">DFC - Normal</option>
+                        <option value="DFC - Participer à la construction">DFC - Participer à la construction</option>
+                        <option value="DFC - Monter sur phases arrêtées">DFC - Monter sur phases arrêtées</option>
+                        <option value="DFL - Normal">DFL - Normal</option>
+                        <option value="DFL - Prendre le couloir">DFL - Prendre le couloir</option>
+                        <option value="MD - Normal">MD - Normal</option>
+                        <option value="MD - Défendre">MD - Défendre</option>
+                        <option value="MD - Attaquer">MD - Attaquer</option>
+                        <option value="MD - Provoquer">MD - Provoquer</option>
+                        <option value="MOC - Normal" selected>MOC - Normal</option>
+                        <option value="MOC - Attaque">MOC - Attaque</option>
+                        <option value="MOC - Défendre">MOC - Défendre</option>
+                        <option value="MOL - Normal">MOL - Normal</option>
+                        <option value="MOL - Attaque">MOL - Attaque</option>
+                        <option value="AC - Normal">AC - Normal</option>
+                        <option value="AC - Rester en pointe">AC - Rester en pointe</option>
+                        <option value="AL - Normal">AL - Normal</option>
+                        <option value="AL - Repiquer au centre">AL - Repiquer au centre</option>
+                    </select>
                 </div>
 
-                <button class="btn-calc" onclick="calculerNote()">Calculer le Potentiel</button>
-
-                <div id="resultat" class="result-box">
-                    Score Estimé : <span id="scoreVal">-</span>
+                <h3>Caractéristiques du Joueur :</h3>
+                <div class="stats-grid">
+                    <div class="form-group"><label>Gardien :</label><input type="number" id="st_gar" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Défense :</label><input type="number" id="st_def" value="64" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Tacles :</label><input type="number" id="st_tac" value="27" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Placement :</label><input type="number" id="st_pla" value="98" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Marquage :</label><input type="number" id="st_mar" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Puissance :</label><input type="number" id="st_pui" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Passes :</label><input type="number" id="st_pas" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Technique :</label><input type="number" id="st_tec" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Vitesse :</label><input type="number" id="st_vit" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Attaque :</label><input type="number" id="st_att" value="1" oninput="calculerTout()"></div>
+                    <div class="form-group"><label>Endurance :</label><input type="number" id="st_end" value="94.5" oninput="calculerTout()"></div>
                 </div>
+
+                <div class="results-panel">
+                    <div class="result-card">
+                        <span>Note Globale (NG) Calculée :</span>
+                        <h1 id="ngResult">0.00</h1>
+                    </div>
+                </div>
+
+                <h3>Répartition Idéale d'Entraînement pour ce Poste :</h3>
+                <div id="entrainementRatio" class="ratio-box">
+                    </div>
             </div>
         </section>
+
     </main>
 
     <footer>
-        <p>African Union (AfU) © 2026 - Virtuafoot Manager</p>
+        <p>African Union (AfU) © 2026 - Plateforme de l'Entente Virtuafoot</p>
     </footer>
 
     <script src="script.js"></script>

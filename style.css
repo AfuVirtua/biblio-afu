@@ -1,40 +1,50 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f6f9;
-    color: #333;
+    background-color: #f0f2f5;
+    color: #1c1e21;
 }
 
 header {
     background: linear-gradient(135deg, #1b5e20, #2e7d32);
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.4rem;
 }
 
 nav {
     display: flex;
     justify-content: center;
-    background-color: #1b1b1b;
+    background-color: #1a1a1a;
+    gap: 5px;
+    flex-wrap: wrap;
 }
 
-nav button {
+.nav-btn {
     background: none;
     border: none;
-    color: white;
-    padding: 1rem 2rem;
+    color: #ccc;
+    padding: 1rem 1.5rem;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
 }
 
-nav button:hover {
+.nav-btn:hover, .nav-btn.active {
+    color: white;
     background-color: #2e7d32;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
@@ -49,50 +59,96 @@ nav button:hover {
 
 .card {
     background: white;
-    padding: 1.5rem;
+    padding: 1.8rem;
     margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.form-group {
-    margin-bottom: 1rem;
+.intro-card {
+    border-left: 6px solid #2e7d32;
+    background-color: #e8f5e9;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
     font-weight: bold;
+    margin-bottom: 0.3rem;
 }
 
-.form-group input {
+.form-group input, .form-group select {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.6rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 
-.btn-calc {
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.data-table th {
     background-color: #2e7d32;
     color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
 }
 
-.btn-calc:hover {
-    background-color: #1b5e20;
-}
-
-.result-box {
+.results-panel {
     margin-top: 1.5rem;
+    text-align: center;
+}
+
+.result-card {
+    background: #1b5e20;
+    color: white;
     padding: 1rem;
-    background-color: #e8f5e9;
-    border-left: 5px solid #2e7d32;
-    font-size: 1.2rem;
+    border-radius: 8px;
+    display: inline-block;
+    min-width: 250px;
+}
+
+.result-card h1 {
+    margin: 0.5rem 0 0 0;
+    font-size: 2.8rem;
+    color: #ffeb3b;
+}
+
+.ratio-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.ratio-badge {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
     font-weight: bold;
+    color: #2e7d32;
 }
 
 footer {
@@ -100,4 +156,5 @@ footer {
     padding: 1.5rem;
     background-color: #e0e0e0;
     margin-top: 3rem;
+    font-size: 0.9rem;
 }
