@@ -1,3 +1,4 @@
+// Navigation entre les onglets
 function showTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
@@ -8,13 +9,14 @@ function showTab(tabId) {
     }
 }
 
-// Proportions d'entraînement d'après l'Excel AfU
+// Proportions idéales d'entraînement issues de la feuille Excel AfU
 const proportionsEntrainement = {
     "GAC": { "Gardien": "50%", "Défense": "16.67%", "Tacles": "16.67%", "Placement": "16.67%" },
+    "GAC - Relanceur": { "Gardien": "50%", "Tacles": "16.67%", "Placement": "16.67%", "Passes": "16.67%" },
     "DL - Normal": { "Défense": "50%", "Tacles": "25%", "Placement": "25%" },
     "DFC - Normal": { "Défense": "50%", "Tacles": "16.67%", "Placement": "16.67%", "Puissance": "16.67%" },
     "DFC - Participer à la construction": { "Défense": "42.86%", "Tacles": "14.29%", "Puissance": "14.29%", "Passes": "28.57%" },
-    "DFC - Monter sur phases arrêtées": { "Défense": "50%", "Tacles": "16.67%", "Marquage": "33.33%" },
+    "DFC - Monter sur phases arrêtées": { "Défense": "50%", "Tacles": "16.67%", "Puissance": "33.33%" },
     "DFL - Normal": { "Défense": "50%", "Tacles": "16.67%", "Passes": "16.67%", "Vitesse": "16.67%" },
     "DFL - Prendre le couloir": { "Défense": "40%", "Tacles": "20%", "Vitesse": "40%" },
     "MD - Normal": { "Défense": "25%", "Passes": "50%", "Technique": "25%" },
@@ -24,14 +26,18 @@ const proportionsEntrainement = {
     "MOC - Normal": { "Passes": "33.33%", "Technique": "33.33%", "Attaque": "33.33%" },
     "MOC - Attaque": { "Passes": "25%", "Technique": "25%", "Attaque": "50%" },
     "MOC - Défendre": { "Défense": "33.33%", "Passes": "33.33%", "Technique": "33.33%" },
-    "MOL - Normal": { "Passes": "33.33%", "Technique": "33.33%", "Vitesse": "33.33%" },
-    "MOL - Attaque": { "Technique": "33.33%", "Vitesse": "33.33%", "Attaque": "33.33%" },
-    "AC - Normal": { "Puissance": "25%", "Vitesse": "25%", "Attaque": "50%" },
-    "AC - Rester en pointe": { "Puissance": "33.33%", "Attaque": "66.67%" },
-    "AL - Normal": { "Technique": "25%", "Vitesse": "50%", "Attaque": "25%" },
-    "AL - Repiquer au centre": { "Technique": "33.33%", "Vitesse": "33.33%", "Attaque": "33.33%" }
+    "MOL - Normal": { "Passes": "20%", "Technique": "20%", "Vitesse": "40%", "Attaque": "20%" },
+    "MOL - Centrer": { "Passes": "40%", "Technique": "20%", "Vitesse": "20%", "Attaque": "20%" },
+    "MOL - Provoquer": { "Passes": "20%", "Technique": "40%", "Vitesse": "20%", "Attaque": "20%" },
+    "MOL - Déborder": { "Passes": "16.67%", "Technique": "16.67%", "Vitesse": "50%", "Attaque": "16.67%" },
+    "AS - Normal": { "Passes": "20%", "Technique": "20%", "Vitesse": "20%", "Attaque": "40%" },
+    "AC - Normal": { "Technique": "25%", "Vitesse": "25%", "Attaque": "50%" },
+    "AT - Jeu en profondeur": { "Technique": "20%", "Vitesse": "40%", "Attaque": "40%" },
+    "AT - Provoquer": { "Technique": "40%", "Vitesse": "20%", "Attaque": "40%" },
+    "AT - Pivot": { "Puissance": "16.67%", "Passes": "16.67%", "Vitesse": "16.67%", "Technique": "16.67%", "Attaque": "33.33%" }
 };
 
+// Calcul exact de la Note Globale (NG) et affichage des ratios d'entraînement
 function calculerTout() {
     let gar = parseFloat(document.getElementById('st_gar').value) || 0;
     let def = parseFloat(document.getElementById('st_def').value) || 0;
@@ -43,85 +49,133 @@ function calculerTout() {
     let tec = parseFloat(document.getElementById('st_tec').value) || 0;
     let vit = parseFloat(document.getElementById('st_vit').value) || 0;
     let att = parseFloat(document.getElementById('st_att').value) || 0;
-    let end = parseFloat(document.getElementById('st_end').value) || 0;
 
     let poste = document.getElementById('posteSelect').value;
     let ng = 0;
 
-    // FORMULES EXACTES EXCEL AFU
-    if (poste === "GAC") {
-        ng = (gar + def + tac+ pla) / 2;
-    } else if (poste === "DL - Normal") {
-        ng = (def + (tac / 2) + (pla / 2)) / 2;
-    } else if (poste === "DFC - Normal") {
-        ng = (def + (tac / 3) + (pla / 3) + (pui / 3)) / 2;
-    } else if (poste === "DFC - Participer à la construction") {
-        ng = ((def * 0.857) + (tac * 0.285) + (pui * 0.285) + (pas * 0.571)) / 2;
-    } else if (poste === "DFC - Monter sur phases arrêtées") {
-        ng = (def + (tac / 3) + (mar * 0.667)) / 2;
-    } else if (poste === "DFL - Normal") {
-        ng = (def + (tac / 3) + (pas / 3) + (vit / 3)) / 2;
-    } else if (poste === "DFL - Prendre le couloir") {
-        ng = ((def * 0.8) + (tac * 0.4) + (vit * 0.8)) / 2;
-    } else if (poste === "MD - Normal") {
-        ng = ((def * 0.5) + pas + (tec * 0.5)) / 2;
-    } else if (poste === "MD - Défendre") {
-        ng = (def + (pas * 0.5) + (tec * 0.5)) / 2;
-    } else if (poste === "MD - Attaquer") {
-        ng = (pas + (tec * 0.5) + (att * 0.5)) / 2;
-    } else if (poste === "MD - Provoquer") {
-        ng = ((def * 0.5) + (pas * 0.5) + tec) / 2;
-    } else if (poste === "MOC - Normal") {
-        ng = (pas + tec + att) / 3;
-    } else if (poste === "MOC - Attaque") {
-        ng = ((pas * 0.75) + (tec * 0.75) + (att * 1.5)) / 3;
-    } else if (poste === "MOC - Défendre") {
-        ng = (def + pas + tec) / 3;
-    } else if (poste === "MOL - Normal") {
-        ng = (pas + tec + vit) / 3;
-    } else if (poste === "MOL - Attaque") {
-        ng = (tec + vit + att) / 3;
-    } else if (poste === "AC - Normal") {
-        ng = ((pui * 0.5) + (vit * 0.5) + att) / 2;
-    } else if (poste === "AC - Rester en pointe") {
-        ng = ((pui * 0.667) + (att * 1.333)) / 2;
-    } else if (poste === "AL - Normal") {
-        ng = ((tec * 0.5) + vit + (att * 0.5)) / 2;
-    } else if (poste === "AL - Repiquer au centre") {
-        ng = (tec + vit + att) / 3;
+    switch(poste) {
+        // GARDIENS
+        case "GAC":
+            ng = (3 * gar + def + tac + pla) / 6;
+            break;
+        case "GAC - Relanceur":
+            ng = (3 * gar + tac + pla + pas) / 6;
+            break;
+
+        // DÉFENSEURS
+        case "DL - Normal":
+            ng = (2 * def + tac + pla) / 4;
+            break;
+        case "DFC - Normal":
+            ng = (3 * def + tac + pla + pui) / 6;
+            break;
+        case "DFC - Monter sur phases arrêtées":
+            ng = (3 * def + tac + 2 * pui) / 6;
+            break;
+        case "DFC - Participer à la construction":
+            ng = (3 * def + tac + pui + 2 * pas) / 7;
+            break;
+        case "DFL - Normal":
+            ng = (3 * def + tac + pas + vit) / 6;
+            break;
+        case "DFL - Prendre le couloir":
+            ng = (2 * def + tac + 2 * vit) / 5;
+            break;
+
+        // MILIEUX
+        case "MD - Normal":
+            ng = (def + 2 * pas + tec) / 4;
+            break;
+        case "MD - Défendre":
+            ng = (2 * def + pas + tec) / 4;
+            break;
+        case "MD - Attaquer":
+            ng = (2 * pas + tec + att) / 4;
+            break;
+        case "MD - Provoquer":
+            ng = (def + pas + 2 * tec) / 4;
+            break;
+        case "MOC - Normal":
+            ng = (pas + tec + att) / 3;
+            break;
+        case "MOC - Défendre":
+            ng = (def + pas + tec) / 3;
+            break;
+        case "MOC - Attaque":
+            ng = (pas + tec + 2 * att) / 4;
+            break;
+        case "MOL - Normal":
+            ng = (pas + tec + 2 * vit + att) / 5;
+            break;
+        case "MOL - Centrer":
+            ng = (2 * pas + tec + vit + att) / 5;
+            break;
+        case "MOL - Provoquer":
+            ng = (pas + 2 * tec + vit + att) / 5;
+            break;
+        case "MOL - Déborder":
+            ng = (pas + tec + 3 * vit + att) / 6;
+            break;
+
+        // ATTAQUANTS
+        case "AS - Normal":
+            ng = (pas + tec + vit + 2 * att) / 5;
+            break;
+        case "AC - Normal":
+        case "AT Normal":
+            ng = (tec + vit + 2 * att) / 4;
+            break;
+        case "AT - Jeu en profondeur":
+            ng = (tec + 2 * vit + 2 * att) / 5;
+            break;
+        case "AT - Provoquer":
+            ng = (2 * tec + vit + 2 * att) / 5;
+            break;
+        case "AT - Pivot":
+            ng = (pui + pas + vit + tec + 2 * att) / 6;
+            break;
+
+        default:
+            ng = 0;
     }
 
-    ng = ng * (end / 100);
+    // Affichage du résultat exact de la NG
     document.getElementById('ngResult').innerText = ng.toFixed(2);
 
+    // Mise à jour de la boîte des proportions d'entraînement
     let ratioBox = document.getElementById('entrainementRatio');
-    ratioBox.innerHTML = '';
-    
-    let ratios = proportionsEntrainement[poste] || {};
-    for (let [stat, pct] of Object.entries(ratios)) {
-        let badge = document.createElement('div');
-        badge.className = 'ratio-badge';
-        badge.innerText = `${stat} : ${pct}`;
-        ratioBox.appendChild(badge);
+    if (ratioBox) {
+        ratioBox.innerHTML = '';
+        let ratios = proportionsEntrainement[poste] || {};
+        for (let [stat, pct] of Object.entries(ratios)) {
+            let badge = document.createElement('div');
+            badge.className = 'ratio-badge';
+            badge.innerText = `${stat} : ${pct}`;
+            ratioBox.appendChild(badge);
+        }
     }
 }
 
+// Fonction pour charger des valeurs par défaut au démarrage
 function chargerExempleGAC() {
-    document.getElementById('posteSelect').value = "GAC";
-    document.getElementById('st_gar').value = 91;
-    document.getElementById('st_def').value = 29;
-    document.getElementById('st_tac').value = 30;
-    document.getElementById('st_pla').value = 29;
-    document.getElementById('st_mar').value = 1;
-    document.getElementById('st_pui').value = 1;
-    document.getElementById('st_pas').value = 1;
-    document.getElementById('st_tec').value = 1;
-    document.getElementById('st_vit').value = 1;
-    document.getElementById('st_att').value = 1;
-    document.getElementById('st_end').value = 100;
-    calculerTout();
+    if (document.getElementById('posteSelect')) {
+        document.getElementById('posteSelect').value = "GAC";
+        document.getElementById('st_gar').value = 91;
+        document.getElementById('st_def').value = 29;
+        document.getElementById('st_tac').value = 30;
+        document.getElementById('st_pla').value = 29;
+        document.getElementById('st_mar').value = 1;
+        document.getElementById('st_pui').value = 1;
+        document.getElementById('st_pas').value = 1;
+        document.getElementById('st_tec').value = 1;
+        document.getElementById('st_vit').value = 1;
+        document.getElementById('st_att').value = 1;
+        document.getElementById('st_end').value = 100;
+        calculerTout();
+    }
 }
 
+// Initialisation au chargement de la page
 window.onload = function() {
     chargerExempleGAC();
 };
