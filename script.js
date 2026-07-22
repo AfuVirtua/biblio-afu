@@ -37,7 +37,7 @@ const proportionsEntrainement = {
     "AT - Pivot": { "Puissance": "16.67%", "Passes": "16.67%", "Vitesse": "16.67%", "Technique": "16.67%", "Attaque": "33.33%" }
 };
 
-// Calcul exact de la Note Globale (NG) et affichage des ratios d'entraînement
+// Calcul de la NG et affichage des ratios
 function calculerTout() {
     let gar = parseFloat(document.getElementById('st_gar').value) || 0;
     let def = parseFloat(document.getElementById('st_def').value) || 0;
@@ -54,95 +54,36 @@ function calculerTout() {
     let ng = 0;
 
     switch(poste) {
-        // GARDIENS
-        case "GAC":
-            ng = (gar + def + tac + pla) / 2;
-            break;
-        case "GAC - Relanceur":
-            ng = (gar + tac + pla + pas) / 2;
-            break;
-
-        // DÉFENSEURS
-        case "DL - Normal":
-            ng = (2 * def + tac + pla) / 4;
-            break;
-        case "DFC - Normal":
-            ng = (3 * def + tac + pla + pui) / 6;
-            break;
-        case "DFC - Monter sur phases arrêtées":
-            ng = (3 * def + tac + 2 * pui) / 6;
-            break;
-        case "DFC - Participer à la construction":
-            ng = (3 * def + tac + pui + 2 * pas) / 7;
-            break;
-        case "DFL - Normal":
-            ng = (3 * def + tac + pas + vit) / 6;
-            break;
-        case "DFL - Prendre le couloir":
-            ng = (2 * def + tac + 2 * vit) / 5;
-            break;
-
-        // MILIEUX
-        case "MD - Normal":
-            ng = (def + 2 * pas + tec) / 4;
-            break;
-        case "MD - Défendre":
-            ng = (2 * def + pas + tec) / 4;
-            break;
-        case "MD - Attaquer":
-            ng = (2 * pas + tec + att) / 4;
-            break;
-        case "MD - Provoquer":
-            ng = (def + pas + 2 * tec) / 4;
-            break;
-        case "MOC - Normal":
-            ng = (pas + tec + att) / 3;
-            break;
-        case "MOC - Défendre":
-            ng = (def + pas + tec) / 3;
-            break;
-        case "MOC - Attaque":
-            ng = (pas + tec + 2 * att) / 4;
-            break;
-        case "MOL - Normal":
-            ng = (pas + tec + 2 * vit + att) / 5;
-            break;
-        case "MOL - Centrer":
-            ng = (2 * pas + tec + vit + att) / 5;
-            break;
-        case "MOL - Provoquer":
-            ng = (pas + 2 * tec + vit + att) / 5;
-            break;
-        case "MOL - Déborder":
-            ng = (pas + tec + 3 * vit + att) / 6;
-            break;
-
-        // ATTAQUANTS
-        case "AS - Normal":
-            ng = (pas + tec + vit + 2 * att) / 5;
-            break;
+        case "GAC": ng = (gar + def + tac + pla) / 2; break;
+        case "GAC - Relanceur": ng = (gar + tac + pla + pas) / 2; break;
+        case "DL - Normal": ng = (def + tac + pla) / 2; break;
+        case "DFC - Normal": ng = (def + tac + pla + pui) / 2; break;
+        case "DFC - Monter sur phases arrêtées": ng = (3 * def + tac + 2 * pui) / 6; break;
+        case "DFC - Participer à la construction": ng = (3 * def + tac + pui + 2 * pas) / 7; break;
+        case "DFL - Normal": ng = (3 * def + tac + pas + vit) / 6; break;
+        case "DFL - Prendre le couloir": ng = (2 * def + tac + 2 * vit) / 5; break;
+        case "MD - Normal": ng = (def + 2 * pas + tec) / 4; break;
+        case "MD - Défendre": ng = (2 * def + pas + tec) / 4; break;
+        case "MD - Attaquer": ng = (2 * pas + tec + att) / 4; break;
+        case "MD - Provoquer": ng = (def + pas + 2 * tec) / 4; break;
+        case "MOC - Normal": ng = (pas + tec + att) / 3; break;
+        case "MOC - Attaque": ng = (pas + tec + 2 * att) / 4; break;
+        case "MOC - Défendre": ng = (def + pas + tec) / 3; break;
+        case "MOL - Normal": ng = (pas + tec + 2 * vit + att) / 5; break;
+        case "MOL - Centrer": ng = (2 * pas + tec + vit + att) / 5; break;
+        case "MOL - Provoquer": ng = (pas + 2 * tec + vit + att) / 5; break;
+        case "MOL - Déborder": ng = (pas + tec + 3 * vit + att) / 6; break;
+        case "AS - Normal": ng = (pas + tec + vit + 2 * att) / 5; break;
         case "AC - Normal":
-        case "AT Normal":
-            ng = (tec + vit + 2 * att) / 4;
-            break;
-        case "AT - Jeu en profondeur":
-            ng = (tec + 2 * vit + 2 * att) / 5;
-            break;
-        case "AT - Provoquer":
-            ng = (2 * tec + vit + 2 * att) / 5;
-            break;
-        case "AT - Pivot":
-            ng = (pui + pas + vit + tec + 2 * att) / 6;
-            break;
-
-        default:
-            ng = 0;
+        case "AT Normal": ng = (tec + vit + 2 * att) / 4; break;
+        case "AT - Jeu en profondeur": ng = (tec + 2 * vit + 2 * att) / 5; break;
+        case "AT - Provoquer": ng = (2 * tec + vit + 2 * att) / 5; break;
+        case "AT - Pivot": ng = (pui + pas + vit + tec + 2 * att) / 6; break;
+        default: ng = 0;
     }
 
-    // Affichage du résultat exact de la NG
     document.getElementById('ngResult').innerText = ng.toFixed(2);
 
-    // Mise à jour de la boîte des proportions d'entraînement
     let ratioBox = document.getElementById('entrainementRatio');
     if (ratioBox) {
         ratioBox.innerHTML = '';
@@ -156,7 +97,6 @@ function calculerTout() {
     }
 }
 
-// Fonction pour charger des valeurs par défaut au démarrage
 function chargerExempleGAC() {
     if (document.getElementById('posteSelect')) {
         document.getElementById('posteSelect').value = "GAC";
@@ -175,7 +115,6 @@ function chargerExempleGAC() {
     }
 }
 
-// Initialisation au chargement de la page
 window.onload = function() {
     chargerExempleGAC();
 };

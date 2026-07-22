@@ -162,3 +162,17 @@ footer {
     margin-top: 3rem;
     font-size: 0.9rem;
 }
+/* Badges de postes IS */
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: white;
+    display: inline-block;
+}
+
+.badge-gk { background-color: #f57c00; }  /* Gardien (Orange) */
+.badge-def { background-color: #1976d2; } /* Défense (Bleu) */
+.badge-mid { background-color: #388e3c; } /* Milieu (Vert) */
+.badge-att { background-color: #d32f2f; } /* Attaque (Rouge) */
