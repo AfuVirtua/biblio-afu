@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblio AfU - African Union</title>
-      <!-- ===== FAVICON ===== -->
-    <link rel="icon" type="image/png" href="logo_afu.jpg">
-    <link rel="shortcut icon" type="image/jpg" href="logo_afu.jpg">
-    <!-- Pour les appareils Apple -->
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/jpeg" href="logo_afu.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="logo_afu.jpg">
     <link rel="apple-touch-icon" href="logo_afu.jpg">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,7 +27,8 @@
     </header>
 
     <nav>
-        <button class="nav-btn active" onclick="showTab('gestion')" data-i18n="nav-gestion">📊 Gestion & Infrastructures</button>
+        <button class="nav-btn active" onclick="showTab('accueil')" data-i18n="nav-accueil">🏠 Accueil</button>
+        <button class="nav-btn" onclick="showTab('gestion')" data-i18n="nav-gestion">📊 Gestion & Infrastructures</button>
         <button class="nav-btn" onclick="showTab('consignes')" data-i18n="nav-consignes">📜 Consignes Individuelles</button>
         <button class="nav-btn" onclick="showTab('tactique')" data-i18n="nav-tactique">⚽ Tactiques & Tutos Lahi</button>
         <button class="nav-btn" onclick="showTab('is')" data-i18n="nav-is">🦁 Sélection IS</button>
@@ -36,9 +38,63 @@
     <main class="container">
 
         <!-- ============================================================ -->
+        <!-- SECTION ACCUEIL                                               -->
+        <!-- ============================================================ -->
+        <section id="accueil" class="tab-content active">
+            <h2 data-i18n="accueil-title">🏠 Bienvenue sur Biblio AfU</h2>
+            
+            <div class="card" style="text-align: center; padding: 0; overflow: hidden;">
+                <img src="https://zupimages.net/up/24/09/3251.gif" alt="African Union Banner" style="width: 100%; max-height: 300px; object-fit: cover;">
+            </div>
+
+            <div class="card intro-card" style="border-left-color: #ff9800; background-color: #fff8e1;">
+                <p style="font-size: 1.05rem; line-height: 1.8;">
+                    L'Entente <strong>AFRICAN UNION</strong> est un regroupement de managers passionnés qui partagent l'amour du football et l'ambition de réussir sur le management virtuel d'un club. Nous sommes fiers de <strong>notre identité africaine</strong> et croyons en la force de l'unité pour atteindre le sommet.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.8;">
+                    Notre principale mission est de créer une communauté dynamique, compétitive et respectueuse, où chaque manager contribue au succès collectif. Ensemble, nous aspirons à dominer les compétitions et à élever le niveau de jeu pour représenter dignement l'Afrique dans le monde de Virtuafoot.
+                </p>
+            </div>
+
+            <div class="card" style="border-left: 6px solid #2e7d32; background-color: #e8f5e9;">
+                <h3 style="color: #1b5e20; text-align: center; font-size: 1.5rem;">Nos Valeurs</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                        <h4 style="color: #2e7d32; margin-top: 0;">🤝 Solidarité</h4>
+                        <p style="margin: 0; line-height: 1.6;">Nous croyons en l'importance de soutenir les uns les autres, que ce soit par des conseils tactiques, des échanges de joueurs ou des encouragements lors des matchs cruciaux.</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                        <h4 style="color: #1976d2; margin-top: 0;">⭐ Respect</h4>
+                        <p style="margin: 0; line-height: 1.6;">Chaque manager, quel que soit son niveau d'expérience, est respecté au sein de notre entente. Nous encourageons la diversité des styles de jeu et favorisons un environnement où chacun peut s'exprimer librement.</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                        <h4 style="color: #d32f2f; margin-top: 0;">🔥 Enthousiasme</h4>
+                        <p style="margin: 0; line-height: 1.6;">La passion pour le jeu est le ciment qui nous unit. Nous encourageons l'enthousiasme, la convivialité, la créativité tactique et l'engagement dans chaque aspect de Virtuafoot.</p>
+                    </div>
+                </div>
+                <p style="text-align: center; font-size: 1.1rem; margin-top: 1.5rem; font-weight: bold; color: #1b5e20;">
+                    Notre entente est notre identité! Notre fierté!! Ensemble, construisons une force imparable dans le monde Vfien. Que la victoire soit notre destin commun !
+                </p>
+            </div>
+
+            <div class="card" style="text-align: center; padding: 0; overflow: hidden; margin-top: 0;">
+                <img src="https://zupimages.net/up/24/09/fez5.gif" alt="African Union Banner 2" style="width: 100%; max-height: 200px; object-fit: cover;">
+            </div>
+
+            <div class="card intro-card" style="border-left-color: #e65100; background-color: #fff3e0; text-align: center;">
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Si vous partagez notre passion pour le football et notre engagement envers l'excellence dans la gestion virtuelle de clubs, <strong>rejoignez-nous dès aujourd'hui !</strong> Ensemble, nous construirons une communauté dynamique, compétitive et respectueuse, représentant fièrement l'Afrique dans le monde de Virtuafoot.
+                </p>
+                <p style="font-size: 1.2rem; font-weight: bold; color: #e65100; margin-top: 0.5rem;">
+                    Ensemble, nous sommes plus forts ! 💪🌍
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
         <!-- SECTION GESTION                                               -->
         <!-- ============================================================ -->
-        <section id="gestion" class="tab-content active">
+        <section id="gestion" class="tab-content">
             <h2 data-i18n="gestion-title">📊 Stratégie, Gestion Financière & Infrastructures</h2>
             
             <div class="card intro-card">

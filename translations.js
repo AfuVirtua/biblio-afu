@@ -386,7 +386,17 @@ const translations = {
         'stat-vitesse': 'Speed:',
         'stat-attaque': 'Attack:',
         'stat-endurance': 'Stamina:',
-        
+        // Dans la section FR (ajouter après 'nav-calculateur')
+'nav-accueil': '🏠 Accueil',
+
+// Dans la section EN (ajouter après 'nav-calculateur')
+'nav-accueil': '🏠 Home',
+
+// Dans la section FR (ajouter après 'footer')
+'accueil-title': '🏠 Bienvenue sur Biblio AfU',
+
+// Dans la section EN (ajouter après 'footer')
+'accueil-title': '🏠 Welcome to Biblio AfU',
         // ===== FOOTER =====
         'footer': 'African Union (AfU) © 2026 - Virtuafoot Alliance Platform'
     }
