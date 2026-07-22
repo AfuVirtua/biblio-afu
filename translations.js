@@ -397,6 +397,21 @@ const translations = {
 
 // Dans la section EN (ajouter après 'footer')
 'accueil-title': '🏠 Welcome to Biblio AfU',
+// Dans la section FR (après 'nav-accueil')
+'nav-reglement': '📜 Règlement Intérieur',
+'nav-palmares': '🏆 Palmarès',
+
+// Dans la section EN (après 'nav-accueil')
+'nav-reglement': '📜 Internal Rules',
+'nav-palmares': '🏆 History',
+
+// Dans la section FR (après 'accueil-title')
+'reglement-title': '📜 Règlement Intérieur',
+'palmares-title': '🏆 Palmarès de l\'African Union',
+
+// Dans la section EN (après 'accueil-title')
+'reglement-title': '📜 Internal Rules',
+'palmares-title': '🏆 African Union History',
         // ===== FOOTER =====
         'footer': 'African Union (AfU) © 2026 - Virtuafoot Alliance Platform'
     }
