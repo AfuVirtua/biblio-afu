@@ -56,10 +56,10 @@ function calculerTout() {
     switch(poste) {
         // GARDIENS
         case "GAC":
-            ng = (3 * gar + def + tac + pla) / 6;
+            ng = (gar + def + tac + pla) / 2;
             break;
         case "GAC - Relanceur":
-            ng = (3 * gar + tac + pla + pas) / 6;
+            ng = (gar + tac + pla + pas) / 2;
             break;
 
         // DÉFENSEURS

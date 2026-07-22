@@ -13,18 +13,19 @@
     </header>
 
     <nav>
-        <button class="nav-btn active" onclick="showTab('gestion')">📊 Gestion du Club</button>
+        <button class="nav-btn active" onclick="showTab('gestion')">📊 Gestion & Infrastructures</button>
         <button class="nav-btn" onclick="showTab('consignes')">📜 Consignes Individuelles</button>
-        <button class="nav-btn" onclick="showTab('tactique')">⚽ Tactiques & Styles</button>
+        <button class="nav-btn" onclick="showTab('tactique')">⚽ Tactiques & Tuto MDM</button>
         <button class="nav-btn" onclick="showTab('calculateur')">🧮 Calculateur Excel AfU</button>
     </nav>
 
     <main class="container">
 
         <section id="gestion" class="tab-content active">
-            <h2>📊 Stratégie & Gestion Financière du Club (par Sam)</h2>
+            <h2>📊 Stratégie, Gestion Financière & Infrastructures</h2>
+            
             <div class="card intro-card">
-                <p><strong>Les clés de la réussite sur Virtuafoot :</strong> La Patience, La Formation et l'Intelligence. Tout tourne autour de la gestion de votre trésorerie (banque).</p>
+                <p><strong>Les clés de la réussite sur Virtuafoot :</strong> La Patience, La Formation et l'Intelligence. Tout tourne autour de la gestion de votre trésorerie (banque) et de l'élévation de vos infrastructures.</p>
             </div>
 
             <div class="grid-2">
@@ -32,7 +33,7 @@
                     <h3>💵 A. Les Revenus de Matchs</h3>
                     <ul>
                         <li><strong>A1. Matchs amicaux à domicile :</strong> Organisez vos matchs amicaux à domicile au moins 1 heure à l'avance pour laisser le temps aux autres clubs d'acheter vos droits TV.</li>
-                        <li><strong>A2. Interviews d'après-match :</strong> Rejoignez un championnat pour faire l'interview après chaque rencontre à domicile. L'objectif initial est de cumuler les gains.</li>
+                        <li><strong>A2. Interviews d'après-match :</strong> Rejoignez un championnat pour faire l'interview après chaque rencontre à domicile afin de cumuler les gains.</li>
                     </ul>
                 </div>
 
@@ -47,13 +48,74 @@
             </div>
 
             <div class="card">
-                <h3>🏆 C. Gestion de l'Équipe en Compétition</h3>
+                <h3>🏆 C. Philosophie Équipe A / Équipe B</h3>
                 <p>Adoptez la philosophie <strong>Équipe A (Compétitive)</strong> + <strong>Équipe B (100% Formation)</strong> :</p>
                 <ul>
                     <li>Achetez vos futurs cadres très jeunes (18 ans, potentiel 75) à 3M-5M au lieu d'investir 10M+ sur des joueurs de 27 ans.</li>
                     <li>Formez-les vous-même. Lorsqu'ils arrivent à maturité (27 ans environ), faites monter l’Équipe B et revendez l’Équipe A avec une forte plus-value.</li>
                     <li>Vos joueurs formés ensemble développeront une <strong>Affinité maximale</strong>, facteur déterminant en compétition.</li>
                 </ul>
+            </div>
+
+            <div class="card">
+                <h3>🏟️ Couts et Amélioration des Infrastructures</h3>
+                <p>Grille de progression des infrastructures de votre club :</p>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Infrastructures</th>
+                               <th>Niveau 1</th>
+                                <th>Niveau 2</th>
+                                <th>Niveau 3</th>
+                                <th>Niveau 4</th>
+                                <th>Niveau 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Stade</strong></td>
+                                <td>Gratuit (1 000 p.)</td>
+                                <td>1 M€ (5 000 p.)</td>
+                                <td>2.5 M€ (10 000 p.)</td>
+                                <td>5 M€ (25 000 p.)</td>
+                                <td>10 M€ (50 000 p.)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Boutique</strong></td>
+                                <td>—</td>
+                                <td>500 k€</td>
+                                <td>1 M€</td>
+                                <td>2.5 M€</td>
+                                <td>5 M€</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Centre de Formation</strong></td>
+                                <td>—</td>
+                                <td>1 M€</td>
+                                <td>2 M€</td>
+                                <td>5 M€</td>
+                                <td>10 M€</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Centre d'Entraînement</strong></td>
+                                <td>—</td>
+                                <td>1 M€</td>
+                                <td>2 M€</td>
+                                <td>5 M€</td>
+                                <td>10 M€</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Centre Médical</strong></td>
+                                <td>—</td>
+                                <td>500 k€</td>
+                                <td>1 M€</td>
+                                <td>2.5 M€</td>
+                                <td>5 M€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
@@ -235,7 +297,31 @@
         </section>
 
         <section id="tactique" class="tab-content">
-            <h2>⚽ Analyse Tactique, Ratios & Styles de Jeu</h2>
+            <h2>⚽ Analyse Tactique & Tutoriel MDM</h2>
+
+            <div class="card intro-card">
+                <h3>💡 Tuto : Débloquer le Moteur De Match (MDM) par Lahi</h3>
+                <p><strong>La règle d'or :</strong> Ne JAMAIS attaquer et défendre en même temps sur le même côté ! (Ex: Attaquer dans l'axe et bloquer l'axe, ou attaquer à droite et bloquer à droite). Cela bloque le MDM et provoque des buts évitables.</p>
+                <hr>
+                <h4>Combinaisons Tactiques Recommandées :</h4>
+                <ul>
+                    <li><strong>Si vous attaquez sur les Ailes :</strong>
+                        <ul>
+                            <li>Options Défense : Bloquer l'axe, Défendre bas, Bloquer côté droit, Bloquer côté gauche, Pressing haut, ou Normal.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Si vous attaquez dans l'Axe :</strong>
+                        <ul>
+                            <li>Options Défense : Bloquer les couloirs, Défendre bas, Bloquer côté gauche, Bloquer côté droit, Pressing haut, ou Normal.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Si vous attaquez Côté Droit :</strong>
+                        <ul>
+                            <li>Option Défense idéale : Bloquer Côté Gauche (et inversement).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
             <div class="card">
                 <h3>🎯 Impact des Styles de Jeu</h3>
@@ -293,12 +379,13 @@
         </section>
 
         <section id="calculateur" class="tab-content">
-            <h2>🧮 Calculateur de NG & Proportions d'Entraînement</h2>
+            <h2>🧮 Calculateur de NG Brute & Proportions d'Entraînement</h2>
             <div class="card">
                 <div class="form-group">
                     <label for="posteSelect">Sélectionnez le Poste & Consigne :</label>
                     <select id="posteSelect" onchange="calculerTout()">
                         <option value="GAC">GAC (Gardien)</option>
+                        <option value="GAC - Relanceur">GAC - Relanceur</option>
                         <option value="DL - Normal">DL - Normal</option>
                         <option value="DFC - Normal">DFC - Normal</option>
                         <option value="DFC - Participer à la construction">DFC - Participer à la construction</option>
@@ -313,11 +400,14 @@
                         <option value="MOC - Attaque">MOC - Attaque</option>
                         <option value="MOC - Défendre">MOC - Défendre</option>
                         <option value="MOL - Normal">MOL - Normal</option>
-                        <option value="MOL - Attaque">MOL - Attaque</option>
-                        <option value="AC - Normal">AC - Normal</option>
-                        <option value="AC - Rester en pointe">AC - Rester en pointe</option>
-                        <option value="AL - Normal">AL - Normal</option>
-                        <option value="AL - Repiquer au centre">AL - Repiquer au centre</option>
+                        <option value="MOL - Centrer">MOL - Centrer</option>
+                        <option value="MOL - Provoquer">MOL - Provoquer</option>
+                        <option value="MOL - Déborder">MOL - Déborder</option>
+                        <option value="AS - Normal">AS - Normal</option>
+                        <option value="AC - Normal">AT - Normal</option>
+                        <option value="AT - Jeu en profondeur">AT - Jeu en profondeur</option>
+                        <option value="AT - Provoquer">AT - Provoquer</option>
+                        <option value="AT - Pivot">AT - Pivot</option>
                     </select>
                 </div>
 
@@ -338,8 +428,8 @@
 
                 <div class="results-panel">
                     <div class="result-card">
-                        <span>Note Globale (NG) Calculée :</span>
-                        <h1 id="ngResult">90.00</h1>
+                        <span>Note Globale Brute (NG) :</span>
+                        <h1 id="ngResult">88.67</h1>
                     </div>
                 </div>
 
