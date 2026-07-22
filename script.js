@@ -3,7 +3,9 @@ function showTab(tabId) {
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
     
     document.getElementById(tabId).classList.add('active');
-    event.currentTarget.classList.add('active');
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
 }
 
 // Proportions d'entraînement d'après l'Excel AfU
@@ -46,7 +48,7 @@ function calculerTout() {
     let poste = document.getElementById('posteSelect').value;
     let ng = 0;
 
-    // FORMULES EXACTES TIRÉES DE L'EXCEL AFU
+    // FORMULES EXACTES EXCEL AFU
     if (poste === "GAC") {
         ng = (gar + (def / 3) + (tac / 3) + (pla / 3)) / 2;
     } else if (poste === "DL - Normal") {
@@ -89,12 +91,9 @@ function calculerTout() {
         ng = (tec + vit + att) / 3;
     }
 
-    // Prise en compte du coefficient d'endurance
     ng = ng * (end / 100);
-
     document.getElementById('ngResult').innerText = ng.toFixed(2);
 
-    // Mettre à jour la boîte des proportions d'entraînement
     let ratioBox = document.getElementById('entrainementRatio');
     ratioBox.innerHTML = '';
     
@@ -107,7 +106,6 @@ function calculerTout() {
     }
 }
 
-// Remplissage avec des valeurs de démonstration conformes (GAC -> NG 90)
 function chargerExempleGAC() {
     document.getElementById('posteSelect').value = "GAC";
     document.getElementById('st_gar').value = 91;

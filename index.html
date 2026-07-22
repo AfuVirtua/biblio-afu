@@ -14,6 +14,7 @@
 
     <nav>
         <button class="nav-btn active" onclick="showTab('gestion')">📊 Gestion du Club</button>
+        <button class="nav-btn" onclick="showTab('consignes')">📜 Consignes Individuelles</button>
         <button class="nav-btn" onclick="showTab('tactique')">⚽ Tactiques & Styles</button>
         <button class="nav-btn" onclick="showTab('calculateur')">🧮 Calculateur Excel AfU</button>
     </nav>
@@ -31,7 +32,7 @@
                     <h3>💵 A. Les Revenus de Matchs</h3>
                     <ul>
                         <li><strong>A1. Matchs amicaux à domicile :</strong> Organisez vos matchs amicaux à domicile au moins 1 heure à l'avance pour laisser le temps aux autres clubs d'acheter vos droits TV.</li>
-                        <li><strong>A2. Interviews d'après-match :</strong> Rejoignez un championnat pour faire l'interview après chaque rencontre à domicile. L'objectif initial n'est pas forcément de tout gagner, mais de cumuler les gains.</li>
+                        <li><strong>A2. Interviews d'après-match :</strong> Rejoignez un championnat pour faire l'interview après chaque rencontre à domicile. L'objectif initial est de cumuler les gains.</li>
                     </ul>
                 </div>
 
@@ -39,8 +40,8 @@
                     <h3>🔁 B. Les Revenus de Transferts</h3>
                     <ul>
                         <li><strong>B1. Formation de jeunes en prêt :</strong> Prenez 6 jeunes en prêt avec prime de formation (minimum 100k/point). Priorisez les coefficients de progression élevés.</li>
-                        <li><strong>B2. Achat / Revente rapide :</strong> Libérez les places restantes (ex: 26 places) pour faire du trading régulier. Objectif : 1M/jour de bénéfice = 60M+/saison.</li>
-                        <li><strong>B3. Achat de jeunes à 1 saison de la fin :</strong> Achetez aux enchères des jeunes presque formés, terminez leur formation et revendez-les plus cher tout en profitant de leur rendement sur le terrain.</li>
+                        <li><strong>B2. Achat / Revente rapide :</strong> Libérez les places restantes pour faire du trading régulier. Objectif : 1M/jour de bénéfice = 60M+/saison.</li>
+                        <li><strong>B3. Achat de jeunes à 1 saison de la fin :</strong> Achetez aux enchères des jeunes presque formés, terminez leur formation et revendez-les plus cher.</li>
                     </ul>
                 </div>
             </div>
@@ -50,9 +51,186 @@
                 <p>Adoptez la philosophie <strong>Équipe A (Compétitive)</strong> + <strong>Équipe B (100% Formation)</strong> :</p>
                 <ul>
                     <li>Achetez vos futurs cadres très jeunes (18 ans, potentiel 75) à 3M-5M au lieu d'investir 10M+ sur des joueurs de 27 ans.</li>
-                    <li>Formez-les vous-même. Lorsqu'ils arrivent à maturité (27 ans environ), faites monter l'Équipe B pour prendre le relais et revendez l'Équipe A avec une forte plus-value.</li>
+                    <li>Formez-les vous-même. Lorsqu'ils arrivent à maturité (27 ans environ), faites monter l’Équipe B et revendez l’Équipe A avec une forte plus-value.</li>
                     <li>Vos joueurs formés ensemble développeront une <strong>Affinité maximale</strong>, facteur déterminant en compétition.</li>
                 </ul>
+            </div>
+        </section>
+
+        <section id="consignes" class="tab-content">
+            <h2>📜 Tutoriel : Consignes Individuelles & Impacts</h2>
+            <div class="card intro-card">
+                <p>Le terrain de football est divisé en 9 sections (Défense, Milieu, Attaque × Axe, Gauche, Droite). Les consignes individuelles déterminent l'impact de chaque joueur sur ces zones et définissent les caractéristiques clés à entraîner.</p>
+            </div>
+
+            <div class="card">
+                <h3>🧤 Gardiens (GAC)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Consigne</th>
+                            <th>Répartition Note en Match</th>
+                            <th>Poids des Caractéristiques</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>GAC Normal</strong></td>
+                            <td>Défense 100%</td>
+                            <td>Gardien 3 | Défense 1 | Tacles 1 | Placement 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GAC Relanceur</strong></td>
+                            <td>Défense 80% - Milieu 20%</td>
+                            <td>Gardien 3 | Tacles 1 | Placement 1 | Passes 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>🛡️ Défenseurs (DL / DFL / DFC)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Poste / Consigne</th>
+                            <th>Répartition Note en Match</th>
+                            <th>Poids des Caractéristiques</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DL Normal</strong></td>
+                            <td>Défense 100%</td>
+                            <td>Défense 2 | Tacles 1 | Placement 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DFL Normal</strong></td>
+                            <td>Défense 66% - Milieu 17% - Attaque 17%</td>
+                            <td>Défense 3 | Tacles 1 | Passes 1 | Vitesse 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DFL Prendre le couloir</strong></td>
+                            <td>Défense 60% - Attaque 40%</td>
+                            <td>Défense 2 | Tacles 1 | Vitesse 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DFC Normal</strong></td>
+                            <td>Défense 100%</td>
+                            <td>Défense 3 | Tacles 1 | Placement 1 | Puissance 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DFC Phases Arrêtées</strong></td>
+                            <td>Défense 66% - Attaque 33%</td>
+                            <td>Défense 3 | Tacles 1 | Puissance 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DFC Construction</strong></td>
+                            <td>Défense 70% - Milieu 30%</td>
+                            <td>Défense 3 | Tacles 1 | Puissance 1 | Passes 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>⚙️ Milieux (MD / MOC / MOL)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Poste / Consigne</th>
+                            <th>Répartition Note en Match</th>
+                            <th>Poids des Caractéristiques</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MD Normal</strong></td>
+                            <td>Défense 25% - Milieu 75%</td>
+                            <td>Défense 1 | Passes 2 | Technique 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MD Provoquer</strong></td>
+                            <td>Défense 25% - Milieu 75%</td>
+                            <td>Défense 1 | Passes 1 | Technique 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MD Défendre</strong></td>
+                            <td>Défense 50% - Milieu 50%</td>
+                            <td>Défense 2 | Passes 1 | Technique 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MD Attaquer</strong></td>
+                            <td>Milieu 50% - Attaque 50%</td>
+                            <td>Passes 2 | Technique 1 | Attaque 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MOC Normal</strong></td>
+                            <td>Milieu 75% - Attaque 25%</td>
+                            <td>Passes 1 | Technique 1 | Attaque 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MOC Défendre</strong></td>
+                            <td>Défense 33% - Milieu 66%</td>
+                            <td>Défense 1 | Passes 1 | Technique 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MOC Attaquer</strong></td>
+                            <td>Milieu 50% - Attaque 50%</td>
+                            <td>Passes 1 | Technique 1 | Attaque 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MOL Normal / Centrer / Provoquer</strong></td>
+                            <td>Milieu 80% - Attaque 20%</td>
+                            <td>P1-T1-V2-A1 (Norm) / P2-T1-V1-A1 (Centr) / P1-T2-V1-A1 (Prov)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MOL Déborder</strong></td>
+                            <td>Milieu 83% - Attaque 17%</td>
+                            <td>Passes 1 | Technique 1 | Vitesse 3 | Attaque 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>⚽ Attaquants (AS / AT)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Poste / Consigne</th>
+                            <th>Répartition Note en Match</th>
+                            <th>Poids des Caractéristiques</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AS Normal (Soutien)</strong></td>
+                            <td>Milieu 20% - Attaque 80%</td>
+                            <td>Passes 1 | Technique 1 | Vitesse 1 | Attaque 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AT Normal</strong></td>
+                            <td>Attaque 100%</td>
+                            <td>Technique 1 | Vitesse 1 | Attaque 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AT Jeu en profondeur</strong></td>
+                            <td>Attaque 100%</td>
+                            <td>Technique 1 | Vitesse 2 | Attaque 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AT Provoquer</strong></td>
+                            <td>Attaque 100%</td>
+                            <td>Technique 2 | Vitesse 1 | Attaque 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AT Attaquant en pivot</strong></td>
+                            <td>Attaque 100%</td>
+                            <td>Puissance 1 | Passes 1 | Vitesse 1 | Technique 1 | Attaque 2</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
@@ -88,7 +266,7 @@
                         <tr>
                             <td><strong>Jeu Direct</strong></td>
                             <td>Attaque</td>
-                            <td>100 Axe, 50 Gauche, 50 Droite. <em>(Fortement recommandé en attaque)</em></td>
+                            <td>100 Axe, 50 Gauche, 50 Droite. <em>(Recommandé en attaque)</em></td>
                         </tr>
                         <tr>
                             <td><strong>Contre-Attaques</strong></td>
@@ -108,8 +286,8 @@
                 <h3>📈 Utilisation des Ratios en Match</h3>
                 <p>Un but provient presque toujours de la domination d'une zone spécifique du terrain (Milieu / Attaque vs Défense adverse) :</p>
                 <ul>
-                    <li><strong>Blocage de l'Axe & Perforation des Ailes :</strong> Si l'adversaire force l'axe, orientez votre compo pour bloquer l'axe défensif tout en dominant les ailes en attaque pour marquer.</li>
-                    <li><strong>Réaction aux ajustements :</strong> Suivez les statistiques de possession et de XG (Expected Goals) à la mi-temps pour corriger vos consignes en direct.</li>
+                    <li><strong>Blocage de l'Axe & Perforation des Ailes :</strong> Si l'adversaire force l'axe, orientez votre compo pour bloquer l'axe défensif tout en dominant les ailes en attaque.</li>
+                    <li><strong>Réaction aux ajustements :</strong> Suivez la possession et les XG à la mi-temps pour corriger vos consignes.</li>
                 </ul>
             </div>
         </section>
