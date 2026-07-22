@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BIBLIO AFU - STYLES COMPLETS (VERSION CORRIGÉE)
+   BIBLIO AFU - STYLES COMPLETS
    ========================================================================== */
 
 /* ----- RESET & BASE ----- */
@@ -199,6 +199,10 @@ nav {
     background-color: #e8f5e9;
 }
 
+.data-table tfoot tr {
+    background-color: #e8f5e9 !important;
+}
+
 /* ----- BADGES (pour les postes IS) ----- */
 .badge {
     padding: 4px 8px;
@@ -254,15 +258,11 @@ nav {
     box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
 }
 
-/* ================================================================
-   CORRECTION POUR LES CHAMPS NUMBER (suppression des flèches)
-   ================================================================ */
-/* Firefox */
+/* Suppression des flèches sur les champs number */
 input[type="number"] {
     -moz-appearance: textfield;
 }
 
-/* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -335,7 +335,6 @@ footer {
    RESPONSIVE
    ================================================================ */
 
-/* Tablettes et petits écrans */
 @media (max-width: 768px) {
     .header-title h1 {
         font-size: 1.8rem;
@@ -396,7 +395,6 @@ footer {
     }
 }
 
-/* Mobiles */
 @media (max-width: 480px) {
     .header-title h1 {
         font-size: 1.4rem;

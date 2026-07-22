@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BIBLIO AFU - SCRIPT PRINCIPAL (VERSION AVEC CALCUL NG CORRECT)
+   BIBLIO AFU - SCRIPT PRINCIPAL (AVEC CALCUL NG CORRECT)
    ========================================================================== */
 
 // 1. VARIABLE GLOBALE DE LANGUE
@@ -100,7 +100,7 @@ function showTab(tabId) {
     });
 }
 
-// 7. FONCTION DE CALCUL DE LA NG - MÉTHODE CORRECTE
+// 7. FONCTION DE CALCUL DE LA NG - MÉTHODE CORRECTE (basée sur l'Excel)
 function calculerTout() {
     // Récupération des valeurs des caractéristiques
     const stats = {
@@ -124,85 +124,62 @@ function calculerTout() {
     // Récupérer les coefficients pour ce poste
     const coeffs = coefficients[poste] || {};
     
-    // Étape 1: Calculer la somme des stats utiles pondérées
-    let sommeStats = 0;
-    let sommeCoeffs = 0;
-    const statsUtiles = {};
-    
-    for (const [statName, coeff] of Object.entries(coeffs)) {
-        const statKey = statMapping[statName];
-        if (statKey && stats[statKey] !== undefined) {
-            statsUtiles[statKey] = stats[statKey];
-            sommeStats += stats[statKey];
-            sommeCoeffs += coeff;
-        }
-    }
-    
-    // Étape 2: Calculer la NG idéale (la plus haute stat * 2)
-    // La NG maximale est limitée par la stat la plus élevée
-    // Pour un GAC avec Gardien à 91, la NG max est 91 * (6/2) = 273? Non.
-    // En réalité, la NG = (somme des min(stat_réelle, stat_idéale)) / 2
-    
-    // Étape 3: Calculer les valeurs idéales basées sur la stat la plus élevée
-    const statKeys = Object.keys(statsUtiles);
+    // Récupérer les stats utiles pour ce poste
+    const statKeys = Object.keys(coeffs);
     if (statKeys.length === 0) {
         document.getElementById('ngResult').innerText = '0.00';
         return;
     }
     
+    // Calculer la somme des stats utiles
+    let totalStats = 0;
+    const statValues = {};
+    for (const statName of statKeys) {
+        const statKey = statMapping[statName];
+        if (statKey && stats[statKey] !== undefined) {
+            const value = stats[statKey];
+            statValues[statName] = value;
+            totalStats += value;
+        }
+    }
+    
+    if (totalStats === 0) {
+        document.getElementById('ngResult').innerText = '0.00';
+        return;
+    }
+    
     // Trouver la stat la plus élevée pour déterminer la référence
-    let maxStat = 0;
-    let maxStatKey = '';
-    for (const key of statKeys) {
-        if (statsUtiles[key] > maxStat) {
-            maxStat = statsUtiles[key];
-            maxStatKey = key;
+    let maxStatValue = 0;
+    let maxStatName = '';
+    for (const [name, value] of Object.entries(statValues)) {
+        if (value > maxStatValue) {
+            maxStatValue = value;
+            maxStatName = name;
         }
     }
     
     // Calculer les valeurs idéales basées sur la stat max
     // Idéalement, chaque stat devrait être proportionnelle à son coefficient
-    // Par exemple, si Gardien=91 et coeff=0.5, alors Défense idéale = 91 * (0.1667/0.5)
+    const maxCoeff = coeffs[maxStatName];
     let ngSum = 0;
-    for (const key of statKeys) {
-        const statValue = statsUtiles[key];
-        // Trouver le nom de la stat correspondant
-        let statName = '';
-        for (const [name, mappingKey] of Object.entries(statMapping)) {
-            if (mappingKey === key) {
-                statName = name;
-                break;
-            }
-        }
-        if (statName && coeffs[statName]) {
-            const coeff = coeffs[statName];
-            // Valeur idéale basée sur la stat max
-            const idealValue = maxStat * (coeff / coeffs[statNameForMax]);
-            // Prendre le minimum entre la valeur réelle et l'idéale
-            const minValue = Math.min(statValue, idealValue);
-            ngSum += minValue;
-        }
+    
+    for (const statName of statKeys) {
+        const statValue = statValues[statName] || 0;
+        const coeff = coeffs[statName];
+        // Valeur idéale basée sur la stat max
+        const idealValue = maxStatValue * (coeff / maxCoeff);
+        // Prendre le minimum entre la valeur réelle et l'idéale
+        const minValue = Math.min(statValue, idealValue);
+        ngSum += minValue;
     }
     
     // La NG est la somme divisée par 2
     const ng = ngSum / 2;
     
-    // Trouver le nom de la stat max pour l'affichage
-    let statNameForMax = '';
-    for (const [name, mappingKey] of Object.entries(statMapping)) {
-        if (mappingKey === maxStatKey) {
-            statNameForMax = name;
-            break;
-        }
-    }
-    
-    // Si la stat max est 0, NG = 0
-    const finalNg = maxStat === 0 ? 0 : ng;
-
-    // Affichage de la NG arrondie
+    // Affichage de la NG arrondie à 2 décimales
     const ngResultElem = document.getElementById('ngResult');
     if (ngResultElem) {
-        ngResultElem.innerText = finalNg.toFixed(2);
+        ngResultElem.innerText = ng.toFixed(2);
     }
 
     // Affichage des badges de proportions d'entraînement
