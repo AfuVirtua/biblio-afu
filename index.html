@@ -6,20 +6,9 @@
     <title>Biblio AfU - African Union</title>
     
     <!-- ===== FAVICON ===== -->
-<!-- Solution 1: PNG (recommandé) -->
-    <link rel="icon" type="image/png" sizes="640x640" href="logo_afu.png">
-    
-    <!-- Solution 2: JPG -->
-    <link rel="icon" type="image/jpeg" href="logo_afu.jpg">
-    
-    <!-- Solution 3: ICO (meilleure compatibilité) -->
-    <link rel="shortcut icon" type="image/x-icon" href="logo_afu.ico">
-    
-    <!-- Solution 4: Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="logo_afu.png">
-    
-    <!-- Solution 5: Fallback avec style inline -->
-    <link rel="icon" href="logo_afu.jpg">
+    <link rel="icon" type="image/jpeg" sizes="640x640" href="logo_afu.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="logo_afu.jpg">
+    <link rel="apple-touch-icon" href="logo_afu.jpg">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -30,15 +19,23 @@
                 <h1>🌍 Biblio AfU</h1>
                 <p id="header-subtitle" data-i18n="header-subtitle">Plateforme Officielle, Outils & Guides de l'Entente African Union</p>
             </div>
-            <div class="lang-switch">
-                <button onclick="switchLanguage('fr')" id="btn-fr" class="lang-btn active">🇫🇷 FR</button>
-                <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn">🇬🇧 EN</button>
+            <div class="header-right">
+                <div class="visitor-counter" id="visitorCounter">
+                    <span class="visitor-icon">👁️</span>
+                    <span class="visitor-label" data-i18n="visitors">Visiteurs :</span>
+                    <span class="visitor-count" id="visitorCount">0</span>
+                </div>
+                <div class="lang-switch">
+                    <button onclick="switchLanguage('fr')" id="btn-fr" class="lang-btn active">🇫🇷 FR</button>
+                    <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn">🇬🇧 EN</button>
+                </div>
             </div>
         </div>
     </header>
 
     <nav>
         <button class="nav-btn active" onclick="showTab('accueil')" data-i18n="nav-accueil">🏠 Accueil</button>
+        <button class="nav-btn" onclick="showTab('news')" data-i18n="nav-news">📰 News</button>
         <button class="nav-btn" onclick="showTab('reglement')" data-i18n="nav-reglement">📜 Règlement Intérieur</button>
         <button class="nav-btn" onclick="showTab('palmares')" data-i18n="nav-palmares">🏆 Palmarès</button>
         <button class="nav-btn" onclick="showTab('gestion')" data-i18n="nav-gestion">📊 Gestion & Infrastructures</button>
@@ -102,6 +99,67 @@
                 </p>
                 <p style="font-size: 1.2rem; font-weight: bold; color: #e65100; margin-top: 0.5rem;">
                     Ensemble, nous sommes plus forts ! 💪🌍
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECTION NEWS                                                  -->
+        <!-- ============================================================ -->
+        <section id="news" class="tab-content">
+            <h2 data-i18n="news-title">📰 Dernières News de Virtuafoot</h2>
+            
+            <!-- Dernière nouvelle - Aymeric -->
+            <div class="card" style="border-left: 6px solid #d32f2f; background-color: #fff5f5;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+                    <h3 style="margin: 0; color: #d32f2f;">📢 Nouveauté Virtuafoot</h3>
+                    <span style="font-size: 0.9rem; color: #888; background: #f5f5f5; padding: 4px 12px; border-radius: 20px;">🔴 Nouveau</span>
+                </div>
+                <p style="color: #666; font-style: italic; margin-top: 0;">Posté par <strong>Aymeric</strong> - Propriétaire de Virtuafoot</p>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                    <p style="font-size: 1.05rem; line-height: 1.8;">
+                        Deux évolutions font leur apparition sur Virtuafoot :
+                    </p>
+                    
+                    <h4 style="color: #1b5e20; margin-top: 1.5rem;">🏃 Condition physique et style de jeu</h4>
+                    <p style="line-height: 1.8;">
+                        La condition physique des joueurs est désormais prise en compte dans le calcul de l'impact du style de jeu.
+                    </p>
+                    <p style="line-height: 1.8; background: #e8f5e9; padding: 0.8rem 1.2rem; border-radius: 6px; border-left: 4px solid #2e7d32;">
+                        <strong>Concrètement :</strong> Plus la condition physique de vos joueurs est basse, moins votre style de jeu pèsera sur le déroulement du match. Une équipe fatiguée appliquera donc moins efficacement ses consignes de jeu. <strong>Surveillez la fraîcheur de votre effectif avant les grandes échéances !</strong>
+                    </p>
+                    
+                    <h4 style="color: #1976d2; margin-top: 1.5rem;">💎 Des points VF pour les défaites</h4>
+                    <p style="line-height: 1.8;">
+                        Jusqu'à présent, seules les victoires et les matchs nuls rapportaient des points VF. Désormais, les défaites rapporteront des points VF, à hauteur de <strong>50% des points gagnés en cas de victoire</strong>, soit autant que les matchs nuls.
+                    </p>
+                    <p style="line-height: 1.8; background: #e3f2fd; padding: 0.8rem 1.2rem; border-radius: 6px; border-left: 4px solid #1976d2;">
+                        <strong>Vous aurez donc la garantie de faire progresser votre club en jouant des matchs</strong>, peu importe l'adversaire que vous choisissez.
+                    </p>
+                    
+                    <hr style="margin: 1.5rem 0; border: none; border-top: 2px dashed #ddd;">
+                    
+                    <p style="font-style: italic; color: #666; font-size: 0.95rem; background: #f5f5f5; padding: 0.8rem 1.2rem; border-radius: 6px;">
+                        <strong>📌 Note :</strong> Pour chaque actualisation (actu), la baisse de style est de <strong>0,3</strong>.
+                    </p>
+                </div>
+                
+                <p style="color: #999; font-size: 0.85rem; text-align: right; margin: 0;">
+                    📅 Publié le 23 Juillet 2026
+                </p>
+            </div>
+
+            <!-- Archive des news précédentes -->
+            <div class="card" style="border-left: 6px solid #ff6f00; background-color: #fff8e1;">
+                <h4 style="color: #ff6f00; margin-top: 0;">📰 Archives des News</h4>
+                <ul style="line-height: 2; padding-left: 1.2rem;">
+                    <li><strong>📢 23/07/2026</strong> - <span data-i18n="news-latest">Nouveautés : Condition physique & points VF pour les défaites</span></li>
+                    <li><span style="color: #999;">📢 15/07/2026</span> - <span style="color: #999;" data-i18n="news-older1">Mise à jour du moteur de match</span></li>
+                    <li><span style="color: #999;">📢 01/07/2026</span> - <span style="color: #999;" data-i18n="news-older2">Nouveau système de transferts</span></li>
+                </ul>
+                <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">
+                    💡 <span data-i18n="news-archive">Les anciennes news sont consultables sur le forum officiel de Virtuafoot.</span>
                 </p>
             </div>
         </section>

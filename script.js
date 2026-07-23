@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BIBLIO AFU - SCRIPT PRINCIPAL (AVEC CALCUL NG CORRECT)
+   BIBLIO AFU - SCRIPT PRINCIPAL (VERSION COMPLÈTE)
    ========================================================================== */
 
 // 1. VARIABLE GLOBALE DE LANGUE
@@ -62,7 +62,9 @@ const statMapping = {
     "Attaque": "att"
 };
 
-// 5. FONCTION POUR CHANGER DE LANGUE
+// ================================================================
+// FONCTION POUR CHANGER DE LANGUE
+// ================================================================
 function switchLanguage(lang) {
     currentLang = lang;
     
@@ -83,7 +85,9 @@ function switchLanguage(lang) {
     calculerTout();
 }
 
-// 6. FONCTION POUR LA NAVIGATION
+// ================================================================
+// FONCTION POUR LA NAVIGATION
+// ================================================================
 function showTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
@@ -100,7 +104,9 @@ function showTab(tabId) {
     });
 }
 
-// 7. FONCTION DE CALCUL DE LA NG - MÉTHODE CORRECTE (basée sur l'Excel)
+// ================================================================
+// FONCTION DE CALCUL DE LA NG - MÉTHODE CORRECTE
+// ================================================================
 function calculerTout() {
     // Récupération des valeurs des caractéristiques
     const stats = {
@@ -131,21 +137,13 @@ function calculerTout() {
         return;
     }
     
-    // Calculer la somme des stats utiles
-    let totalStats = 0;
+    // Calculer les valeurs des stats utiles
     const statValues = {};
     for (const statName of statKeys) {
         const statKey = statMapping[statName];
         if (statKey && stats[statKey] !== undefined) {
-            const value = stats[statKey];
-            statValues[statName] = value;
-            totalStats += value;
+            statValues[statName] = stats[statKey];
         }
-    }
-    
-    if (totalStats === 0) {
-        document.getElementById('ngResult').innerText = '0.00';
-        return;
     }
     
     // Trouver la stat la plus élevée pour déterminer la référence
@@ -158,8 +156,12 @@ function calculerTout() {
         }
     }
     
+    if (maxStatValue === 0) {
+        document.getElementById('ngResult').innerText = '0.00';
+        return;
+    }
+    
     // Calculer les valeurs idéales basées sur la stat max
-    // Idéalement, chaque stat devrait être proportionnelle à son coefficient
     const maxCoeff = coeffs[maxStatName];
     let ngSum = 0;
     
@@ -197,8 +199,37 @@ function calculerTout() {
     }
 }
 
-// 8. INITIALISATION
+// ================================================================
+// COMPTEUR DE VISITEURS (localStorage)
+// ================================================================
+function initVisitorCounter() {
+    let count = localStorage.getItem('afu_visitor_count');
+    
+    if (count === null) {
+        // Premier visiteur
+        count = 1;
+    } else {
+        count = parseInt(count) + 1;
+    }
+    
+    localStorage.setItem('afu_visitor_count', count);
+    
+    const visitorElement = document.getElementById('visitorCount');
+    if (visitorElement) {
+        visitorElement.textContent = count;
+    }
+}
+
+// ================================================================
+// INITIALISATION AU CHARGEMENT DE LA PAGE
+// ================================================================
 document.addEventListener('DOMContentLoaded', function() {
+    // Appliquer la langue par défaut (français)
     switchLanguage('fr');
+    
+    // Calculer la NG initiale
     calculerTout();
+    
+    // Initialiser le compteur de visiteurs
+    initVisitorCounter();
 });

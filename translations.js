@@ -412,6 +412,27 @@ const translations = {
 // Dans la section EN (après 'accueil-title')
 'reglement-title': '📜 Internal Rules',
 'palmares-title': '🏆 African Union History',
+// Dans la section FR (après 'nav-accueil')
+'nav-news': '📰 News',
+
+// Dans la section EN (après 'nav-accueil')
+'nav-news': '📰 News',
+
+// Dans la section FR (après 'accueil-title')
+'news-title': '📰 Dernières News de Virtuafoot',
+'news-latest': 'Nouveautés : Condition physique & points VF pour les défaites',
+'news-older1': 'Mise à jour du moteur de match',
+'news-older2': 'Nouveau système de transferts',
+'news-archive': 'Les anciennes news sont consultables sur le forum officiel de Virtuafoot.',
+'visitors': 'Visiteurs :',
+
+// Dans la section EN (après 'accueil-title')
+'news-title': '📰 Latest Virtuafoot News',
+'news-latest': 'Updates: Physical condition & VF points for defeats',
+'news-older1': 'Match engine update',
+'news-older2': 'New transfer system',
+'news-archive': 'Older news can be viewed on the official Virtuafoot forum.',
+'visitors': 'Visitors:',
         // ===== FOOTER =====
         'footer': 'African Union (AfU) © 2026 - Virtuafoot Alliance Platform'
     }
