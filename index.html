@@ -803,7 +803,28 @@
                 <div id="entrainementRatio" class="ratio-box"></div>
             </div>
         </section>
-
+        <!-- ============================================================ -->
+        <!-- SECTION NEWS                                                  -->
+        <!-- ============================================================ -->
+        <section id="news" class="tab-content">
+            <h2 data-i18n="news-title">📰 Dernières News de Virtuafoot</h2>
+            
+            <!-- Conteneur des news avec pagination -->
+            <div id="newsContainer">
+                <!-- Les news seront injectées par JavaScript -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination-container" id="paginationContainer">
+                <button class="pagination-btn" onclick="changePage(-1)" id="prevPage" disabled>
+                    ◀ <span data-i18n="prev">Précédent</span>
+                </button>
+                <span class="pagination-info" id="pageInfo">Page 1 / 1</span>
+                <button class="pagination-btn" onclick="changePage(1)" id="nextPage">
+                    <span data-i18n="next">Suivant</span> ▶
+                </button>
+            </div>
+        </section>
     </main>
 
     <footer>

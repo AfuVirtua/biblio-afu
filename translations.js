@@ -433,6 +433,13 @@ const translations = {
 'news-older2': 'New transfer system',
 'news-archive': 'Older news can be viewed on the official Virtuafoot forum.',
 'visitors': 'Visitors:',
+// Dans la section FR
+'prev': 'Précédent',
+'next': 'Suivant',
+
+// Dans la section EN
+'prev': 'Previous',
+'next': 'Next',
         // ===== FOOTER =====
         'footer': 'African Union (AfU) © 2026 - Virtuafoot Alliance Platform'
     }

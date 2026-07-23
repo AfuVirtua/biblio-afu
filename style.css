@@ -518,3 +518,68 @@ footer {
         padding: 4px 12px;
     }
 }
+/* ================================================================
+   PAGINATION DES NEWS
+   ================================================================ */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.pagination-btn {
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #2e7d32;
+    background: white;
+    color: #2e7d32;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #2e7d32;
+    color: white;
+    transform: scale(1.02);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: #ccc;
+    color: #ccc;
+}
+
+.pagination-info {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    min-width: 100px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .pagination-container {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0.8rem;
+    }
+    
+    .pagination-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .pagination-info {
+        font-size: 0.85rem;
+        min-width: 80px;
+    }
+}
