@@ -165,7 +165,7 @@ function switchLanguage(lang) {
     });
 
     calculerTout();
-    renderNews(); // Re-rendre les news avec la nouvelle langue
+    renderNews();
 }
 
 // 7. FONCTION POUR LA NAVIGATION
@@ -184,14 +184,13 @@ function showTab(tabId) {
         }
     });
     
-    // Réinitialiser la pagination quand on ouvre l'onglet News
     if (tabId === 'news') {
         currentPage = 1;
         renderNews();
     }
 }
 
-// 8. FONCTION DE CALCUL DE LA NG - MÉTHODE CORRECTE
+// 8. FONCTION DE CALCUL DE LA NG
 function calculerTout() {
     const stats = {
         gar: parseFloat(document.getElementById('st_gar')?.value) || 0,
@@ -302,7 +301,6 @@ function renderNews() {
         `).join('');
     }
     
-    // Mise à jour de la pagination
     const pageInfo = document.getElementById('pageInfo');
     const prevBtn = document.getElementById('prevPage');
     const nextBtn = document.getElementById('nextPage');
@@ -328,35 +326,15 @@ function changePage(direction) {
     currentPage = newPage;
     renderNews();
     
-    // Scroll en haut de la section
     const container = document.getElementById('newsContainer');
     if (container) {
         container.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
 
-// 11. COMPTEUR DE VISITEURS (localStorage)
-function initVisitorCounter() {
-    let count = localStorage.getItem('afu_visitor_count');
-    
-    if (count === null) {
-        count = 1;
-    } else {
-        count = parseInt(count) + 1;
-    }
-    
-    localStorage.setItem('afu_visitor_count', count);
-    
-    const visitorElement = document.getElementById('visitorCount');
-    if (visitorElement) {
-        visitorElement.textContent = count;
-    }
-}
-
-// 12. INITIALISATION AU CHARGEMENT DE LA PAGE
+// 11. INITIALISATION AU CHARGEMENT DE LA PAGE
 document.addEventListener('DOMContentLoaded', function() {
     switchLanguage('fr');
     calculerTout();
-    initVisitorCounter();
     renderNews();
 });

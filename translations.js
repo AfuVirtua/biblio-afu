@@ -8,11 +8,29 @@ const translations = {
         'header-subtitle': 'Plateforme Officielle, Outils & Guides de l\'Entente African Union',
         
         // ===== NAVIGATION =====
+        'nav-accueil': '🏠 Accueil',
+        'nav-news': '📰 News',
+        'nav-reglement': '📜 Règlement Intérieur',
+        'nav-palmares': '🏆 Palmarès',
         'nav-gestion': '📊 Gestion & Infrastructures',
         'nav-consignes': '📜 Consignes Individuelles',
         'nav-tactique': '⚽ Tactiques & Tutos Lahi',
         'nav-is': '🦁 Sélection IS',
         'nav-calculateur': '🧮 Calculateur Excel AfU',
+        
+        // ===== ACCUEIL =====
+        'accueil-title': '🏠 Bienvenue sur Biblio AfU',
+        
+        // ===== NEWS =====
+        'news-title': '📰 Dernières News de Virtuafoot',
+        'prev': 'Précédent',
+        'next': 'Suivant',
+        
+        // ===== REGLEMENT =====
+        'reglement-title': '📜 Règlement Intérieur',
+        
+        // ===== PALMARES =====
+        'palmares-title': '🏆 Palmarès de l\'African Union',
         
         // ===== SECTION GESTION =====
         'gestion-title': '📊 Stratégie, Gestion Financière & Infrastructures',
@@ -202,11 +220,29 @@ const translations = {
         'header-subtitle': 'Official Platform, Tools & Guides of the African Union Alliance',
         
         // ===== NAVIGATION =====
+        'nav-accueil': '🏠 Home',
+        'nav-news': '📰 News',
+        'nav-reglement': '📜 Internal Rules',
+        'nav-palmares': '🏆 History',
         'nav-gestion': '📊 Management & Infrastructure',
         'nav-consignes': '📜 Individual Instructions',
         'nav-tactique': '⚽ Tactics & Lahi Tutorials',
         'nav-is': '🦁 IS Selection',
         'nav-calculateur': '🧮 AfU Excel Calculator',
+        
+        // ===== HOME =====
+        'accueil-title': '🏠 Welcome to Biblio AfU',
+        
+        // ===== NEWS =====
+        'news-title': '📰 Latest Virtuafoot News',
+        'prev': 'Previous',
+        'next': 'Next',
+        
+        // ===== RULES =====
+        'reglement-title': '📜 Internal Rules',
+        
+        // ===== HISTORY =====
+        'palmares-title': '🏆 African Union History',
         
         // ===== SECTION MANAGEMENT =====
         'gestion-title': '📊 Strategy, Financial Management & Infrastructure',
@@ -386,60 +422,7 @@ const translations = {
         'stat-vitesse': 'Speed:',
         'stat-attaque': 'Attack:',
         'stat-endurance': 'Stamina:',
-        // Dans la section FR (ajouter après 'nav-calculateur')
-'nav-accueil': '🏠 Accueil',
-
-// Dans la section EN (ajouter après 'nav-calculateur')
-'nav-accueil': '🏠 Home',
-
-// Dans la section FR (ajouter après 'footer')
-'accueil-title': '🏠 Bienvenue sur Biblio AfU',
-
-// Dans la section EN (ajouter après 'footer')
-'accueil-title': '🏠 Welcome to Biblio AfU',
-// Dans la section FR (après 'nav-accueil')
-'nav-reglement': '📜 Règlement Intérieur',
-'nav-palmares': '🏆 Palmarès',
-
-// Dans la section EN (après 'nav-accueil')
-'nav-reglement': '📜 Internal Rules',
-'nav-palmares': '🏆 History',
-
-// Dans la section FR (après 'accueil-title')
-'reglement-title': '📜 Règlement Intérieur',
-'palmares-title': '🏆 Palmarès de l\'African Union',
-
-// Dans la section EN (après 'accueil-title')
-'reglement-title': '📜 Internal Rules',
-'palmares-title': '🏆 African Union History',
-// Dans la section FR (après 'nav-accueil')
-'nav-news': '📰 News',
-
-// Dans la section EN (après 'nav-accueil')
-'nav-news': '📰 News',
-
-// Dans la section FR (après 'accueil-title')
-'news-title': '📰 Dernières News de Virtuafoot',
-'news-latest': 'Nouveautés : Condition physique & points VF pour les défaites',
-'news-older1': 'Mise à jour du moteur de match',
-'news-older2': 'Nouveau système de transferts',
-'news-archive': 'Les anciennes news sont consultables sur le forum officiel de Virtuafoot.',
-'visitors': 'Visiteurs :',
-
-// Dans la section EN (après 'accueil-title')
-'news-title': '📰 Latest Virtuafoot News',
-'news-latest': 'Updates: Physical condition & VF points for defeats',
-'news-older1': 'Match engine update',
-'news-older2': 'New transfer system',
-'news-archive': 'Older news can be viewed on the official Virtuafoot forum.',
-'visitors': 'Visitors:',
-// Dans la section FR
-'prev': 'Précédent',
-'next': 'Suivant',
-
-// Dans la section EN
-'prev': 'Previous',
-'next': 'Next',
+        
         // ===== FOOTER =====
         'footer': 'African Union (AfU) © 2026 - Virtuafoot Alliance Platform'
     }
